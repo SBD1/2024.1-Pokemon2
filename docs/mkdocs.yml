@@ -1,0 +1,47 @@
+site_name: Pokemon
+theme:
+  features:
+    - navigation.sections
+    - navigation.path
+    - search.suggest
+    - search.highlight
+  name: material
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/link
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off
+        name: Switch to system preference
+  language: pt-BR
+  extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/SBD1/2024.1-Pokemon2
+
+
+nav:
+  - Home: index.md
+  - DER: 
+    - V1: der_v1.md
+
+
+
+extra_javascript:
+  - js/custom.js
+
+extra_css:
+  - css/custom.css
+
