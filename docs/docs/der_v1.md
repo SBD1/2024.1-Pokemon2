@@ -36,7 +36,7 @@
 #### **Pokeball**
     - Representa as pokébolas usadas pelos personagens para capturar Pokémon. Existem diferentes tipos de Pokébolas com diferentes taxas de captura.
 
-#### Entidades e Atributos
+### Entidades e Atributos:
 
 **Pokemon**
 
