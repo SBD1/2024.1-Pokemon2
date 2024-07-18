@@ -53,27 +53,10 @@
 - Efeito
 - Tipo de Item (Consumível, Equipamento, Evolutivo, Aprendizado, Medicinais, Pokebolas, batalha, valiosos, Apriorísticos (Mega Evolução), decoração, eventos)
 - Preço
-- Raridade (Comum, Raro, Lendário)
-- Peso
 - Usos por Item (número de vezes que pode ser usado)
 - Categoria (Medicinal, Batalha, Aprimoramento, etc.)
-- Data de Introdução (quando foi adicionado ao jogo)
 - ID_Pokemon_Compatível (FK) (especificar se é compatível com Pokémon específicos)
-- Vendas Totais (quantidade vendida)
-- Localização de Compra (onde pode ser adquirido: PokeMart, Centro Pokémon, etc.)
-- Nível Mínimo Requerido (nível do jogador ou Pokémon necessário para uso)
-- Efeito Secundário (qualquer efeito adicional)
-- Durabilidade (se aplicável, por exemplo, para equipamentos)
-- Quantidade no Estoque
-- Data de Expiração (se aplicável)
-- Versões de Jogo Disponíveis (se o item está disponível em várias versões do jogo)
-- Descontos Aplicáveis
-- Imagem/Ícone
-- Requisitos Especiais (condições necessárias para usar o item)
 - ID_Evento (FK) (se o item está relacionado a algum evento específico)
-- Usável em Batalha (sim/não)
-- Multiplicador de Efeito (se aumenta algum atributo, qual é o multiplicador)
-- Interações Especiais (como o item interage com outros itens ou habilidades)
 
 
 **Personagem**
@@ -112,27 +95,17 @@
 
 **Centro Pokémon**
 - ID_Centro
-- Localização (Região/Cidade)
 - NPC
 - Pokemon
 - Pokeball
 - Text
 - Nome
 - Horário de Funcionamento
-- Capacidade de Atendimento (número de Pokémon que podem ser atendidos ao mesmo tempo)
+- Capacidade de Atendimento (número de Pokémons que podem ser atendidos ao mesmo tempo)
 - Número de Enfermeiros
 - Serviços Oferecidos (Curar Pokémon, PC Box, Troca de Pokémon)
 - Número de Máquinas de Cura
-- Número de Salas de Tratamento
-- Número de PCs Disponíveis
-- Loja de Itens (sim/não)
-- Segurança (nível de segurança baixo, mpedio, alto)
-- Popularidade (classificação em número de estrelas)
 - ID_Região (FK)
-- Tipo de Instalação (Grande, Pequeno, Móvel)
-- Tempo Médio de Espera
-- Responsável pelo Centro
-- Serviços de Emergência (sim/não)
 
 
 **Tipo**
@@ -213,41 +186,21 @@
 - ID_Ginásio (FK)
 - Tipo de Pokémon Especialidade (Fogo, Água, Planta, ...)
 - Nível de Dificuldade (Iniciante, Intermediário, Avançado)
-- Número de Insígnias Concedidas
 - Biografia
-- Estratégia de Batalha
-- Número de Pokémon na Equipe
 - Número de Vitórias
 - Número de Derrotas
-- Data de Início como Líder
 - Insígnia Oferecida
-- Premiação em Dinheiro
-- Experiência em Treinamento (anos)
-- Habilidades Especiais
-- Equipe Atual de Pokémon
 - Região de Origem
-- Itens Usados nas Batalhas
 
 **Competição**
 
 - ID_Competição
 - Nome
 - Descrição
-- Data de Início
-- Data de Término
 - Localização
 - Tipo de Competição (Torneio, Campeonato, Desafio)
-- Regras Especiais
-- Número de Participantes
-- Inscrição Necessária (sim/não)
-- Taxa de Inscrição
-- Prêmio para o Vencedor
-- Status (Ativa, Encerrada, Planejada)
 - Nível de Dificuldade (Iniciante, Intermediário, Avançado)
-- Pokémon Permitidos (Especificar tipos ou restrições)
 - Formato da Competição (Eliminatória, Pontuação)
-- Lista de Juízes
-- Histórico de Vencedores
 - Número de Rodadas
 - Critérios de Desempate
 
@@ -260,13 +213,9 @@
 - Número de Pokémon Registrados
 - Número de Pokémon Vistos
 - Número de Pokémon Capturados
-- Região de Cobertura (por exemplo, Kanto, Johto, etc.)
-- Versão (diferentes versões podem ter diferentes layouts ou funcionalidades)
 - Status de Completo (sim/não)
 - Porcentagem de Completo
 - Tipo de Pokedex (Regional/Nacional)
-- Funções Extras (Análise de Habilidades, Localização dos Pokémon)
-- Nível de Detalhe (Básico, Médio, Avançado,)
 
 
 **Equipe Rocket**
@@ -300,19 +249,11 @@
 - Localização
 - ID_Região (FK)
 - Número de Insígnias Necessárias
-- Data de Fundação
 - Descrição
-- Nome do Campeão Atual
-- Recompensa em Dinheiro
 - Quantidade de Experiência Ganho
 - Quantidade de Insígnias Oferecidas
-- Regras Especiais
-- Tipo de Batalha (Single, Double, tripple, rotation, multi, battle royale, inverse battle, sky battle)
-- Número de Partidas
 - Dificuldade (Iniciante, Intermediário, Avançado)
-- Status (Ativa/Inativa)
 - ID_Ginásio (FK) (Referência ao ginásio associado, se tiver)
-- Histórico de Campeões
 
 
 **Insígnia**
