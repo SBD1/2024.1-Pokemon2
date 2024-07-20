@@ -37,4 +37,5 @@ jobs:
 
       # Deploying mkdocs to branch gh-pages
       - name: Deploying mkdocs
-        run: mkdocs gh-deploy --force
+        run: mkdocs gh-deploy --config-file=docs/mkdocs.yml --force
+
