@@ -34,7 +34,7 @@
    - Representa os centros Pokémon onde os jogadores podem curar seus Pokémon e obter assistência.
 
 #### **Pokeball**
-    - Representa as pokébolas usadas pelos personagens para capturar Pokémon. Existem diferentes tipos de Pokébolas com diferentes taxas de captura.
+   - Representa as pokébolas usadas pelos personagens para capturar Pokémon. Existem diferentes tipos de Pokébolas com diferentes taxas de captura.
 
 ### Relacionamentos:
 

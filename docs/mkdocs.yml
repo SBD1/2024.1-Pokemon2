@@ -36,6 +36,9 @@ nav:
   - Home: index.md
   - DER: 
     - V1: der_v1.md
+    - V2: der_v2.md
+  - Dicionário de Dados:
+    - V1: dicionario_de_dados_v1.md
 
 
 
