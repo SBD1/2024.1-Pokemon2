@@ -2,7 +2,11 @@
 
 ## Alunos 
 
-- Arthur José Nascimento de Lima  190084600
+- Arthur José Nascimento de Lima 190084600
+- Arthur Ferreira Rodrigues 200056981
+- Carlos Gabriel Cardoso Ramos 211042327
+- Felipe Pereira da Costa Silva 200017772
+
 
 ## Rodando MKdocs
 
