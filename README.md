@@ -7,6 +7,9 @@
 - Carlos Gabriel Cardoso Ramos 211042327
 - Fellipe Pereira da Costa Silva 200017772
 
+## Link de Apresentações:
+
+- Entrega do Trabalho - Módulo 1: [link](https://youtu.be/BzyO2wMSp1A)
 
 ## Rodando MKdocs
 
