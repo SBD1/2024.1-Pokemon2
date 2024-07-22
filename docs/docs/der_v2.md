@@ -1,368 +1,456 @@
 # **Descrição do Artefato DER - Segunda Versão**
-### Entidades:
 
-#### **Pokemon**
-   - Representa os diferentes Pokémon disponíveis no jogo. Cada Pokémon tem atributos específicos como nome, tipo, habilidades, etc.
+## DER:
+
+![Image](der_v2.png)
+
+
+<details>
+    <summary><strong>Entidades e Atributos</strong></summary>
+    <ul class="relationship-list">
+</li>
+
+
+<details>
+<summary><strong>Pokemon</strong></summary>
+<ul id="pokemonAttributesList">
+  <li>ID_Pokemon</li>
+  <li>Nome</li>
+  <li>Nível</li>
+  <li>Experiência</li>
+  <li>HP</li>
+  <li>Ataque</li>
+  <li>Defesa</li>
+  <li>Velocidade</li>
+  <li>Habilidade</li>
+</ul>
+
+</details>
+
+<details>
+    <summary><strong>Item</strong></summary>
+    <ul class="attribute-list">
+        <li>ID_Item</li>
+        <li>Nome</li>
+        <li>Descrição</li>
+        <li>Efeito</li>
+        <li>Tipo de Item (Consumível, Equipamento, Evolutivo, Aprendizado, Medicinais, Pokebolas, batalha, valiosos, Apriorísticos (Mega Evolução), decoração, eventos)</li>
+        <li>Preço</li>
+        <li>Usos por Item (número de vezes que pode ser usado)</li>
+        <li>Categoria (Medicinal, Batalha, Aprimoramento, etc.)</li>
+        <li>ID_Pokemon_Compatível (FK) (especificar se é compatível com Pokémon específicos)</li>
+        <li>ID_Evento (FK) (se o item está relacionado a algum evento específico)</li>
+    </ul>
+</details>
+
+<details>
+    <summary><strong>Personagem</strong></summary>
+    <ul class="attribute-list">
+        <li>ID_Personagem</li>
+        <li>Nome</li>
+        <li>Função (Treinador, Líder de Ginásio, Membro da Equipe Rocket, etc.)</li>
+        <li>Pokemon</li>
+        <li>Cidade</li>
+        <li>Insignia</li>
+        <li>Pokeballs</li>
+        <li>Dinheiro</li>
+    </ul>
+</details>
+
+<details>
+    <summary><strong>NPC</strong></summary>
+    <ul class="attribute-list">
+        <li>ID_NPC</li>
+        <li>Nome</li>
+        <li>Localização</li>
+    </ul>
+</details>
+
+<details>
+    <summary><strong>Player</strong></summary>
+    <ul class="attribute-list">
+        <li>ID_Player</li>
+        <li>Nome</li>
+        <li>ID_Personagem (FK)</li>
+        <li>ID_Pokedex (FK)</li>
+    </ul>
+</details>
+
+<details>
+    <summary><strong>Caminho</strong></summary>
+    <ul class="attribute-list">
+        <li>ID_Caminho</li>
+        <li>Nome</li>
+        <li>Descrição</li>
+        <li>Pokemon</li>
+        <li>NPC</li>
+        <li>Pokebola</li>
+    </ul>
+</details>
+
+<details>
+    <summary><strong>Centro Pokémon</strong></summary>
+    <ul class="attribute-list">
+        <li>ID_Centro</li>
+        <li>NPC</li>
+        <li>Pokemon</li>
+        <li>Pokeball</li>
+        <li>Text</li>
+        <li>Nome</li>
+        <li>Horário de Funcionamento</li>
+        <li>Capacidade de Atendimento (número de Pokémons que podem ser atendidos ao mesmo tempo)</li>
+        <li>Número de Enfermeiros</li>
+        <li>Serviços Oferecidos (Curar Pokémon, PC Box, Troca de Pokémon)</li>
+        <li>Número de Máquinas de Cura</li>
+        <li>ID_Região (FK)</li>
+    </ul>
+</details>
+
+<details>
+    <summary><strong>Tipo</strong></summary>
+    <ul class="attribute-list">
+        <li>ID_Tipo</li>
+        <li>Nome</li>
+        <li>Descrição</li>
+    </ul>
+</details>
+
+<details>
+    <summary><strong>Habilidade</strong></summary>
+    <ul class="attribute-list">
+        <li>ID_Habilidade</li>
+        <li>Nome</li>
+        <li>Descrição</li>
+    </ul>
+</details>
+
+<details>
+    <summary><strong>Região</strong></summary>
+    <ul class="attribute-list">
+        <li>ID_Região</li>
+        <li>Nome</li>
+        <li>Descrição</li>
+    </ul>
+</details>
+
+<details>
+    <summary><strong>Natureza</strong></summary>
+    <ul class="attribute-list">
+        <li>ID_Natureza</li>
+        <li>Nome</li>
+        <li>Efeito</li>
+    </ul>
+</details>
+
+<details>
+    <summary><strong>Evolução</strong></summary>
+    <ul class="attribute-list">
+        <li>ID_Evolução</li>
+        <li>Pokemon_Inicial (FK)</li>
+        <li>Pokemon_Final (FK)</li>
+        <li>Nível</li>
+    </ul>
+</details>
+
+<details>
+    <summary><strong>Mega Evolução</strong></summary>
+    <ul class="attribute-list">
+        <li>ID_MegaEvolução</li>
+        <li>Pokemon_Inicial (FK)</li>
+        <li>Pokemon_Mega (FK)</li>
+        <li>Item_Necessário (FK)</li>
+    </ul>
+</details>
+
+<details>
+    <summary><strong>Espécie</strong></summary>
+    <ul class="attribute-list">
+        <li>ID_Espécie</li>
+        <li>Nome</li>
+        <li>Descrição</li>
+    </ul>
+</details>
+
+<details>
+    <summary><strong>Geração</strong></summary>
+    <ul class="attribute-list">
+        <li>ID_Geração</li>
+        <li>Número</li>
+        <li>Descrição</li>
+    </ul>
+</details>
+
+<details>
+    <summary><strong>Evento</strong></summary>
+    <ul class="attribute-list">
+        <li>ID_Evento</li>
+        <li>Nome</li>
+        <li>Descrição</li>
+        <li>Data</li>
+    </ul>
+</details>
+
+<details>
+    <summary><strong>Ginásio</strong></summary>
+    <ul class="attribute-list">
+        <li>ID_Ginásio</li>
+        <li>Cidade</li>
+        <li>Nome</li>
+        <li>Tipo</li>
+        <li>Pokemon</li>
+        <li>NPC</li>
+        <li>Insignia</li>
+        <li>Localização</li>
+        <li>ID_Líder (FK)</li>
+    </ul>
+</details>
+
+<details>
+    <summary><strong>Líder de Ginásio</strong></summary>
+    <ul class="attribute-list">
+        <li>ID_Líder</li>
+        <li>Nome</li>
+        <li>ID_Personagem (FK)</li>
+        <li>ID_Ginásio (FK)</li>
+        <li>Tipo de Pokémon Especialidade (Fogo, Água, Planta, ...)</li>
+        <li>Nível de Dificuldade (Iniciante, Intermediário, Avançado)</li>
+        <li>Biografia</li>
+        <li>Número de Vitórias</li>
+        <li>Número de Derrotas</li>
+        <li>Insígnia Oferecida</li>
+        <li>Região de Origem</li>
+    </ul>
+</details>
+
+<details>
+    <summary><strong>Competição</strong></summary>
+    <ul class="attribute-list">
+        <li>ID_Competição</li>
+        <li>Nome</li>
+        <li>Descrição</li>
+        <li>Localização</li>
+        <li>Tipo de Competição (Torneio, Campeonato, Desafio)</li>
+        <li>Nível de Dificuldade (Iniciante, Intermediário, Avançado)</li>
+        <li>Formato da Competição (Eliminatória, Pontuação)</li>
+        <li>Número de Rodadas</li>
+        <li>Critérios de Desempate</li>
+    </ul>
+</details>
+
+<details>
+    <summary><strong>Pokedex</strong></summary>
+    <ul class="attribute-list">
+        <li>ID_Pokedex</li>
+        <li>Nome</li>
+        <li>ID_Player (FK)</li>
+        <li>Data de Criação</li>
+        <li>Número de Pokémon Registrados</li>
+        <li>Número de Pokémon Vistos</li>
+        <li>Número de Pokémon Capturados</li>
+        <li>Status de Completo (sim/não)</li>
+        <li>Porcentagem de Completo</li>
+        <li>Tipo de Pokedex (Regional/Nacional)</li>
+    </ul>
+</details>
+
+<details>
+    <summary><strong>Equipe Rocket</strong></summary>
+    <ul class="attribute-list">
+        <li>ID_Membro</li>
+        <li>Nome</li>
+        <li>ID_Personagem (FK)</li>
+    </ul>
+</details>
+
+<details>
+    <summary><strong>Torneio</strong></summary>
+    <ul class="attribute-list">
+        <li>ID_Torneio</li>
+        <li>Nome</li>
+        <li>Descrição</li>
+    </ul>
+</details>
+
+<details>
+    <summary><strong>PokeMart</strong></summary>
+    <ul class="attribute-list">
+        <li>ID_PokeMart</li>
+        <li>Nome</li>
+        <li>Localização</li>
+    </ul>
+</details>
+
+<details>
+    <summary><strong>Fossil</strong></summary>
+    <ul class="attribute-list">
+        <li>ID_Fossil</li>
+        <li>Nome</li>
+        <li>Descrição</li>
+    </ul>
+</details>
+
+<details>
+    <summary><strong>Liga Pokémon</strong></summary>
+    <ul class="attribute-list">
+        <li>ID_Liga</li>
+        <li>Nome</li>
+        <li>Localização</li>
+        <li>ID_Região (FK)</li>
+        <li>Número de Insígnias Necessárias</li>
+        <li>Descrição</li>
+        <li>Quantidade de Experiência Ganho</li>
+        <li>Quantidade de Insígnias Oferecidas</li>
+        <li>Dificuldade (Iniciante, Intermediário, Avançado)</li>
+        <li>ID_Ginásio (FK) (Referência ao ginásio associado, se tiver)</li>
+    </ul>
+</details>
+
+<details>
+    <summary><strong>Insígnia</strong></summary>
+    <ul class="attribute-list">
+        <li>ID_Insígnia</li>
+        <li>Nome</li>
+        <li>Descrição</li>
+    </ul>
+</details>
+            </ul>
+        </li>
+    </ul>
+</details>
+
+</body>
+</html>
+
+</body>
+</html>
+
+
+<details>
+    <summary><strong>Relacionamentos Entre Entidades</strong></summary>
+    <ul class="relationship-list">
+</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Item e Pokemon</strong>
+            <ul>
+                <li><strong>Item é Compatível com Pokémon</strong></li>
+                <li>Um Item pode ser compatível com nenhum ou vários Pokémon (0,n).</li>
+                <li>Um Pokémon pode usar nenhum ou vários Itens (0,n).</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Item e Evento</strong>
+            <ul>
+                <li><strong>Item está associado a Evento</strong></li>
+                <li>Um Item pode estar associado a nenhum ou a um Evento (0,n).</li>
+                <li>Um Evento pode ter vários Itens associados (0,n).</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Player e Pokedex</strong>
+            <ul>
+                <li><strong>Player possui Pokedex</strong></li>
+                <li>Um Player tem uma Pokedex (1,1).</li>
+                <li>Uma Pokedex pertence a um Player (1,1).</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Centro Pokémon e Região</strong>
+            <ul>
+                <li><strong>Centro Pokémon está localizado em Região</strong></li>
+                <li>Um Centro Pokémon está localizado em uma Região (1,1).</li>
+                <li>Uma Região pode ter vários Centros Pokémon (0,n).</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Ginásio e Líder de Ginásio</strong>
+            <ul>
+                <li><strong>Ginásio tem Líder de Ginásio</strong></li>
+                <li>Um Ginásio tem um Líder de Ginásio (1,1).</li>
+                <li>Um Líder de Ginásio está associado a um Ginásio (1,1).</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Líder de Ginásio e Competição</strong>
+            <ul>
+                <li><strong>Líder de Ginásio pode participar de Competição</strong></li>
+                <li>Um Líder de Ginásio pode participar de uma ou mais Competições (0,n).</li>
+                <li>Uma Competição pode ter vários Líderes de Ginásio participando (0,n).</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Ginásio e Liga Pokémon</strong>
+            <ul>
+                <li><strong>Ginásio pertence a Liga Pokémon</strong></li>
+                <li>Um Ginásio pode estar associado a uma Liga Pokémon (0,1).</li>
+                <li>Uma Liga Pokémon pode ter vários Ginásios (0,n).</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Competição e Player</strong>
+            <ul>
+                <li><strong>Player participa de Competição</strong></li>
+                <li>Um Player pode participar de várias Competições (0,n).</li>
+                <li>Uma Competição pode ter vários Players participando (0,n).</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Pokedex e Pokemon</strong>
+            <ul>
+                <li><strong>Pokedex registra Pokémon</strong></li>
+                <li>Uma Pokedex registra vários Pokémon (0,n).</li>
+                <li>Um Pokémon pode ser registrado em várias Pokedex (0,n).</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Torneio e Competição</strong>
+            <ul>
+                <li><strong>Torneio pode ser um tipo de Competição</strong></li>
+                <li>Um Torneio é um tipo de Competição (1,1).</li>
+                <li>Uma Competição pode ser um Torneio (0,n).</li>
+            </ul>
+        </li>
+        <li>
+            <strong>PokeMart e Item</strong>
+            <ul>
+                <li><strong>PokeMart vende Item</strong></li>
+                <li>Um PokeMart pode vender vários Itens (0,n).</li>
+                <li>Um Item pode estar disponível em vários PokeMarts (0,n).</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Fossil e Pokemon</strong>
+            <ul>
+                <li><strong>Fossil pode ser usado para recriar Pokémon</strong></li>
+                <li>Um Fossil pode ser usado para recriar um Pokémon específico (1,1).</li>
+                <li>Um Pokémon pode ser recriado a partir de vários Fossils (0,n).</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Liga Pokémon e Insígnia</strong>
+            <ul>
+                <li><strong>Liga Pokémon concede Insígnias</strong></li>
+                <li>Uma Liga Pokémon concede várias Insígnias (0,n).</li>
+                <li>Uma Insígnia é concedida por uma Liga Pokémon (1,1).</li>
+            </ul>
+        </li>
+    </ul>
+</details>
+
+</body>
+</html>
 
-#### **Porção**
-   - Representa itens de cura e melhoria de status que os jogadores podem usar para recuperar a saúde dos Pokémon ou melhorar suas estatísticas temporariamente.
-
-#### **Insignia**
-   - Representa as insígnias que os personagens podem obter ao derrotar líderes de ginásios. Essas insígnias são um símbolo de progresso e habilidade.
-
-#### **Personagem**
-   - Representa os personagens dentro do jogo, incluindo treinadores (Players) e personagens não jogáveis (NPCs). Os personagens têm atributos como nome, idade, e podem possuir Pokémon, capturar Pokémon e obter insígnias.
-
-#### **NPC**
-   - Subconjunto de Personagem, NPCs são personagens não jogáveis que interagem com o jogador e podem fornecer informações, desafios ou recompensas.
-
-#### **Player**
-   - Subconjunto de Personagem, os jogadores são personagens controlados pelos usuários que podem capturar Pokémon, obter insígnias e interagir com o mundo do jogo.
-
-#### **Caminhos**
-   - Representa os diferentes caminhos que os personagens podem percorrer no jogo. Esses caminhos conectam diferentes áreas como cidades, ginásios e centros Pokémon.
-
-#### **Ginásio**
-   - Representa os ginásios Pokémon onde os personagens podem desafiar líderes de ginásio para ganhar insígnias.
-
-#### **Centro Pokemon**
-   - Representa os centros Pokémon onde os jogadores podem curar seus Pokémon e obter assistência.
-
-#### **Pokeball**
-    - Representa as pokébolas usadas pelos personagens para capturar Pokémon. Existem diferentes tipos de Pokébolas com diferentes taxas de captura.
-
-#### Entidades e Atributos:
-
-**Pokemon**
-
-- ID_Pokemon
-- Nome
-- Nível
-- Experiência
-- HP
-- Ataque
-- Defesa
-- Velocidade
-- Habilidade
-
-**Item**
-
-- ID_Item
-- Nome
-- Descrição
-- Efeito
-- Tipo de Item (Consumível, Equipamento, Evolutivo, Aprendizado, Medicinais, Pokebolas, batalha, valiosos, Apriorísticos (Mega Evolução), decoração, eventos)
-- Preço
-- Usos por Item (número de vezes que pode ser usado)
-- Categoria (Medicinal, Batalha, Aprimoramento, etc.)
-- ID_Pokemon_Compatível (FK) (especificar se é compatível com Pokémon específicos)
-- ID_Evento (FK) (se o item está relacionado a algum evento específico)
-
-
-**Personagem**
-
-- ID_Personagem
-- Nome
-- Função (Treinador, Líder de Ginásio, Membro da Equipe Rocket, etc.)
-- Pokemon
-- Cidade
-- Insignia
-- Pokeballs
-- Dinheiro
-
-**NPC**
-
-- ID_NPC
-- Nome
-- Localização
-
-**Player**
-
-- ID_Player
-- Nome
-- ID_Personagem (FK)
-- ID_Pokedex (FK)
-
-**Caminho**
-
-- ID_Caminho
-- Nome
-- Descrição
-- Pokemon
-- NPC
-- Pokebola
-
-
-**Centro Pokémon**
-- ID_Centro
-- NPC
-- Pokemon
-- Pokeball
-- Text
-- Nome
-- Horário de Funcionamento
-- Capacidade de Atendimento (número de Pokémons que podem ser atendidos ao mesmo tempo)
-- Número de Enfermeiros
-- Serviços Oferecidos (Curar Pokémon, PC Box, Troca de Pokémon)
-- Número de Máquinas de Cura
-- ID_Região (FK)
-
-
-**Tipo**
-
-- ID_Tipo
-- Nome
-- Descrição
-
-**Habilidade**
-
-- ID_Habilidade
-- Nome
-- Descrição
-
-**Região**
-
-- ID_Região
-- Nome
-- Descrição
-
-**Natureza**
-
-- ID_Natureza
-- Nome
-- Efeito
-
-**Evolução**
-
-- ID_Evolução
-- Pokemon_Inicial (FK)
-- Pokemon_Final (FK)
-- Nível
-
-**Mega Evolução**
-
-- ID_MegaEvolução
-- Pokemon_Inicial (FK)
-- Pokemon_Mega (FK)
-- Item_Necessário (FK)
-
-**Espécie**
-
-- ID_Espécie
-- Nome
-- Descrição
-
-**Geração**
-
-- ID_Geração
-- Número
-- Descrição
-
-**Evento**
-
-- ID_Evento
-- Nome
-- Descrição
-- Data
-
-**Ginásio**
-
-- ID_Ginásio
-- Cidade
-- Nome
-- Tipo
-- Pokemon
-- NPC
-- Insignia
-- Localização
-- ID_Líder (FK)
-
-
-**Líder de Ginásio**
-
-- ID_Líder
-- Nome
-- ID_Personagem (FK)
-- ID_Ginásio (FK)
-- Tipo de Pokémon Especialidade (Fogo, Água, Planta, ...)
-- Nível de Dificuldade (Iniciante, Intermediário, Avançado)
-- Biografia
-- Número de Vitórias
-- Número de Derrotas
-- Insígnia Oferecida
-- Região de Origem
-
-**Competição**
-
-- ID_Competição
-- Nome
-- Descrição
-- Localização
-- Tipo de Competição (Torneio, Campeonato, Desafio)
-- Nível de Dificuldade (Iniciante, Intermediário, Avançado)
-- Formato da Competição (Eliminatória, Pontuação)
-- Número de Rodadas
-- Critérios de Desempate
-
-
-**Pokedex**
-- ID_Pokedex
-- Nome
-- ID_Player (FK)
-- Data de Criação
-- Número de Pokémon Registrados
-- Número de Pokémon Vistos
-- Número de Pokémon Capturados
-- Status de Completo (sim/não)
-- Porcentagem de Completo
-- Tipo de Pokedex (Regional/Nacional)
-
-
-**Equipe Rocket**
-
-- ID_Membro
-- Nome
-- ID_Personagem (FK)
-
-**Torneio**
-
-- ID_Torneio
-- Nome
-- Descrição
-
-**PokeMart**
-
-- ID_PokeMart
-- Nome
-- Localização
-
-**Fossil**
-
-- ID_Fossil
-- Nome
-- Descrição
-
-
-**Liga Pokémon**
-- ID_Liga
-- Nome
-- Localização
-- ID_Região (FK)
-- Número de Insígnias Necessárias
-- Descrição
-- Quantidade de Experiência Ganho
-- Quantidade de Insígnias Oferecidas
-- Dificuldade (Iniciante, Intermediário, Avançado)
-- ID_Ginásio (FK) (Referência ao ginásio associado, se tiver)
-
-
-**Insígnia**
-
-- ID_Insígnia
-- Nome
-- Descrição
-
-### Relacionamentos:
-
-#### **Personagem obtém Insignia**
-   - Este relacionamento indica que os personagens podem obter insígnias ao derrotar líderes de ginásio. Cada personagem pode obter várias insígnias.
-
-####  **Personagem possui Pokemon**
-   - Indica que os personagens podem possuir vários Pokémon. Um Pokémon pertence a apenas um personagem.
-
-#### **Pokemon é capturado por Pokeball**
-   - Este relacionamento representa o fato de que Pokémon são capturados usando Pokébolas. Cada Pokémon é capturado por uma Pokébola específica.
-
-#### **Personagem Passa por Caminhos**
-   - Indica que os personagens podem percorrer diferentes caminhos no mundo do jogo. Cada caminho pode ser percorrido por vários personagens.
-
-#### **Personagem Passa por Ginásio**
-   - Este relacionamento indica que os personagens podem visitar e desafiar ginásios Pokémon. Cada ginásio pode ser visitado por vários personagens.
-
-#### **Personagem Passa por Centro Pokemon**
-   - Indica que os personagens podem visitar centros Pokémon para curar seus Pokémon e obter assistência. Cada centro Pokémon pode ser visitado por vários personagens.
-
-### Relacionamentos Entre Entidades:
-
-
-#### **Item** e **Pokemon**
-- **Item é Compatível com Pokémon**
-  - Um Item pode ser compatível com nenhum ou vários Pokémon (0,n).
-  - Um Pokémon pode usar nenhum ou vários Itens (0,n).
-
-#### **Item** e **Evento**
-- **Item está associado a Evento**
-  - Um Item pode estar associado a nenhum ou a um Evento (0,n).
-  - Um Evento pode ter vários Itens associados (0,n).
-
-
-#### **Player** e **Pokedex**
-- **Player possui Pokedex**
-  - Um Player tem uma Pokedex (1,1).
-  - Uma Pokedex pertence a um Player (1,1).
-
-
-#### **Centro Pokémon** e **Região**
-- **Centro Pokémon está localizado em Região**
-  - Um Centro Pokémon está localizado em uma Região (1,1).
-  - Uma Região pode ter vários Centros Pokémon (0,n).
-
-
-#### **Ginásio** e **Líder de Ginásio**
-- **Ginásio tem Líder de Ginásio**
-  - Um Ginásio tem um Líder de Ginásio (1,1).
-  - Um Líder de Ginásio está associado a um Ginásio (1,1).
-
-#### **Líder de Ginásio** e **Competição**
-- **Líder de Ginásio pode participar de Competição**
-  - Um Líder de Ginásio pode participar de uma ou mais Competições (0,n).
-  - Uma Competição pode ter vários Líderes de Ginásio participando (0,n).
-
-#### **Ginásio** e **Liga Pokémon**
-- **Ginásio pertence a Liga Pokémon**
-  - Um Ginásio pode estar associado a uma Liga Pokémon (0,1).
-  - Uma Liga Pokémon pode ter vários Ginásios (0,n).
-
-#### **Competição** e **Player**
-- **Player participa de Competição**
-  - Um Player pode participar de várias Competições (0,n).
-  - Uma Competição pode ter vários Players participando (0,n).
-
-#### **Pokedex** e **Pokemon**
-- **Pokedex registra Pokémon**
-  - Uma Pokedex registra vários Pokémon (0,n).
-  - Um Pokémon pode ser registrado em várias Pokedex (0,n).
-
-
-#### **Torneio** e **Competição**
-- **Torneio pode ser um tipo de Competição**
-  - Um Torneio é um tipo de Competição (1,1).
-  - Uma Competição pode ser um Torneio (0,n).
-
-#### **PokeMart** e **Item**
-- **PokeMart vende Item**
-  - Um PokeMart pode vender vários Itens (0,n).
-  - Um Item pode estar disponível em vários PokeMarts (0,n).
-
-#### **Fossil** e **Pokemon**
-- **Fossil pode ser usado para recriar Pokémon**
-  - Um Fossil pode ser usado para recriar um Pokémon específico (1,1).
-  - Um Pokémon pode ser recriado a partir de vários Fossils (0,n).
-
-#### **Liga Pokémon** e **Insígnia**
-- **Liga Pokémon concede Insígnias**
-  - Uma Liga Pokémon concede várias Insígnias (0,n).
-  - Uma Insígnia é concedida por uma Liga Pokémon (1,1).
 
 
 ### Descrição Geral:
 
 O Diagrama de Entidade-Relacionamento (DER) na sua primeira versão foi desenvolvido para capturar os principais componentes e interações do universo Pokémon. As entidades centrais incluem Pokémon, itens (como Porção e Pokébola), locais (como Ginásio e Centro Pokémon) e personagens (incluindo jogadores e NPCs). Os personagens são a entidade central do modelo, com vários relacionamentos conectando-os a outras entidades. Eles podem obter insígnias ao desafiar ginásios, possuir e capturar Pokémon usando Pokébolas, e passar por caminhos, ginásios e centros Pokémon ao longo de suas jornadas.
 
-
 ### Histórico de Versões
 
 | Versão | Autor         | Descrição da Alteração                                                                                                                                      | Data       |
 |--------|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|
 | 1.0    | Todos Integrantes  | Criação da segunda versão do modelo DER. | 16/07/2024|
-| 1.1    |  Carlos Gabriel  | Descricão do Artefato DER segunda versao  | 16/07/2024|
+| 1.1    |  Carlos Gabriel  | Descrição do Artefato DER segunda versão  | 16/07/2024|
+| 1.2    |  Carlos Gabriel  | Organização do Artefato DER segunda versão  | 16/07/2024|
