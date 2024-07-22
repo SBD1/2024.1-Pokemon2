@@ -129,7 +129,82 @@ Um dicionário de dados é uma ferramenta fundamental para documentar e organiza
 | Dificuldade | Nível de dificuldade da Liga Pokémon | VARCHAR | 20 | Check (Iniciante, Intermediário, Avançado) |
 | ID_Ginásio | Identificador do ginásio associado à Liga Pokémon (se aplicável) | INT | 4 | Foreign Key, Nullable |
 
+### Personagem
+
+| Tabela | Personagem |
+|---|---|
+| Descrição | Representa os personagens dentro do jogo, incluindo treinadores (Players) e personagens não jogáveis (NPCs). Os personagens têm atributos como nome, idade, e podem possuir Pokémon, capturar Pokémon e obter insígnias.|
+
+| Nome | Descrição | Tipo de Dado | Tamanho | Restrição de Domínio |
+|---|---|---|---|---|
+| ID_personagem | Identificador único do personagem | INT | 4 | Primary Key, Not Null |
+| Nome | Nome do personagem | VARCHAR | 100 | Not Null |
+| Idade | Idade do personagem | INT | 4 |  |
+
+### NPC
+
+| Tabela | NPC |
+|---|---|
+| Descrição | Subconjunto de Personagem, NPCs são personagens não jogáveis que interagem com o jogador e podem fornecer informações, desafios ou recompensas.|
+| Observação | Contém chaves estrangeiras de Personagem e Regiao |
+
+| Nome | Descrição | Tipo de Dado | Tamanho | Restrição de Domínio |
+|---|---|---|---|---|
+| ID_npc | Identificador único do NPC | INT | 4 | Primary Key, Not Null |
+| FK_personagem | Chave estrangeira de personagem | INT | 4  | Not Null |
+| Informacoes | Informacoes do NPC |VARCHAR | 100 | Not Null |
+| Desafios | Desafios do NPC |VARCHAR | 100 | Not Null |
+| Recompensas | Recompensas do NPC |VARCHAR | 100 | Not Null |
+| FK_regiao| Chave estrangeira de regiao | INT | 4  | Not Null |
+
+### Player
+
+| Tabela | Player |
+|---|---|
+| Descrição | Subconjunto de Personagem, os jogadores são personagens controlados pelos usuários que podem capturar Pokémon, obter insígnias e interagir com o mundo do jogo.|
+| Observação | Contém chaves estrangeiras de Personagem |
+
+| Nome | Descrição | Tipo de Dado | Tamanho | Restrição de Domínio |
+|---|---|---|---|---|
+| ID_player | Identificador único do Player | INT | 4 | Primary Key, Not Null |
+| FK_personagem | Chave estrangeira de personagem | INT | 4  | Not Null |
+
+### Habilidade
+| Tabela | Habilidade |
+|---|---|
+| Descrição | Descreve as habilidades que um Pokémon pode possuir, incluindo seus efeitos e tipos.|
+| Observação | Contém chaves estrangeiras de Pokemon |
+
+| Nome | Descrição | Tipo de Dado | Tamanho | Restrição de Domínio |
+|---|---|---|---|---|
+| ID_habilidade| Identificador único do Habilidade | INT | 4 | Primary Key, Not Null |
+| Nome | Nome da Habilidade | VARCHAR | 100 | Not Null |
+| Descricao | Nome da Descrição | VARCHAR | 100 | Not Null |
+| FK_pokemon| Chave estrangeira de Pokemon | INT | 4  | Not Null |
+
+### Tipo
+| Tabela | Tipo |
+|---|---|
+| Descrição | Descreve o tipo de um Pokémon.|
+
+| Nome | Descrição | Tipo de Dado | Tamanho | Restrição de Domínio |
+|---|---|---|---|---|
+| ID_tipo| Identificador único do tipo do pokemon| INT | 4 | Primary Key, Not Null |
+| Nome | Nome do tipo do pokemon | VARCHAR | 100 | Not Null |
+| Descricao | Descrição do Tipo| VARCHAR | 100 | Not Null |
+
+### Região
+| Tabela | Região |
+|---|---|
+| Descrição | Descreve a região de um NPC.|
+
+| Nome | Descrição | Tipo de Dado | Tamanho | Restrição de Domínio |
+|---|---|---|---|---|
+| ID_regiao| Identificador único da Região| INT | 4 | Primary Key, Not Null |
+| Nome | Nome do tipo da Região | VARCHAR | 100 | Not Null |
+| Descricao | Descrição da Região | VARCHAR | 100 | Not Null |
 
 | Versão | Autor         | Descrição da Alteração                                                                                                                                      | Data       |
 |--------|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|
 | 1.0    | Carlos Gabriel  | Criação da segunda versão do dicionário de dados. | 19/07/2024|
+| 1.1    | Fellipe Pereira  | Adicionado algumas entidades. | 21/07/2024|
