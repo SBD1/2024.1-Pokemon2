@@ -1,12 +1,17 @@
 
-</head>
-<body>
 
 # **Descrição do Artefato DER - Terceira Versão**
 
 ## DER:
 
 ![Image](der_v3.png)
+
+## Principais Alterações
+
+- Melhor organização do Diagrama e geral
+- Substituicao de algumas entidades para melhorar a regra de negocio do jogo.
+- Remoção de algumas entidades que nao se adequaram ao contexto (Evento, Regiao, Caminho)
+- Organizar e revisar Cardinalidades.
 
 <details>
     <summary><strong>Entidades e Atributos</strong></summary>
@@ -275,7 +280,7 @@
                 <p><strong>Cardinalidade:</strong></p>
                 <ul>
                     <li>Encontro (0..n) - Surge (0..1)</li>
-                    <li>Rota (0..1) - Surge (0..n)</li>
+                    <li>Rota (0..n) - Surge  (0..1)</li>
                 </ul>
             </details>
         </li>
@@ -418,3 +423,4 @@ O Diagrama de Entidade-Relacionamento (DER) na sua primeira versão foi desenvol
 |--------|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|
 | 1.0    | Todos Integrantes  | Criação da segunda versão do modelo DER. | 21/07/2024|
 | 1.1    |  Carlos Gabriel  | Descricão do Artefato DER terceira versão  | 21/07/2024|
+| 1.1    | Todos Integrantes | Revisão e Pequenas alteracoes no Der v3. | 22/07/2024|

@@ -37,8 +37,10 @@ nav:
   - DER: 
     - V1: der_v1.md
     - V2: der_v2.md
+    - V3: der_v3.md
   - Dicionário de Dados:
     - V1: dicionario_de_dados_v1.md
+    - V2: dicionario_de_dados_v2.md
 
 
 
