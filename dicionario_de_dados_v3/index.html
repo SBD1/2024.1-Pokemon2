@@ -1,0 +1,2123 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
+    
+    
+      
+        <title>Dicionário de Dados - Pokemon</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dicionario-de-dados" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href=".." title="Pokemon" class="md-header__button md-logo" aria-label="Pokemon" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Pokemon
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Dicionário de Dados
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8v2m9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Pokemon" class="md-nav__button md-logo" aria-label="Pokemon" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Pokemon
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Primeira Entrega
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Primeira Entrega
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    DER
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            DER
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../der_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../der_v2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../der_v3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Dicionário de Dados
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Dicionário de Dados
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dicionario_de_dados_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dicionario_de_dados_v2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modelo_logico/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modelos Relacional
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Segunda Entrega
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Segunda Entrega
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../segunda_entrega/ddl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Definition Language (DDL)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../segunda_entrega/dml/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Manipulation Language (DML)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../segunda_entrega/dql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Query Language (DQL)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../segunda_entrega/algebra_relacional/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Álgebra Relacional (DDL)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Geral
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Geral
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ata_de_reunioes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ata de Reuniões
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apresentacoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apresentações
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introdução
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desenvolvimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desenvolvimento
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Desenvolvimento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pokedex" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pokedex
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#personagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Personagem
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rota" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rota
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokebola" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pokebola
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokeball_normal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pokeball_Normal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokeball_great" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pokeball_Great
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokeball_ultra" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pokeball_Ultra
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batalha" class="md-nav__link">
+    <span class="md-ellipsis">
+      Batalha
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lider" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lider
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ginasio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ginasio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insignia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Insignia
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liga-pokemon" class="md-nav__link">
+    <span class="md-ellipsis">
+      Liga Pokemon
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cidade
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encontro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Encontro
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#captura" class="md-nav__link">
+    <span class="md-ellipsis">
+      Captura
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokemon" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pokemon
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ataque" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ataque
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#efetividade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Efetividade
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="dicionario-de-dados">Dicionário de Dados</h1>
+<h2 id="introducao">Introdução</h2>
+<p>Um dicionário de dados é uma ferramenta fundamental para documentar e organizar as informações sobre os dados armazenados em um sistema. Ele funciona como um repositório centralizado que descreve em detalhes os elementos de dados, suas características e suas relações entre si.</p>
+<h2 id="desenvolvimento">Desenvolvimento</h2>
+<h3 id="pokedex">Pokedex</h3>
+<table>
+<thead>
+<tr>
+<th>Tabela</th>
+<th>Nome da Entidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descrição</td>
+<td>Um banco de dados ou enciclopédia de Pokémon que contém informações sobre todos os Pokémon conhecidos, incluindo suas características, tipos e evoluções.</td>
+</tr>
+<tr>
+<td>Observação</td>
+<td>Pode estar associada a um personagem como um item ou ferramenta.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID_Pokedex</td>
+<td>Identificador único da Pokédex</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Primária</td>
+</tr>
+<tr>
+<td>Numero_Pokemons</td>
+<td>Número total de Pokémon na Pokédex</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Numero_Pokemons_Vistos</td>
+<td>Número de Pokémon vistos</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Numero_Pokemons_Capturados</td>
+<td>Número de Pokémon capturados</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Status_Completa</td>
+<td>Indica se a Pokédex está completa (Sim/Não)</td>
+<td>Texto</td>
+<td>3</td>
+<td>Valores Predefinidos</td>
+</tr>
+</tbody>
+</table>
+<h3 id="personagem">Personagem</h3>
+<table>
+<thead>
+<tr>
+<th>Tabela</th>
+<th>Nome da Entidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descrição</td>
+<td>Um indivíduo jogável ou NPC (personagem não jogável) no universo Pokémon. Pode ser um treinador, líder de ginásio, entre outros.</td>
+</tr>
+<tr>
+<td>Observação</td>
+<td>Pode ter um relacionamento com várias outras entidades, como Batalha, Insignia, e Captura.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID_Personagem</td>
+<td>Identificador único do Personagem</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Primária</td>
+</tr>
+<tr>
+<td>Nome</td>
+<td>Nome do Personagem</td>
+<td>Texto</td>
+<td>255</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Pokebolas_Normais</td>
+<td>Quantidade de Pokébolas Normais</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Pokebolas_Greats</td>
+<td>Quantidade de Pokébolas Greats</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Pokebolas_Ultras</td>
+<td>Quantidade de Pokébolas Ultras</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rota">Rota</h3>
+<table>
+<thead>
+<tr>
+<th>Tabela</th>
+<th>Nome da Entidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descrição</td>
+<td>Uma área de viagem entre cidades ou ginásios onde os treinadores podem encontrar Pokémon selvagens e outros treinadores.</td>
+</tr>
+<tr>
+<td>Observação</td>
+<td>Relacionada a Cidades e Encontros de Pokémon.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID_Rota</td>
+<td>Identificador único da Rota</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Primária</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pokebola">Pokebola</h3>
+<table>
+<thead>
+<tr>
+<th>Tabela</th>
+<th>Nome da Entidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descrição</td>
+<td>Um item usado para capturar Pokémon. Existem diferentes tipos com diferentes taxas de sucesso.</td>
+</tr>
+<tr>
+<td>Observação</td>
+<td>Pode ter variantes específicas como Pokeball_Normal, Pokeball_Great, e Pokeball_Ultra.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID_Pokebola</td>
+<td>Identificador único da Pokébola</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Primária</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pokeball_normal">Pokeball_Normal</h3>
+<table>
+<thead>
+<tr>
+<th>Tabela</th>
+<th>Nome da Entidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descrição</td>
+<td>Uma Pokébola padrão com uma taxa básica de sucesso para capturar Pokémon.</td>
+</tr>
+<tr>
+<td>Observação</td>
+<td>Tipo específico de Pokebola.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chance_Captura</td>
+<td>Chance de captura oferecida pela Pokébola Normal</td>
+<td>Decimal</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pokeball_great">Pokeball_Great</h3>
+<table>
+<thead>
+<tr>
+<th>Tabela</th>
+<th>Nome da Entidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descrição</td>
+<td>Um tipo de Pokébola que oferece uma taxa de captura superior à Pokébola Normal.</td>
+</tr>
+<tr>
+<td>Observação</td>
+<td>Tipo específico de Pokebola.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chance_Captura</td>
+<td>Chance de captura oferecida pela Pokébola Great</td>
+<td>Decimal</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pokeball_ultra">Pokeball_Ultra</h3>
+<table>
+<thead>
+<tr>
+<th>Tabela</th>
+<th>Nome da Entidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descrição</td>
+<td>Uma Pokébola de alta qualidade que possui uma taxa de captura ainda maior que a Pokébola Great.</td>
+</tr>
+<tr>
+<td>Observação</td>
+<td>Tipo específico de Pokebola.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chance_Captura</td>
+<td>Chance de captura oferecida pela Pokébola Ultra</td>
+<td>Decimal</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="batalha">Batalha</h3>
+<table>
+<thead>
+<tr>
+<th>Tabela</th>
+<th>Nome da Entidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descrição</td>
+<td>Um confronto entre Pokémon, onde um treinador enfrenta outro ou um Pokémon selvagem.</td>
+</tr>
+<tr>
+<td>Observação</td>
+<td>Pode envolver diferentes personagens e Pokémon.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID_Batalha</td>
+<td>Identificador único da Batalha</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Primária</td>
+</tr>
+<tr>
+<td>Exp</td>
+<td>Experiência ganha na Batalha</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Resultado</td>
+<td>Resultado da Batalha (Vitória/Derrota)</td>
+<td>Texto</td>
+<td>10</td>
+<td>Valores Predefinidos</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lider">Lider</h3>
+<table>
+<thead>
+<tr>
+<th>Tabela</th>
+<th>Nome da Entidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descrição</td>
+<td>Um treinador especializado que dirige um ginásio e desafia os treinadores a batalhar para ganhar uma insignia.</td>
+</tr>
+<tr>
+<td>Observação</td>
+<td>Relacionado a Ginasio e Insignia.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID_Lider</td>
+<td>Identificador único do Líder</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Primária</td>
+</tr>
+<tr>
+<td>Nome</td>
+<td>Nome do Líder</td>
+<td>Texto</td>
+<td>255</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Biografia</td>
+<td>Biografia do Líder</td>
+<td>Texto</td>
+<td>1000</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Vendido_Por_Personagem</td>
+<td>Identificador do Personagem que vende o Líder</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ginasio">Ginasio</h3>
+<table>
+<thead>
+<tr>
+<th>Tabela</th>
+<th>Nome da Entidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descrição</td>
+<td>Um local onde treinadores enfrentam líderes de ginásio para ganhar insignias.</td>
+</tr>
+<tr>
+<td>Observação</td>
+<td>Associado a Lider e Insignia.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID_Ginasio</td>
+<td>Identificador único do Ginásio</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Primária</td>
+</tr>
+</tbody>
+</table>
+<h3 id="insignia">Insignia</h3>
+<table>
+<thead>
+<tr>
+<th>Tabela</th>
+<th>Nome da Entidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descrição</td>
+<td>Uma medalha ou emblema concedido por um líder de ginásio após uma vitória em batalha.</td>
+</tr>
+<tr>
+<td>Observação</td>
+<td>Relacionado a Lider e Ginasio.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID_Insignia</td>
+<td>Identificador único da Insígnia</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Primária</td>
+</tr>
+</tbody>
+</table>
+<h3 id="liga-pokemon">Liga Pokemon</h3>
+<table>
+<thead>
+<tr>
+<th>Tabela</th>
+<th>Nome da Entidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descrição</td>
+<td>Uma competição de alto nível onde treinadores batalham após coletar todas as insignias dos ginásios.</td>
+</tr>
+<tr>
+<td>Observação</td>
+<td>Pode envolver batalhas finais e eventos importantes.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID_Liga</td>
+<td>Identificador único da Liga Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Primária</td>
+</tr>
+<tr>
+<td>Descricao</td>
+<td>Descrição da Liga Pokémon</td>
+<td>Texto</td>
+<td>1000</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Numero_Insignias_Necessarias</td>
+<td>Número de Insígnias necessárias para a Liga</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cidade">Cidade</h3>
+<table>
+<thead>
+<tr>
+<th>Tabela</th>
+<th>Nome da Entidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descrição</td>
+<td>Uma área urbana onde os treinadores podem encontrar ginásios, lojas e outras facilidades.</td>
+</tr>
+<tr>
+<td>Observação</td>
+<td>Pode estar associada a Rotas e Ginasios.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID_Cidade</td>
+<td>Identificador único da Cidade</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Primária</td>
+</tr>
+<tr>
+<td>Possui_Pokecenter</td>
+<td>Indica se a cidade possui um Pokécenter</td>
+<td>Texto</td>
+<td>3</td>
+<td>Valores Predefinidos</td>
+</tr>
+<tr>
+<td>Possui_Pokemarket</td>
+<td>Indica se a cidade possui um Pokémarket</td>
+<td>Texto</td>
+<td>3</td>
+<td>Valores Predefinidos</td>
+</tr>
+<tr>
+<td>Possui_Ginasio</td>
+<td>Indica se a cidade possui um Ginásio</td>
+<td>Texto</td>
+<td>3</td>
+<td>Valores Predefinidos</td>
+</tr>
+</tbody>
+</table>
+<h3 id="encontro">Encontro</h3>
+<table>
+<thead>
+<tr>
+<th>Tabela</th>
+<th>Nome da Entidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descrição</td>
+<td>A ocasião em que um treinador encontra um Pokémon selvagem ou outro treinador.</td>
+</tr>
+<tr>
+<td>Observação</td>
+<td>Relacionado a Rotas e Captura.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID_Encontro</td>
+<td>Identificador único do Encontro</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Primária</td>
+</tr>
+<tr>
+<td>Capturado</td>
+<td>Indica se o Pokémon foi capturado (Sim/Não)</td>
+<td>Texto</td>
+<td>3</td>
+<td>Valores Predefinidos</td>
+</tr>
+<tr>
+<td>Derrotado</td>
+<td>Indica se o Pokémon foi derrotado (Sim/Não)</td>
+<td>Texto</td>
+<td>3</td>
+<td>Valores Predefinidos</td>
+</tr>
+<tr>
+<td>Correu</td>
+<td>Indica se o Pokémon fugiu (Sim/Não)</td>
+<td>Texto</td>
+<td>3</td>
+<td>Valores Predefinidos</td>
+</tr>
+<tr>
+<td>Perdeu</td>
+<td>Indica se o Pokémon perdeu (Sim/Não)</td>
+<td>Texto</td>
+<td>3</td>
+<td>Valores Predefinidos</td>
+</tr>
+<tr>
+<td>Experiencia</td>
+<td>Quantidade de experiência ganha no encontro</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="captura">Captura</h3>
+<table>
+<thead>
+<tr>
+<th>Tabela</th>
+<th>Nome da Entidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descrição</td>
+<td>O ato de usar uma Pokébola para capturar um Pokémon selvagem.</td>
+</tr>
+<tr>
+<td>Observação</td>
+<td>Envolve Pokebola e Pokémon.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID_Captura</td>
+<td>Identificador único da Captura</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Primária</td>
+</tr>
+<tr>
+<td>Experiencia</td>
+<td>Experiência ganhada durante a captura</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pokemon">Pokemon</h3>
+<table>
+<thead>
+<tr>
+<th>Tabela</th>
+<th>Nome da Entidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descrição</td>
+<td>Criaturas com habilidades especiais que podem ser treinadas e usadas em batalhas.</td>
+</tr>
+<tr>
+<td>Observação</td>
+<td>Relacionado a Ataque, Tipo e Efetividade.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID_Pokemon</td>
+<td>Identificador único do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Primária</td>
+</tr>
+<tr>
+<td>Defesa_Especial</td>
+<td>Valor de defesa especial do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Nome</td>
+<td>Nome do Pokémon</td>
+<td>Texto</td>
+<td>255</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Velocidade</td>
+<td>Valor de velocidade do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>HP</td>
+<td>Pontos de vida do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Nivel</td>
+<td>Nível do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Experiencia</td>
+<td>Quantidade de experiência do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Ataque_Especial</td>
+<td>Valor de ataque especial do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Defesa</td>
+<td>Valor de defesa do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tipo">Tipo</h3>
+<table>
+<thead>
+<tr>
+<th>Tabela</th>
+<th>Nome da Entidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descrição</td>
+<td>A classificação dos Pokémon e ataques que define suas características e fortalezas. Exemplos incluem Fogo, Água, Elétrico.</td>
+</tr>
+<tr>
+<td>Observação</td>
+<td>Relacionado a Ataque e Efetividade.</td>
+</tr>
+</tbody>
+</table>
+<p>| Nome                  | Descrição                                      | Tipo de Dado | Tamanho | Restrição de Domínio |
+|------------------------------------------------|--------------|---------|----------------------|
+| ID_Tipo               | Identificador único do Tipo                    | Inteiro       | -       | Chave Primária        |</p>
+<h3 id="ataque">Ataque</h3>
+<table>
+<thead>
+<tr>
+<th>Tabela</th>
+<th>Nome da Entidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descrição</td>
+<td>Ações ofensivas que um Pokémon pode usar em batalha para causar dano aos oponentes.</td>
+</tr>
+<tr>
+<td>Observação</td>
+<td>Associado a Tipo e Efetividade.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID_Ataque</td>
+<td>Identificador único do Ataque</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Primária</td>
+</tr>
+<tr>
+<td>Dano</td>
+<td>Quantidade de dano causado pelo ataque</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="efetividade">Efetividade</h3>
+<table>
+<thead>
+<tr>
+<th>Tabela</th>
+<th>Nome da Entidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descrição</td>
+<td>O impacto que um tipo de ataque tem sobre um tipo específico de Pokémon, determinando se o ataque é mais ou menos eficaz.</td>
+</tr>
+<tr>
+<td>Observação</td>
+<td>Relacionado a Tipo e Ataque.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID_Efetividade</td>
+<td>Identificador único da Efetividade</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Primária</td>
+</tr>
+<tr>
+<td>Veneno</td>
+<td>Modificador de efetividade contra Veneno</td>
+<td>Decimal</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Terra</td>
+<td>Modificador de efetividade contra Terra</td>
+<td>Decimal</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Normal</td>
+<td>Modificador de efetividade contra Normal</td>
+<td>Decimal</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Voador</td>
+<td>Modificador de efetividade contra Voador</td>
+<td>Decimal</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Fogo</td>
+<td>Modificador de efetividade contra Fogo</td>
+<td>Decimal</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Psiquico</td>
+<td>Modificador de efetividade contra Psiquico</td>
+<td>Decimal</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Agua</td>
+<td>Modificador de efetividade contra Água</td>
+<td>Decimal</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Inseto</td>
+<td>Modificador de efetividade contra Inseto</td>
+<td>Decimal</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Eletrico</td>
+<td>Modificador de efetividade contra Elétrico</td>
+<td>Decimal</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Pedra</td>
+<td>Modificador de efetividade contra Pedra</td>
+<td>Decimal</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Grama</td>
+<td>Modificador de efetividade contra Grama</td>
+<td>Decimal</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Fantasma</td>
+<td>Modificador de efetividade contra Fantasma</td>
+<td>Decimal</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Gelo</td>
+<td>Modificador de efetividade contra Gelo</td>
+<td>Decimal</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Dragao</td>
+<td>Modificador de efetividade contra Dragão</td>
+<td>Decimal</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Lutador</td>
+<td>Modificador de efetividade contra Lutador</td>
+<td>Decimal</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Fada</td>
+<td>Modificador de efetividade contra Fada</td>
+<td>Decimal</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Aco</td>
+<td>Modificador de efetividade contra Aço</td>
+<td>Decimal</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Versão</th>
+<th>Autor</th>
+<th>Descrição da Alteração</th>
+<th>Data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0</td>
+<td>Carlos Gabriel</td>
+<td>Criação da terceira versão do dicionário de dados.</td>
+<td>21/07/2024</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.path", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+        <script src="../js/custom.js"></script>
+      
+    
+  </body>
+</html>

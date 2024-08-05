@@ -1,0 +1,1404 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../der_v2/">
+      
+      
+        <link rel="next" href="../dicionario_de_dados_v1/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
+    
+    
+      
+        <title>V3 - Pokemon</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#descricao-do-artefato-der-terceira-versao" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href=".." title="Pokemon" class="md-header__button md-logo" aria-label="Pokemon" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Pokemon
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              V3
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8v2m9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Pokemon" class="md-nav__button md-logo" aria-label="Pokemon" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Pokemon
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Primeira Entrega
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Primeira Entrega
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    DER
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            DER
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../der_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../der_v2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    V3
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    V3
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#der" class="md-nav__link">
+    <span class="md-ellipsis">
+      DER:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principais-alteracoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principais Alterações
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Principais Alterações">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#descricao-geral" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descrição Geral:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#historico-de-versoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Histórico de Versões
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Dicionário de Dados
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Dicionário de Dados
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dicionario_de_dados_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dicionario_de_dados_v2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modelo_logico/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modelos Relacional
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Segunda Entrega
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Segunda Entrega
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../segunda_entrega/ddl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Definition Language (DDL)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../segunda_entrega/dml/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Manipulation Language (DML)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../segunda_entrega/dql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Query Language (DQL)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../segunda_entrega/algebra_relacional/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Álgebra Relacional (DDL)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Geral
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Geral
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ata_de_reunioes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ata de Reuniões
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apresentacoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apresentações
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#der" class="md-nav__link">
+    <span class="md-ellipsis">
+      DER:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principais-alteracoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principais Alterações
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Principais Alterações">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#descricao-geral" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descrição Geral:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#historico-de-versoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Histórico de Versões
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="descricao-do-artefato-der-terceira-versao"><strong>Descrição do Artefato DER - Terceira Versão</strong></h1>
+<h2 id="der">DER:</h2>
+<p><img alt="Image" src="../der_v3.png" /></p>
+<h2 id="principais-alteracoes">Principais Alterações</h2>
+<ul>
+<li>Melhor organização do Diagrama e geral</li>
+<li>Substituicao de algumas entidades para melhorar a regra de negocio do jogo.</li>
+<li>Remoção de algumas entidades que nao se adequaram ao contexto (Evento, Regiao, Caminho)</li>
+<li>Organizar e revisar Cardinalidades.</li>
+</ul>
+<details>
+    <summary><strong>Entidades e Atributos</strong></summary>
+    <ul class="relationship-list">
+        <li>
+            <details>
+                <summary><strong>Efetividade</strong></summary>
+                <ul class="attribute-list">
+                    <li>ID_Efetividade</li>
+                    <li>Veneno</li>
+                    <li>Terra</li>
+                    <li>Normal</li>
+                    <li>Voador</li>
+                    <li>Fogo</li>
+                    <li>Psiquico</li>
+                    <li>Agua</li>
+                    <li>Inseto</li>
+                    <li>Eletrico</li>
+                    <li>Pedra</li>
+                    <li>Grama</li>
+                    <li>Fantasma</li>
+                    <li>Gelo</li>
+                    <li>Dragao</li>
+                    <li>Lutador</li>
+                    <li>Fada</li>
+                    <li>Aco</li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            <details>
+                <summary><strong>Pokedex</strong></summary>
+                <ul class="attribute-list">
+                    <li>ID_Pokedex</li>
+                    <li>Numero_Pokemons</li>
+                    <li>Numero_Pokemons_Vistos</li>
+                    <li>Numero_Pokemons_Capturados</li>
+                    <li>Status_Completa</li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            <details>
+                <summary><strong>Personagem</strong></summary>
+                <ul class="attribute-list">
+                    <li>ID_Personagem</li>
+                    <li>Nome</li>
+                    <li>Pokebolas_Normais</li>
+                    <li>Pokebolas_Greats</li>
+                    <li>Pokebolas_Ultras</li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            <details>
+                <summary><strong>Rota</strong></summary>
+                <ul class="attribute-list">
+                    <li>ID_Rota</li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            <details>
+                <summary><strong>Pokebola</strong></summary>
+                <ul class="attribute-list">
+                    <li>ID_Pokebola</li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            <details>
+                <summary><strong>Pokeball_Normal</strong></summary>
+                <ul class="attribute-list">
+                    <li>Chance_Captura</li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            <details>
+                <summary><strong>Pokeball_Great</strong></summary>
+                <ul class="attribute-list">
+                    <li>Chance_Captura</li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            <details>
+                <summary><strong>Pokeball_Ultra</strong></summary>
+                <ul class="attribute-list">
+                    <li>Chance_Captura</li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            <details>
+                <summary><strong>Batalha</strong></summary>
+                <ul class="attribute-list">
+                    <li>ID_Batalha</li>
+                    <li>Exp</li>
+                    <li>Resultado</li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            <details>
+                <summary><strong>Lider</strong></summary>
+                <ul class="attribute-list">
+                    <li>ID_Lider</li>
+                    <li>Nome</li>
+                    <li>Biografia</li>
+                    <li>Vendido_Por_Personagem</li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            <details>
+                <summary><strong>Ginasio</strong></summary>
+                <ul class="attribute-list">
+                    <li>ID_Ginasio</li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            <details>
+                <summary><strong>Insignia</strong></summary>
+                <ul class="attribute-list">
+                    <li>ID_Insignia</li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            <details>
+                <summary><strong>Liga Pokemon</strong></summary>
+                <ul class="attribute-list">
+                    <li>ID_Liga</li>
+                    <li>Descricao</li>
+                    <li>Numero_Insignias_Necessarias</li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            <details>
+                <summary><strong>Cidade</strong></summary>
+                <ul class="attribute-list">
+                    <li>ID_Cidade</li>
+                    <li>Possui_Pokecenter</li>
+                    <li>Possui_Pokemarket</li>
+                    <li>Possui_Ginasio</li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            <details>
+                <summary><strong>Encontro</strong></summary>
+                <ul class="attribute-list">
+                    <li>ID_Encontro</li>
+                    <li>Capturado</li>
+                    <li>Derrotado</li>
+                    <li>Correu</li>
+                    <li>Perdeu</li>
+                    <li>Experiencia</li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            <details>
+                <summary><strong>Captura</strong></summary>
+                <ul class="attribute-list">
+                    <li>ID_Captura</li>
+                    <li>Experiencia</li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            <details>
+                <summary><strong>Pokemon</strong></summary>
+                <ul class="attribute-list">
+                    <li>ID_Pokemon</li>
+                    <li>Defesa_Especial</li>
+                    <li>Nome</li>
+                    <li>Velocidade</li>
+                    <li>HP</li>
+                    <li>Nivel</li>
+                    <li>Experiencia</li>
+                    <li>Ataque_Especial</li>
+                    <li>Defesa</li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            <details>
+                <summary><strong>Tipo</strong></summary>
+                <ul class="attribute-list">
+                    <li>ID_Tipo</li>
+                    <li>Eficiencia</li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            <details>
+                <summary><strong>Ataque</strong></summary>
+                <ul class="attribute-list">
+                    <li>ID_Ataque</li>
+                    <li>Dano</li>
+                </ul>
+            </details>
+        </li>
+    </ul>
+</details>
+
+<p></body>
+</html></p>
+<details>
+    <summary><strong>Relacionamentos</strong></summary>
+    <ul class="relationship-list">
+        <li>
+            <details>
+                <summary><strong>Preenche</strong></summary>
+                <p><strong>Descrição:</strong> O relacionamento indica que a Pokedex é preenchida por Pokemons capturados ou vistos pelo Personagem.</p>
+                <p><strong>Cardinalidade:</strong></p>
+                <ul>
+                    <li>Pokedex (1) - Preenche (0..n)</li>
+                    <li>Personagem (0..n) - Preenche (1)</li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            <details>
+                <summary><strong>Passa por</strong></summary>
+                <p><strong>Descrição:</strong> O relacionamento indica que o Personagem passa por diversas Rotas.</p>
+                <p><strong>Cardinalidade:</strong></p>
+                <ul>
+                    <li>Personagem (1) - Passa por (0..n)</li>
+                    <li>Rota (0..n) - Passa por (1)</li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            <details>
+                <summary><strong>Leva A</strong></summary>
+                <p><strong>Descrição:</strong> O relacionamento indica que a Rota pode levar a outra Rota.</p>
+                <p><strong>Cardinalidade:</strong></p>
+                <ul>
+                    <li>Rota (0..1) - Leva A (0..n)</li>
+                    <li>Rota (0..n) - Leva A (0..1)</li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            <details>
+                <summary><strong>Lança</strong></summary>
+                <p><strong>Descrição:</strong> O relacionamento indica que o Personagem lança uma Pokebola para capturar um Pokemon.</p>
+                <p><strong>Cardinalidade:</strong></p>
+                <ul>
+                    <li>Personagem (0..n) - Lança (0..n)</li>
+                    <li>Pokebola (0..n) - Lança (0..1)</li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            <details>
+                <summary><strong>Surge</strong></summary>
+                <p><strong>Descrição:</strong> O relacionamento indica que um Encontro surge em uma Rota.</p>
+                <p><strong>Cardinalidade:</strong></p>
+                <ul>
+                    <li>Encontro (0..n) - Surge (0..1)</li>
+                    <li>Rota (0..n) - Surge  (0..1)</li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            <details>
+                <summary><strong>Encontra</strong></summary>
+                <p><strong>Descrição:</strong> O relacionamento indica que o Personagem encontra um Pokemon em um Encontro.</p>
+                <p><strong>Cardinalidade:</strong></p>
+                <ul>
+                    <li>Personagem (0..1) - Encontra (0..n)</li>
+                    <li>Encontro (0..n) - Encontra (0..1)</li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            <details>
+                <summary><strong>Captura</strong></summary>
+                <p><strong>Descrição:</strong> O relacionamento indica que um Personagem pode capturar um Pokemon durante um Encontro.</p>
+                <p><strong>Cardinalidade:</strong></p>
+                <ul>
+                    <li>Captura (0..n) - Captura (0..1)</li>
+                    <li>Encontro (0..1) - Captura (0..n)</li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            <details>
+                <summary><strong>Batalha</strong></summary>
+                <p><strong>Descrição:</strong> O relacionamento indica que o Personagem batalha contra o Lider de um Ginasio.</p>
+                <p><strong>Cardinalidade:</strong></p>
+                <ul>
+                    <li>Batalha (0..n) - Batalha (1..1)</li>
+                    <li>Lider (1..1) - Batalha (0..n)</li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            <details>
+                <summary><strong>Entrega Insígnia</strong></summary>
+                <p><strong>Descrição:</strong> O relacionamento indica que após uma batalha, um Lider pode entregar uma Insignia ao Personagem.</p>
+                <p><strong>Cardinalidade:</strong></p>
+                <ul>
+                    <li>Lider (1..1) - Entrega Insígnia (0..n)</li>
+                    <li>Personagem (0..n) - Entrega Insígnia (1..1)</li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            <details>
+                <summary><strong>Lidera</strong></summary>
+                <p><strong>Descrição:</strong> O relacionamento indica que um Lider lidera um Ginasio.</p>
+                <p><strong>Cardinalidade:</strong></p>
+                <ul>
+                    <li>Lider (1..1) - Lidera (1..1)</li>
+                    <li>Ginasio (1..1) - Lidera (1..1)</li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            <details>
+                <summary><strong>Detém</strong></summary>
+                <p><strong>Descrição:</strong> O relacionamento indica que um Ginasio detém uma Insignia.</p>
+                <p><strong>Cardinalidade:</strong></p>
+                <ul>
+                    <li>Ginasio (1..1) - Detém (0..n)</li>
+                    <li>Insignia (0..n) - Detém (1..1)</li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            <details>
+                <summary><strong>Pertence</strong></summary>
+                <p><strong>Descrição:</strong> O relacionamento indica que um Ginasio pertence a uma Liga Pokemon.</p>
+                <p><strong>Cardinalidade:</strong></p>
+                <ul>
+                    <li>Ginasio (1..1) - Pertence (0..n)</li>
+                    <li>Liga Pokemon (1..n) - Pertence (1..1)</li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            <details>
+                <summary><strong>Hospeda</strong></summary>
+                <p><strong>Descrição:</strong> O relacionamento indica que uma Cidade hospeda um Ginasio, Pokecenter e Pokemarket.</p>
+                <p><strong>Cardinalidade:</strong></p>
+                <ul>
+                    <li>Cidade (0..1) - Hospeda (0..n)</li>
+                    <li>Ginasio (0..1) - Hospeda (0..1)</li>
+                    <li>Pokecenter (0..1) - Hospeda (0..1)</li>
+                    <li>Pokemarket (0..1) - Hospeda (0..1)</li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            <details>
+                <summary><strong>É</strong></summary>
+                <p><strong>Descrição:</strong> O relacionamento indica que um Pokemon possui um ou mais Tipos.</p>
+                <p><strong>Cardinalidade:</strong></p>
+                <ul>
+                    <li>Pokemon (1..n) - É (1..1)</li>
+                    <li>Tipo (1..1) - É (0..n)</li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            <details>
+                <summary><strong>Tem</strong></summary>
+                <p><strong>Descrição:</strong> O relacionamento indica que um Pokemon tem um ou mais Ataques.</p>
+                <p><strong>Cardinalidade:</strong></p>
+                <ul>
+                    <li>Pokemon (1..n) - Tem (0..n)</li>
+                    <li>Ataque (1..1) - Tem (0..n)</li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            <details>
+                <summary><strong>Possui</strong></summary>
+                <p><strong>Descrição:</strong> O relacionamento indica que um Tipo possui uma ou mais Efetividades.</p>
+                <p><strong>Cardinalidade:</strong></p>
+                <ul>
+                    <li>Tipo (1..1) - Possui (1..1)</li>
+                    <li>Efetividade (1..1) - Possui (0..n)</li>
+                </ul>
+            </details>
+        </li>
+    </ul>
+</details>
+
+<p></body>
+</html></p>
+<h3 id="descricao-geral">Descrição Geral:</h3>
+<p>O Diagrama de Entidade-Relacionamento (DER) na sua primeira versão foi desenvolvido para capturar os principais componentes e interações do universo Pokémon. As entidades centrais incluem Pokemon, objetos (como insignia e Pokebola), locais (como Ginásio e Cidade) e personagens. Os personagens são a entidade central do modelo, com vários relacionamentos conectando-os a outras entidades. Eles podem obter insígnias ao desafiar ginásios, possuir e capturar Pokemons usando Pokebolas, e passar por rotas e ginásios ao longo de suas jornadas.</p>
+<h3 id="historico-de-versoes">Histórico de Versões</h3>
+<table>
+<thead>
+<tr>
+<th>Versão</th>
+<th>Autor</th>
+<th>Descrição da Alteração</th>
+<th>Data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0</td>
+<td>Todos Integrantes</td>
+<td>Criação da segunda versão do modelo DER.</td>
+<td>21/07/2024</td>
+</tr>
+<tr>
+<td>1.1</td>
+<td>Carlos Gabriel</td>
+<td>Descricão do Artefato DER terceira versão</td>
+<td>21/07/2024</td>
+</tr>
+<tr>
+<td>1.1</td>
+<td>Todos Integrantes</td>
+<td>Revisão e Pequenas alteracoes no Der v3.</td>
+<td>22/07/2024</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.path", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+        <script src="../js/custom.js"></script>
+      
+    
+  </body>
+</html>
