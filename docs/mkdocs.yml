@@ -34,16 +34,24 @@ theme:
 
 nav:
   - Home: index.md
-  - DER: 
-    - V1: der_v1.md
-    - V2: der_v2.md
-    - V3: der_v3.md
-  - Dicionário de Dados:
-    - V1: dicionario_de_dados_v1.md
-    - V2: dicionario_de_dados_v2.md
-  - Ata de Reuniões: ata_de_reunioes.md
-  - Modelos Relacional: modelo_logico.md
-  - Apresentações: apresentacoes.md
+  - Primeira Entrega:
+    - DER: 
+      - V1: der_v1.md
+      - V2: der_v2.md
+      - V3: der_v3.md
+    - Dicionário de Dados:
+      - V1: dicionario_de_dados_v1.md
+      - V2: dicionario_de_dados_v2.md
+    - Modelos Relacional: modelo_logico.md
+  - Segunda Entrega:
+    - Data Definition Language (DDL): segunda_entrega/ddl.md
+    - Data Manipulation Language (DML): segunda_entrega/dml.md
+    - Data Query Language (DQL): segunda_entrega/dql.md
+    - Álgebra Relacional (DDL): segunda_entrega/algebra_relacional.md
+
+  - Geral:
+    - Ata de Reuniões: ata_de_reunioes.md
+    - Apresentações: apresentacoes.md
 
 
 

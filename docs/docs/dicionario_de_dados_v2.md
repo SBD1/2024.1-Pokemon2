@@ -260,3 +260,87 @@ Um dicionário de dados é uma ferramenta fundamental para documentar e organiza
 
 
 
+
+
+### Aluno
+| Tabela   | Nome da Entidade |
+|----------|------------------|
+| Descrição | Contem informacoes sobre todos os alunos registrados na fga, incluindo seus atributos mais impotantes para sua identificacao |
+
+| Nome                  | Descrição                                      | Tipo de Dado | Tamanho | Restrição de Domínio |
+|-----------------------|------------------------------------------------|--------------|---------|----------------------|
+| nome completo       | atributo composto de nome, sobrenome e ultimo nome | Texto       | -       | -                    |
+| matricula        | identificador unico para alunos| texto       | menor que 10 carateres      |    chave primária              |
+| nome do curso      | identificador para curso atualmente cursado | texto       | -       | -                    |
+| departamento        | Indica o local responsavel por lidar com solicitacoes de deterinados cursos em comum  | Texto       | -       | -                    |
+| turno        | Indica o periodo do dia  | texto       | -       | Matutino, Vespertino, Noturno                    |
+| nivel        | Indica Graduacao ou Licenciatura | texto       | -       | Graduacao ou Licenciatura                   |
+
+
+
+### Solicitacao
+| Tabela   | Nome da Entidade |
+|----------|------------------|
+| Descrição | Contem informacoes sobre todas solicitacoes de revisao de mencao em determinada disciplina |
+
+| Nome                  | Descrição                                      | Tipo de Dado | Tamanho | Restrição de Domínio |
+|-----------------------|------------------------------------------------|--------------|---------|----------------------|
+| Id       |  identificador de solicitacoes | Inteiro       | -       | chave primária                   |
+| nome da disciplina       |  -  | Texto       | -       | -                    |
+| turma       |  identificador para a turma de alguma disciplina | Texto       | -       | -                    |
+| código      |  representa o identificador da turma | Texto       | -       | -                    |
+| nome do professor       |  representa um identificador para o professor | Texto       | -       | chave estrangeira                    |
+| periodo cursado       |  indica o periodo em que foi realizado a materia que o aluno quer realizar revisao de mencao | Texto       | -       | -                    |
+| situacao       |  indica o motivo principal da enventual solicitacao | Texto       | -       | -                    |
+| exposicao de motivos       |  descricao detalhada do motivo da solicao | Texto       | -       | -                    |
+
+### Recibo
+| Tabela   | Nome da Entidade |
+|----------|------------------|
+| Descrição | Contem informacoes sobre uma determinada data de um recibo|
+
+| Nome                  | Descrição                                      | Tipo de Dado | Tamanho | Restrição de Domínio |
+|-----------------------|------------------------------------------------|--------------|---------|----------------------|
+| Id da solicitacao       |  identificador de solicitacao | Inteiro       | -       | chave primária composta                  |
+| data       |  identificador auxiliar para distinguir recibos de diferentes solicitacoes | DateTime       | -       | chave primária composta                    |
+| descricao       |  descreve as acoes feitas na solicitacao | Texto       | -       | -                    |
+|  status da solicitacao      |  indica o andamento da solicitacao (Em andamento, concluida, Arquivada) | Texto       | -       | -                    |
+
+
+### Contato
+| Tabela   | Nome da Entidade |
+|----------|------------------|
+| Descrição | Contem informacoes adicionais de como se comunicar com Professores e Alunos|
+
+| Nome                  | Descrição                                      | Tipo de Dado | Tamanho | Restrição de Domínio |
+|-----------------------|------------------------------------------------|--------------|---------|----------------------|
+| email       |  - | Texto       | -       | chave primária composta                  |
+| telefone       |  - | Texto       | -       | chave primária composta                    |
+| matricula       |  identificador para aluno ou professor | Texto       | -       | chave primária composta                     |
+
+
+### Professor
+| Tabela   | Nome da Entidade |
+|----------|------------------|
+| Descrição | Contem informacoes sobre caracteristicas dos professores |
+
+| Nome                  | Descrição                                      | Tipo de Dado | Tamanho | Restrição de Domínio |
+|-----------------------|------------------------------------------------|--------------|---------|----------------------|
+| matricula       |  identificador de professores| texto       | -       | chave primária                   |
+| nome do professor       |  pode ser utilizado como um identificador  | Texto       | -       | chave secundária                    |
+| contato       |  representa uma referencia para a tabela contato | Contato       | -       | chave estrangeira                    |
+
+
+### Matricula
+| Tabela   | Nome da Entidade |
+|----------|------------------|
+| Descrição | Contem informacoes sobre a matricula de alunos na faculdade |
+
+| Nome                  | Descrição                                      | Tipo de Dado | Tamanho | Restrição de Domínio |
+|-----------------------|------------------------------------------------|--------------|---------|----------------------|
+| matricula       |  identificador de matricula | Texto       | -       | chave primária                   |
+| nome do curso   |  indica o nome de determinado curso | Texto       | -       | -                    |
+| faculdade       |  indica o nome da faculdade | Texto       | -       | -                    |
+|  departamento      |  Indica o local responsavel por lidar com solicitacoes de deterinados cursos em comum  | Texto       | -       | -                    |
+| turno       |  Indica o periodo  | Texto       | -       | -                    |
+| nível       |  indica o periodo cursando | Texto       | -       | -                    |
