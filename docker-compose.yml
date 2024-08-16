@@ -10,6 +10,8 @@ services:
       POSTGRES_USER: postgres
     networks:
       - mynetwork
+    volumes:
+      - ./init-db:/docker-entrypoint-initdb.d/
 
   pgadmin:
     image: dpage/pgadmin4:latest
