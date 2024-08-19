@@ -12,17 +12,9 @@ services:
       - mynetwork
     volumes:
       - ./init-db:/docker-entrypoint-initdb.d/
-
-  pgadmin:
-    image: dpage/pgadmin4:latest
-    restart: always
-    environment:
-      PGADMIN_DEFAULT_EMAIL: admin@example.com
-      PGADMIN_DEFAULT_PASSWORD: admin
-    networks:
-      - mynetwork
     ports:
-      - "5050:80"
+      - "5432:5432" 
+
 
 networks:
   mynetwork:
