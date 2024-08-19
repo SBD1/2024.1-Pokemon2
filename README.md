@@ -60,3 +60,29 @@ Fazer deploy da aplicação
 ```bash
 mkdocs gh-deploy
 ```
+
+## Rodando o Projeto
+
+Suba o docker compose
+
+```bash
+docker compose up
+```
+
+Entre no manager
+
+```bash
+. venv/bin/activate
+```
+
+Instale os Requirements 
+
+```bash
+pip3 install -r game/requirements.txt
+```
+
+Rode o arquivo
+
+```bash
+python3 game/game.py 
+```
