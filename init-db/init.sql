@@ -1,8 +1,8 @@
-CREATE TABLE Liga Pokemon (
+CREATE TABLE Liga_Pokemon (
     ID_Liga INT PRIMARY KEY,
     Descricao VARCHAR,
     Numero_Insignias_Necessarias INT,
-    fk_Ginásio_ID_Ginasio INT
+    fk_Ginasio_ID_Ginasio INT
 );
 
 CREATE TABLE Rota (
@@ -30,7 +30,7 @@ CREATE TABLE Pokeball (
     Pokeball_TIPO INT
 );
 
-CREATE TABLE Lider_Ginásio (
+CREATE TABLE Lider_Ginasio (
     ID_Lider INT,
     Nome VARCHAR,
     Biografia VARCHAR,
@@ -73,9 +73,9 @@ CREATE TABLE Cidade (
     Possui_Pokecenter INT,
     Possui_Pokemarket INT,
     Possui_Ginasio INT,
-    fk_Lider_Ginásio_Insignia_ID_Lider INT,
-    fk_Lider_Ginásio_Insignia_ID_Ginasio INT,
-    fk_Lider_Ginásio_Insignia_ID_Insignia INT,
+    fk_Lider_Ginasio_Insignia_ID_Lider INT,
+    fk_Lider_Ginasio_Insignia_ID_Ginasio INT,
+    fk_Lider_Ginasio_Insignia_ID_Insignia INT,
     fk_Rota_ID_Rota INT
 );
 
@@ -83,9 +83,9 @@ CREATE TABLE Batalha (
     ID_Batalha INT PRIMARY KEY,
     Exp VARCHAR,
     Resultado VARCHAR,
-    fk_Lider_Ginásio_Insignia_ID_Lider INT,
-    fk_Lider_Ginásio_Insignia_ID_Ginasio INT,
-    fk_Lider_Ginásio_Insignia_ID_Insignia INT,
+    fk_Lider_Ginasio_Insignia_ID_Lider INT,
+    fk_Lider_Ginasio_Insignia_ID_Ginasio INT,
+    fk_Lider_Ginasio_Insignia_ID_Insignia INT,
     fk_Personagem_Pokedex_ID_Personagem INT,
     fk_Personagem_Pokedex_ID_Pokedex INT
 );
@@ -125,32 +125,32 @@ CREATE TABLE Tipo_Ataque (
 );
 
 CREATE TABLE Tipo_Pokemon (
-    FK_Pokemon_ID_Pokemon INT,
-    FK_Tipo_Efetividade_ID_Tipo INT,
-    FK_Tipo_Efetividade_ID_Efetividade INT
-);
-
-CREATE TABLE Entrega Insignia (
-    fk_Personagem_Pokedex_ID_Personagem INT,
-    fk_Lider_Ginásio_Insignia_ID_Lider INT,
-    fk_Lider_Ginásio_Insignia_ID_Ginasio INT
-);
-
-CREATE TABLE Tipo_Ginásio (
-    fk_Lider_Ginásio_Insignia_ID_Lider INT,
-    fk_Lider_Ginásio_Insignia_ID_Ginasio INT,
-    fk_Lider_Ginásio_Insignia_ID_Insignia INT,
+    fk_Pokemon_ID_Pokemon INT,
     fk_Tipo_Efetividade_ID_Tipo INT,
     fk_Tipo_Efetividade_ID_Efetividade INT
 );
 
-CREATE TABLE Passa por (
+CREATE TABLE Entrega_Insignia (
+    fk_Personagem_Pokedex_ID_Personagem INT,
+    fk_Lider_Ginasio_Insignia_ID_Lider INT,
+    fk_Lider_Ginasio_Insignia_ID_Ginasio INT
+);
+
+CREATE TABLE Tipo_Ginasio (
+    fk_Lider_Ginasio_Insignia_ID_Lider INT,
+    fk_Lider_Ginasio_Insignia_ID_Ginasio INT,
+    fk_Lider_Ginasio_Insignia_ID_Insignia INT,
+    fk_Tipo_Efetividade_ID_Tipo INT,
+    fk_Tipo_Efetividade_ID_Efetividade INT
+);
+
+CREATE TABLE Passa_por (
     fk_Personagem_Pokedex_ID_Personagem INT,
     fk_Personagem_Pokedex_ID_Pokedex INT,
     fk_Rota_ID_Rota INT
 );
 
-CREATE TABLE Lança (
+CREATE TABLE Lanca (
     fk_Personagem_Pokedex_ID_Personagem INT,
     fk_Personagem_Pokedex_ID_Pokedex INT,
     fk_Pokeball_ID_Pokebola INT
@@ -160,10 +160,10 @@ CREATE TABLE Surge (
     fk_Rota_ID_Rota INT,
     fk_Pokemon_ID_Pokemon INT
 );
- 
-ALTER TABLE Liga Pokemon ADD CONSTRAINT FK_Liga Pokemon_2
-    FOREIGN KEY (fk_Ginásio_ID_Ginasio)
-    REFERENCES ??? (???);
+
+ALTER TABLE Liga_Pokemon ADD CONSTRAINT FK_Liga_Pokemon_2
+    FOREIGN KEY (fk_Ginasio_ID_Ginasio)
+    REFERENCES Lider_Ginasio (ID_Ginasio);
  
 ALTER TABLE Rota ADD CONSTRAINT FK_Rota_2
     FOREIGN KEY (fk_Rota_ID_Rota)
@@ -171,11 +171,11 @@ ALTER TABLE Rota ADD CONSTRAINT FK_Rota_2
  
 ALTER TABLE Ataque ADD CONSTRAINT FK_Ataque_2
     FOREIGN KEY (fk_Pokemon_ID_Pokemon)
-    REFERENCES ??? (???);
+    REFERENCES Captura_Pokemon (ID_Pokemon);
  
 ALTER TABLE Cidade ADD CONSTRAINT FK_Cidade_1
-    FOREIGN KEY (fk_Lider_Ginásio_Insignia_ID_Lider, fk_Lider_Ginásio_Insignia_ID_Ginasio, fk_Lider_Ginásio_Insignia_ID_Insignia)
-    REFERENCES Lider_Ginásio (ID_Lider, ID_Ginasio, ID_Insignia)
+    FOREIGN KEY (fk_Lider_Ginasio_Insignia_ID_Lider, fk_Lider_Ginasio_Insignia_ID_Ginasio, fk_Lider_Ginasio_Insignia_ID_Insignia)
+    REFERENCES Lider_Ginasio (ID_Lider, ID_Ginasio, ID_Insignia)
     ON DELETE CASCADE;
  
 ALTER TABLE Cidade ADD CONSTRAINT FK_Cidade_2
@@ -184,8 +184,8 @@ ALTER TABLE Cidade ADD CONSTRAINT FK_Cidade_2
     ON DELETE SET NULL;
  
 ALTER TABLE Batalha ADD CONSTRAINT FK_Batalha_2
-    FOREIGN KEY (fk_Lider_Ginásio_Insignia_ID_Lider, fk_Lider_Ginásio_Insignia_ID_Ginasio, fk_Lider_Ginásio_Insignia_ID_Insignia)
-    REFERENCES Lider_Ginásio (ID_Lider, ID_Ginasio, ID_Insignia);
+    FOREIGN KEY (fk_Lider_Ginasio_Insignia_ID_Lider, fk_Lider_Ginasio_Insignia_ID_Ginasio, fk_Lider_Ginasio_Insignia_ID_Insignia)
+    REFERENCES Lider_Ginasio (ID_Lider, ID_Ginasio, ID_Insignia);
  
 ALTER TABLE Batalha ADD CONSTRAINT FK_Batalha_3
     FOREIGN KEY (fk_Personagem_Pokedex_ID_Personagem, fk_Personagem_Pokedex_ID_Pokedex)
@@ -201,7 +201,7 @@ ALTER TABLE Encontro_Pokemon ADD CONSTRAINT FK_Encontro_Pokemon_2
  
 ALTER TABLE Encontro_Pokemon ADD CONSTRAINT FK_Encontro_Pokemon_3
     FOREIGN KEY (fk_Pokemon_ID_Pokemon)
-    REFERENCES ??? (???);
+    REFERENCES Captura_Pokemon (ID_Pokemon);
  
 ALTER TABLE Tipo_Ataque ADD CONSTRAINT FK_Tipo_Ataque_1
     FOREIGN KEY (fk_Ataque_ID_Ataque)
@@ -214,59 +214,57 @@ ALTER TABLE Tipo_Ataque ADD CONSTRAINT FK_Tipo_Ataque_2
     ON DELETE SET NULL;
  
 ALTER TABLE Tipo_Pokemon ADD CONSTRAINT FK_Tipo_Pokemon_1
-    FOREIGN KEY (FK_Pokemon_ID_Pokemon)
-    REFERENCES ??? (???);
+    FOREIGN KEY (fk_Pokemon_ID_Pokemon)
+    REFERENCES Captura_Pokemon (ID_Pokemon);
  
 ALTER TABLE Tipo_Pokemon ADD CONSTRAINT FK_Tipo_Pokemon_2
-    FOREIGN KEY (FK_Tipo_Efetividade_ID_Tipo, FK_Tipo_Efetividade_ID_Efetividade)
-    REFERENCES Tipo_Efetividade (ID_Tipo, ID_Efetividade)
-    ON DELETE SET NULL;
- 
-ALTER TABLE Entrega Insignia ADD CONSTRAINT FK_Entrega Insignia_1
-    FOREIGN KEY (fk_Personagem_Pokedex_ID_Personagem, ???)
-    REFERENCES Personagem_Pokedex (ID_Personagem, ???)
-    ON DELETE RESTRICT;
- 
-ALTER TABLE Entrega Insignia ADD CONSTRAINT FK_Entrega Insignia_2
-    FOREIGN KEY (fk_Lider_Ginásio_Insignia_ID_Lider, fk_Lider_Ginásio_Insignia_ID_Ginasio, ???)
-    REFERENCES Lider_Ginásio (ID_Lider, ID_Ginasio, ???)
-    ON DELETE SET NULL;
- 
-ALTER TABLE Tipo_Ginásio ADD CONSTRAINT FK_Tipo_Ginásio_1
-    FOREIGN KEY (fk_Lider_Ginásio_Insignia_ID_Lider, fk_Lider_Ginásio_Insignia_ID_Ginasio, fk_Lider_Ginásio_Insignia_ID_Insignia)
-    REFERENCES Lider_Ginásio (ID_Lider, ID_Ginasio, ID_Insignia)
-    ON DELETE SET NULL;
- 
-ALTER TABLE Tipo_Ginásio ADD CONSTRAINT FK_Tipo_Ginásio_2
     FOREIGN KEY (fk_Tipo_Efetividade_ID_Tipo, fk_Tipo_Efetividade_ID_Efetividade)
     REFERENCES Tipo_Efetividade (ID_Tipo, ID_Efetividade)
     ON DELETE SET NULL;
  
-ALTER TABLE Passa por ADD CONSTRAINT FK_Passa por_1
+ALTER TABLE Entrega_Insignia ADD CONSTRAINT FK_Entrega_Insignia_1
+    FOREIGN KEY (fk_Personagem_Pokedex_ID_Personagem, ID_Pokedex)
+    REFERENCES Personagem_Pokedex (ID_Personagem, ID_Pokedex)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE Entrega_Insignia ADD CONSTRAINT FK_Entrega_Insignia_2
+    FOREIGN KEY (fk_Lider_Ginasio_Insignia_ID_Lider, fk_Lider_Ginasio_Insignia_ID_Ginasio, fk_Lider_Ginasio_Insignia_ID_Insignia)
+    REFERENCES Lider_Ginasio (ID_Lider, ID_Ginasio, ID_Insignia)
+    ON DELETE SET NULL;
+ 
+ALTER TABLE Tipo_Ginasio ADD CONSTRAINT FK_Tipo_Ginasio_1
+    FOREIGN KEY (fk_Lider_Ginasio_Insignia_ID_Lider, fk_Lider_Ginasio_Insignia_ID_Ginasio, fk_Lider_Ginasio_Insignia_ID_Insignia)
+    REFERENCES Lider_Ginasio (ID_Lider, ID_Ginasio, ID_Insignia)
+    ON DELETE SET NULL;
+ 
+ALTER TABLE Tipo_Ginasio ADD CONSTRAINT FK_Tipo_Ginasio_2
+    FOREIGN KEY (fk_Tipo_Efetividade_ID_Tipo, fk_Tipo_Efetividade_ID_Efetividade)
+    REFERENCES Tipo_Efetividade (ID_Tipo, ID_Efetividade)
+    ON DELETE SET NULL;
+ 
+ALTER TABLE Passa_por ADD CONSTRAINT FK_Passa_por_1
     FOREIGN KEY (fk_Personagem_Pokedex_ID_Personagem, fk_Personagem_Pokedex_ID_Pokedex)
     REFERENCES Personagem_Pokedex (ID_Personagem, ID_Pokedex)
     ON DELETE SET NULL;
  
-ALTER TABLE Passa por ADD CONSTRAINT FK_Passa por_2
+ALTER TABLE Passa_por ADD CONSTRAINT FK_Passa_por_2
     FOREIGN KEY (fk_Rota_ID_Rota)
-    REFERENCES Rota (ID_Rota)
-    ON DELETE SET NULL;
+    REFERENCES Rota (ID_Rota);
  
-ALTER TABLE Lança ADD CONSTRAINT FK_Lança_1
+ALTER TABLE Lanca ADD CONSTRAINT FK_Lanca_1
     FOREIGN KEY (fk_Personagem_Pokedex_ID_Personagem, fk_Personagem_Pokedex_ID_Pokedex)
-    REFERENCES Personagem_Pokedex (ID_Personagem, ID_Pokedex)
-    ON DELETE SET NULL;
+    REFERENCES Personagem_Pokedex (ID_Personagem, ID_Pokedex);
  
-ALTER TABLE Lança ADD CONSTRAINT FK_Lança_2
+ALTER TABLE Lanca ADD CONSTRAINT FK_Lanca_2
     FOREIGN KEY (fk_Pokeball_ID_Pokebola)
     REFERENCES Pokeball (ID_Pokebola)
-    ON DELETE SET NULL;
+    ON DELETE CASCADE;
  
 ALTER TABLE Surge ADD CONSTRAINT FK_Surge_1
     FOREIGN KEY (fk_Rota_ID_Rota)
     REFERENCES Rota (ID_Rota)
-    ON DELETE SET NULL;
+    ON DELETE CASCADE;
  
 ALTER TABLE Surge ADD CONSTRAINT FK_Surge_2
     FOREIGN KEY (fk_Pokemon_ID_Pokemon)
-    REFERENCES ??? (???);
+    REFERENCES Captura_Pokemon (ID_Pokemon);
