@@ -11,9 +11,60 @@ from faker import Faker
 def get_db_engine():
     return create_engine('postgresql://postgres:postgres@localhost:5432/pokemon')
 
-
 # Game Functions
 
+
+# Rotas 
+
+def inserir_cidade(db_engine, possui_pokecenter, possui_pokemarket, possui_ginasio, lider_id, ginasio_id, insignia_id, rota_id):
+    insert_cidade = f"""
+        INSERT INTO Cidade (Possui_Pokecenter, Possui_Pokemarket, Possui_Ginasio, 
+                            fk_Lider_Ginasio_Insignia_ID_Lider, fk_Lider_Ginasio_Insignia_ID_Ginasio, 
+                            fk_Lider_Ginasio_Insignia_ID_Insignia, fk_Rota_ID_Rota) 
+        VALUES ({possui_pokecenter}, {possui_pokemarket}, {possui_ginasio}, 
+                {lider_id}, {ginasio_id}, {insignia_id}, {rota_id})
+    """
+    db_engine.execute(text(insert_cidade).execution_options(autocommit=True))
+
+# Função para inserir rotas
+def inserir_rota(db_engine, id_rota, rota_id_conectada):
+    insert_rota = f"""
+        INSERT INTO Rota (ID_Rota, fk_Rota_ID_Rota) 
+        VALUES ({id_rota}, {rota_id_conectada})
+    """
+    db_engine.execute(text(insert_rota).execution_options(autocommit=True))
+
+def inicializar_caminhos():
+    # Inserindo algumas cidades
+    inserir_cidade(db_engine, 1, 1, 0, 0, 0, 0, 1)  # Pallet Town
+    inserir_cidade(db_engine, 1, 1, 1, 1, 1, 1, 2)           # Viridian City
+    inserir_cidade(db_engine, 1, 1, 1, 2, 2, 2, 3)           # Pewter City
+    inserir_cidade(db_engine, 1, 1, 1, 3, 3, 3, 4)           # Cerulean City
+
+    # Inserindo algumas rotas
+    inserir_rota(db_engine, 1, 1)  # Rota 1 (Pallet Town -> Viridian City)
+    inserir_rota(db_engine, 2, 1)     # Rota 2 (Pallet Town -> Pewter City)
+    inserir_rota(db_engine, 3, 2)     # Rota 3 (Pallet Town  -> Cerulean City)
+
+def exibir_menu_rotas():
+    clear_terminal()
+    slow_print("Escolha uma rota para seguir:")
+    print("\n")
+    print("1: Pallet Town -> Viridian City")
+    print("2: Pallet Town  -> Pewter City")
+    print("3: Pallet Town  -> Cerulean City")
+    print("\n")
+    escolha = slow_input("Digite o número da rota que deseja seguir: ")
+    
+    if escolha in ['1', '2', '3']:
+        id_rota = int(escolha)
+        print("\n")
+        print(f"Você escolheu seguir a Rota {id_rota}.")
+        print("\n")
+    else:
+        print("Opção inválida. Por favor, tente novamente.")
+        print("\n")
+    wait_for_keypress()
 
 def slow_print(text, delay=1):
     start_time = time.time()
@@ -143,6 +194,8 @@ def main_menu():
     print("\n")
 
     wait_for_keypress()
+
+    exibir_menu_rotas()
     
     clear_terminal()
 
@@ -157,5 +210,6 @@ if __name__ == "__main__":
             print(e)
 
     faker = Faker('en_US')
+    inicializar_caminhos()
     main_menu()
     db_engine.close()
