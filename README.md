@@ -10,6 +10,7 @@
 ## Link de Apresentações:
 
 - Entrega do Trabalho - Módulo 1: [link](https://youtu.be/BzyO2wMSp1A)
+- Entrega do Trabalho - Módulo 2: [link](https://youtu.be/O-SqRkyf6m8)
 
 ## Rodando MKdocs
 
