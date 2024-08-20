@@ -1,1 +1,0 @@
-## Álgebra Relacional (DDL)
