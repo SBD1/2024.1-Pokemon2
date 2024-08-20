@@ -422,3 +422,52 @@ VALUES (2, 250, 0, 2, 2, 2, 2, 2);
 
 INSERT INTO Batalha_Batalha (ID_Batalha, Exp, Resultado, fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Lider, fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Ginasio, fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Insignia, fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Personagem, fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Pokedex) 
 VALUES (3, 400, 1, 3, 3, 3, 3, 3);
+
+INSERT INTO PokemonDeAgua (
+    hydro_pump, id, ID_Pokemon, Nome, Nivel, Experiencia, Defesa_Especial, Velocidade, Tipo, fk_InstPokemon_Id_Pokemon_Inst
+) VALUES
+(100, 1, 1, 'Squirtle', 5, 20, 50, 43, 'Água', 1),
+(100, 2, 2, 'Tentacool', 10, 50, 60, 50, 'Água', 2);
+
+INSERT INTO PokemonEletrico (
+    fire_blast, ID_Pokemon, Nome, Nivel, Experiencia, Defesa_Especial, Velocidade, Tipo, fk_InstPokemon_Id_Pokemon_Inst
+) VALUES
+(120, 1, 'Pikachu', 5, 25, 40, 60, 'Elétrico', 1),
+(120, 2, 'Magnemite', 10, 50, 60, 40, 'Elétrico', 2);
+
+INSERT INTO PokemonInseto (
+    id, ID_Pokemon, Nome, Nivel, Experiencia, Defesa_Especial, Velocidade, Tipo, fk_InstPokemon_Id_Pokemon_Inst
+) VALUES
+(1, 1, 'Caterpie', 5, 25, 35, 45, 'Inseto', 1),
+(1, 2, 'Weedle', 10, 30, 40, 50, 'Inseto', 2);
+
+INSERT INTO Inst_pokemon (
+    Id_Pokemon_Inst, Probabilidade_Surgimento
+) VALUES
+(1, 50),
+(2, 30);
+
+INSERT INTO Elite (
+    Multiplicador_Dificuldade, ID_Liga, Descricao, Numero_Insignias_Necessarias, fk_Ginásio_ID_Ginasio
+) VALUES
+(2, 1, 'Elite 4', 8, 1),
+(3, 2, 'Champion', 8, 2);
+
+INSERT INTO Passa_por (
+    fk_Personagem_Pokedex_Equipe_ID_Personagem, fk_Personagem_Pokedex_Equipe_ID_Pokedex, fk_Rota_ID_Rota
+) VALUES
+(1, 1, 1),
+(2, 2, 2);
+
+INSERT INTO Lança (
+    fk_Personagem_Pokedex_Equipe_ID_Personagem, fk_Personagem_Pokedex_Equipe_ID_Pokedex, fk_Pokeball_ID_Pokebola
+) VALUES
+(1, 1, 1),
+(2, 2, 2);
+
+INSERT INTO Surge (
+    fk_Rota_ID_Rota, fk_InstPokemon_Id_Pokemon_Inst
+) VALUES
+(1, 1),
+(2, 2);
+
