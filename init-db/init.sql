@@ -1,473 +1,421 @@
-CREATE TABLE Rota (
-    ID_Rota INT PRIMARY KEY,
-    fk_Rota_ID_Rota INT
+-- CreateEnum
+CREATE TYPE "TipoPokemon" AS ENUM ('AGUA', 'FOGO', 'GRAMA', 'ELETRICO', 'LUTADOR', 'PSIQUICO', 'VENENOSO', 'PEDRA', 'VOADOR', 'GELO', 'INSETO', 'DRAGAO', 'FANTASMA', 'SOMBRIO', 'TERRA', 'METAL', 'FADA');
+
+-- CreateEnum
+CREATE TYPE "PokeballTipo" AS ENUM ('POKEBALL', 'GREATBALL', 'ULTRABALL', 'MASTERBALL');
+
+-- CreateTable
+CREATE TABLE "Treinador" (
+    "id" SERIAL NOT NULL,
+    "qtdPokeball" INTEGER NOT NULL,
+    "qtdGreatBall" INTEGER NOT NULL,
+    "qtdUltraBall" INTEGER NOT NULL,
+    "qtdMasterBall" INTEGER NOT NULL,
+    "timePokemonId" INTEGER NOT NULL,
+
+    CONSTRAINT "Treinador_pkey" PRIMARY KEY ("id")
 );
 
-CREATE TABLE Pokeball (
-    ID_Pokebola INT PRIMARY KEY,
-    Chance_captura INT
+-- CreateTable
+CREATE TABLE "Rota" (
+    "id" SERIAL NOT NULL,
+
+    CONSTRAINT "Rota_pkey" PRIMARY KEY ("id")
 );
 
-CREATE TABLE Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe (
-    ID_Lider INT,
-    Nome VARCHAR,
-    Biografia VARCHAR,
-    ID_Ginasio INT,
-    fk_Personagem_Pokedex_Equipe_ID_Personagem INT,
-    ID_Insignia INT,
-    Tipo VARCHAR,
-    ID_Personagem VARCHAR,
-    Pokebolas_Normais INT,
-    Pokebolas_Greats INT,
-    Pokebolas_Ultras INT,
-    ID_Pokedex INT,
-    Numero_Pokemons INT,
-    Numero_Pokemons_Vistos INT,
-    Numero_Pokemons_Capturados INT,
-    Status_Completa INT,
-    fk_Inst_pokemon_Id_Pokemon_Inst INT,
-    PRIMARY KEY (ID_Lider, ID_Ginasio, ID_Insignia, ID_Personagem, ID_Pokedex)
+-- CreateTable
+CREATE TABLE "RotaRota" (
+    "id" SERIAL NOT NULL,
+    "origemRotaId" INTEGER NOT NULL,
+    "destinoRotaId" INTEGER NOT NULL,
+
+    CONSTRAINT "RotaRota_pkey" PRIMARY KEY ("id")
 );
 
-CREATE TABLE Cidade (
-    Possui_Pokecenter INT,
-    Possui_Pokemarket INT,
-    Possui_Ginasio INT,
-    fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Lider INT,
-    fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Ginasio INT,
-    fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Insignia INT,
-    fk_Rota_ID_Rota INT
+-- CreateTable
+CREATE TABLE "RotaRotaCidade" (
+    "id" SERIAL NOT NULL,
+    "origemRotaId" INTEGER NOT NULL,
+    "destinoCidadeId" INTEGER NOT NULL,
+
+    CONSTRAINT "RotaRotaCidade_pkey" PRIMARY KEY ("id")
 );
 
-CREATE TABLE Batalha_Batalha (
-    ID_Batalha INT PRIMARY KEY,
-    Exp INT,
-    Resultado INT,
-    fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Lider INT,
-    fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Ginasio INT,
-    fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Insignia INT,
-    fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Personagem INT,
-    fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Pokedex INT
+-- CreateTable
+CREATE TABLE "RotaCidadeRota" (
+    "id" SERIAL NOT NULL,
+    "origemCidadeId" INTEGER NOT NULL,
+    "destinoRotaId" INTEGER NOT NULL,
+
+    CONSTRAINT "RotaCidadeRota_pkey" PRIMARY KEY ("id")
 );
 
-CREATE TABLE Captura_Captura (
-    ID_Captura INT PRIMARY KEY,
-    Experiencia INT,
-    fk_Pokeball_ID_Pokebola INT,
-    fk_PokemonDeAgua_id INT,
-    fk_PokemonDeAgua_ID_Pokemon INT,
-    fk_PokemonEletrico_ID_Pokemon INT,
-    fk_PokemonDeFogo_id INT,
-    fk_PokemonDeFogo_ID_Pokemon INT,
-    fk_PokemonDeGelo_id INT,
-    fk_PokemonDeGelo_ID_Pokemon INT,
-    fk_PokemonVenenoso_id INT,
-    fk_PokemonVenenoso_ID_Pokemon INT,
-    fk_PokemonTerrestre_id INT,
-    fk_PokemonTerrestre_ID_Pokemon INT,
-    fk_PokemonVoador_id INT,
-    fk_PokemonVoador_ID_Pokemon INT,
-    fk_PokemonPsíquico_id INT,
-    fk_PokemonPsíquico_ID_Pokemon INT,
-    fk_PokemonInseto_id INT,
-    fk_PokemonInseto_ID_Pokemon INT,
-    fk_PokemonDePedra_id INT,
-    fk_PokemonDePedra_ID_Pokemon INT,
-    fk_PokemonDragao_ID_Pokemon INT,
-    fk_PokemonSombrio_ID_Pokemon INT,
-    fk_PokemonFada_id INT,
-    fk_PokemonFada_ID_Pokemon INT,
-    fk_PokemonDePlanta_id INT,
-    fk_PokemonDePlanta_ID_Pokemon INT,
-    fk_PokemonLutador_ID_Pokemon INT,
-    fk_PokemonMetalico_id INT,
-    fk_PokemonMetalico_ID_Pokemon INT
+-- CreateTable
+CREATE TABLE "Cidade" (
+    "id" SERIAL NOT NULL,
+    "nome" TEXT NOT NULL,
+    "possui_pokemart" BOOLEAN NOT NULL,
+    "possui_centro_pokemon" BOOLEAN NOT NULL,
+    "possui_ginasio" BOOLEAN NOT NULL,
+
+    CONSTRAINT "Cidade_pkey" PRIMARY KEY ("id")
 );
 
-CREATE TABLE Encontro_Encontra (
-    ID_Encontro INT PRIMARY KEY,
-    Capturado INT,
-    Derrotado INT,
-    Correu INT,
-    Perdeu INT,
-    Experiencia INT,
-    fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Lider INT,
-    fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Ginasio INT,
-    fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Insignia INT,
-    fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Personagem VARCHAR,
-    fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Pokedex INT,
-    fk_PokemonDeAgua_id INT,
-    fk_PokemonDeAgua_ID_Pokemon INT,
-    fk_PokemonEletrico_ID_Pokemon INT,
-    fk_PokemonDeFogo_id INT,
-    fk_PokemonDeFogo_ID_Pokemon INT,
-    fk_PokemonDeGelo_id INT,
-    fk_PokemonDeGelo_ID_Pokemon INT,
-    fk_PokemonVenenoso_id INT,
-    fk_PokemonVenenoso_ID_Pokemon INT,
-    fk_PokemonTerrestre_id INT,
-    fk_PokemonTerrestre_ID_Pokemon INT,
-    fk_PokemonVoador_id INT,
-    fk_PokemonVoador_ID_Pokemon INT,
-    fk_PokemonPsíquico_id INT,
-    fk_PokemonPsíquico_ID_Pokemon INT,
-    fk_PokemonInseto_id INT,
-    fk_PokemonInseto_ID_Pokemon INT,
-    fk_PokemonDePedra_id INT,
-    fk_PokemonDePedra_ID_Pokemon INT,
-    fk_PokemonDragao_ID_Pokemon INT,
-    fk_PokemonSombrio_ID_Pokemon INT,
-    fk_PokemonFada_id INT,
-    fk_PokemonFada_ID_Pokemon INT,
-    fk_PokemonDePlanta_id INT,
-    fk_PokemonDePlanta_ID_Pokemon INT,
-    fk_PokemonLutador_ID_Pokemon INT,
-    fk_PokemonMetalico_id INT,
-    fk_PokemonMetalico_ID_Pokemon INT
+-- CreateTable
+CREATE TABLE "Lider" (
+    "id" SERIAL NOT NULL,
+    "ginasioId" INTEGER NOT NULL,
+    "biografia" TEXT NOT NULL,
+    "timeLiderID" INTEGER NOT NULL,
+
+    CONSTRAINT "Lider_pkey" PRIMARY KEY ("id")
 );
 
-CREATE TABLE PokemonDeAgua (
-    hydro_pump INT,
-    id INT,
-    ID_Pokemon INT,
-    Nome VARCHAR,
-    Nivel INT,
-    Experiencia INT,
-    Defesa_Especial INT,
-    Velocidade INT,
-    Tipo VARCHAR,
-    fk_InstPokemon_Id_Pokemon_Inst INT,
-    PRIMARY KEY (id, ID_Pokemon)
+-- CreateTable
+CREATE TABLE "Insignia" (
+    "id" SERIAL NOT NULL,
+    "nome" TEXT NOT NULL,
+    "liderId" INTEGER NOT NULL,
+    "tipoPokemon" "TipoPokemon" NOT NULL,
+
+    CONSTRAINT "Insignia_pkey" PRIMARY KEY ("id")
 );
 
-CREATE TABLE PokemonEletrico  (
-    fire_blast INT,
-    ID_Pokemon INT PRIMARY KEY,
-    Nome VARCHAR,
-    Nivel INT,
-    Experiencia INT,
-    Defesa_Especial INT,
-    Velocidade INT,
-    Tipo VARCHAR,
-    fk_InstPokemon_Id_Pokemon_Inst INT
+-- CreateTable
+CREATE TABLE "EntregaInsignia" (
+    "id" SERIAL NOT NULL,
+    "insigniaId" INTEGER NOT NULL,
+    "treinadorId" INTEGER NOT NULL,
+
+    CONSTRAINT "EntregaInsignia_pkey" PRIMARY KEY ("id")
 );
 
-CREATE TABLE PokemonDeFogo (
-    id INT,
-    ID_Pokemon INT,
-    Nome VARCHAR,
-    Nivel INT,
-    Experiencia INT,
-    Defesa_Especial INT,
-    Velocidade INT,
-    Tipo VARCHAR,
-    fk_InstPokemon_Id_Pokemon_Inst INT,
-    PRIMARY KEY (id, ID_Pokemon)
+-- CreateTable
+CREATE TABLE "Ginasio" (
+    "id" SERIAL NOT NULL,
+    "cidadeId" INTEGER NOT NULL,
+    "liderId" INTEGER NOT NULL,
+    "ligaId" INTEGER,
+
+    CONSTRAINT "Ginasio_pkey" PRIMARY KEY ("id")
 );
 
-CREATE TABLE PokemonDePlanta (
-    id INT,
-    ID_Pokemon INT,
-    Nome VARCHAR,
-    Nivel INT,
-    Experiencia INT,
-    Defesa_Especial INT,
-    Velocidade INT,
-    Tipo VARCHAR,
-    fk_InstPokemon_Id_Pokemon_Inst INT,
-    PRIMARY KEY (id, ID_Pokemon)
+-- CreateTable
+CREATE TABLE "Habilidade" (
+    "id" SERIAL NOT NULL,
+    "nome" TEXT NOT NULL,
+    "tipo" "TipoPokemon" NOT NULL,
+    "poder" INTEGER NOT NULL,
+    "precisao" INTEGER NOT NULL,
+
+    CONSTRAINT "Habilidade_pkey" PRIMARY KEY ("id")
 );
 
-CREATE TABLE PokemonDeGelo (
-    id INT,
-    ID_Pokemon INT,
-    Nome VARCHAR,
-    Nivel INT,
-    Experiencia INT,
-    Defesa_Especial INT,
-    Velocidade INT,
-    Tipo VARCHAR,
-    fk_InstPokemon_Id_Pokemon_Inst INT,
-    PRIMARY KEY (id, ID_Pokemon)
+-- CreateTable
+CREATE TABLE "PokemonInst" (
+    "id" SERIAL NOT NULL,
+    "pokemonDex" INTEGER NOT NULL,
+    "treinadorId" INTEGER NOT NULL,
+    "nivel" INTEGER NOT NULL,
+    "hp" INTEGER NOT NULL,
+    "ataque" INTEGER NOT NULL,
+    "defesa" INTEGER NOT NULL,
+    "velocidade" INTEGER NOT NULL,
+    "spAtaque" INTEGER NOT NULL,
+    "spDefesa" INTEGER NOT NULL,
+    "timePokemonId" INTEGER,
+    "timeNPCId" INTEGER,
+
+    CONSTRAINT "PokemonInst_pkey" PRIMARY KEY ("id")
 );
 
-CREATE TABLE PokemonLutador (
-    focus_blast INT,
-    ID_Pokemon INT PRIMARY KEY,
-    Nome VARCHAR,
-    Nivel INT,
-    Experiencia INT,
-    Defesa_Especial INT,
-    Velocidade INT,
-    Tipo VARCHAR,
-    fk_InstPokemon_Id_Pokemon_Inst INT
+-- CreateTable
+CREATE TABLE "Pokemon" (
+    "dex" SERIAL NOT NULL,
+    "nome" TEXT NOT NULL,
+    "tipo" "TipoPokemon" NOT NULL,
+    "hp" INTEGER NOT NULL,
+    "ataque" INTEGER NOT NULL,
+    "defesa" INTEGER NOT NULL,
+    "velocidade" INTEGER NOT NULL,
+    "spAtaque" INTEGER NOT NULL,
+    "spDefesa" INTEGER NOT NULL,
+    "evolucaoDex" INTEGER,
+    "habilidadeId" INTEGER NOT NULL,
+    "pokemonDex" INTEGER NOT NULL,
+    "rotaId" INTEGER,
+
+    CONSTRAINT "Pokemon_pkey" PRIMARY KEY ("dex")
 );
 
-CREATE TABLE PokemonVenenoso (
-    id INT,
-    ID_Pokemon INT,
-    Nome VARCHAR,
-    Nivel INT,
-    Experiencia INT,
-    Defesa_Especial INT,
-    Velocidade INT,
-    Tipo VARCHAR,
-    fk_InstPokemon_Id_Pokemon_Inst INT,
-    PRIMARY KEY (id, ID_Pokemon)
+-- CreateTable
+CREATE TABLE "Liga" (
+    "id" SERIAL NOT NULL,
+    "descricao" TEXT NOT NULL,
+    "nInsiginias" INTEGER NOT NULL,
+
+    CONSTRAINT "Liga_pkey" PRIMARY KEY ("id")
 );
 
-CREATE TABLE PokemonTerrestre (
-    id INT,
-    ID_Pokemon INT,
-    Nome VARCHAR,
-    Nivel INT,
-    Experiencia INT,
-    Defesa_Especial INT,
-    Velocidade INT,
-    Tipo VARCHAR,
-    fk_InstPokemon_Id_Pokemon_Inst INT,
-    PRIMARY KEY (id, ID_Pokemon)
+-- CreateTable
+CREATE TABLE "NPC" (
+    "id" SERIAL NOT NULL,
+    "nome" TEXT NOT NULL,
+    "TimeNPCId" INTEGER NOT NULL,
+    "ligaId" INTEGER,
+
+    CONSTRAINT "NPC_pkey" PRIMARY KEY ("id")
 );
 
-CREATE TABLE PokemonVoador (
-    id INT,
-    ID_Pokemon INT,
-    Nome INT,
-    Nivel INT,
-    Experiencia INT,
-    Defesa_Especial INT,
-    Velocidade INT,
-    Tipo INT,
-    fk_InstPokemon_Id_Pokemon_Inst INT,
-    PRIMARY KEY (id, ID_Pokemon)
+-- CreateTable
+CREATE TABLE "TimePokemon" (
+    "id" SERIAL NOT NULL,
+
+    CONSTRAINT "TimePokemon_pkey" PRIMARY KEY ("id")
 );
 
-CREATE TABLE PokemonPsíquico (
-    id INT,
-    ID_Pokemon INT,
-    Nome VARCHAR,
-    Nivel INT,
-    Experiencia INT,
-    Defesa_Especial INT,
-    Velocidade INT,
-    Tipo VARCHAR,
-    fk_InstPokemon_Id_Pokemon_Inst INT,
-    PRIMARY KEY (id, ID_Pokemon)
+-- CreateTable
+CREATE TABLE "TimeNPC" (
+    "id" SERIAL NOT NULL,
+
+    CONSTRAINT "TimeNPC_pkey" PRIMARY KEY ("id")
 );
 
-CREATE TABLE PokemonInseto (
-    id INT,
-    ID_Pokemon INT,
-    Nome VARCHAR,
-    Nivel INT,
-    Experiencia INT,
-    Defesa_Especial INT,
-    Velocidade INT,
-    Tipo VARCHAR,
-    fk_InstPokemon_Id_Pokemon_Inst INT,
-    PRIMARY KEY (id, ID_Pokemon)
+-- CreateTable
+CREATE TABLE "Pokeball" (
+    "id" SERIAL NOT NULL,
+    "tipo" "PokeballTipo" NOT NULL,
+
+    CONSTRAINT "Pokeball_pkey" PRIMARY KEY ("id")
 );
 
-CREATE TABLE PokemonDePedra (
-    id INT,
-    ID_Pokemon INT,
-    Nome VARCHAR,
-    Nivel INT,
-    Experiencia INT,
-    Defesa_Especial INT,
-    Velocidade INT,
-    Tipo VARCHAR,
-    fk_InstPokemon_Id_Pokemon_Inst INT,
-    PRIMARY KEY (id, ID_Pokemon)
+-- CreateTable
+CREATE TABLE "Captura" (
+    "id" SERIAL NOT NULL,
+    "treinadorId" INTEGER NOT NULL,
+    "pokemonId" INTEGER NOT NULL,
+    "pokeballId" INTEGER NOT NULL,
+
+    CONSTRAINT "Captura_pkey" PRIMARY KEY ("id")
 );
 
-CREATE TABLE PokemonFantasma (
+-- CreateTable
+CREATE TABLE "Surgimento" (
+    "id" SERIAL NOT NULL,
+    "pokemonId" INTEGER NOT NULL,
+    "rotaId" INTEGER NOT NULL,
+
+    CONSTRAINT "Surgimento_pkey" PRIMARY KEY ("id")
 );
 
-CREATE TABLE PokemonDragao (
-    ID_Pokemon INT PRIMARY KEY,
-    Nome VARCHAR,
-    Nivel INT,
-    Experiencia INT,
-    Defesa_Especial INT,
-    Velocidade INT,
-    Tipo VARCHAR,
-    fk_InstPokemon_Id_Pokemon_Inst INT
+-- CreateTable
+CREATE TABLE "EncontroPokemon" (
+    "id" SERIAL NOT NULL,
+    "pokemonId" INTEGER NOT NULL,
+    "treinadorId" INTEGER NOT NULL,
+    "rotaId" INTEGER NOT NULL,
+    "capturado" BOOLEAN NOT NULL,
+    "venceu" BOOLEAN NOT NULL,
+    "correu" BOOLEAN NOT NULL,
+    "perdeu" BOOLEAN NOT NULL,
+
+    CONSTRAINT "EncontroPokemon_pkey" PRIMARY KEY ("id")
 );
 
-CREATE TABLE PokemonSombrio (
-    ID_Pokemon INT PRIMARY KEY,
-    Nome VARCHAR,
-    Nivel INT,
-    Experiencia INT,
-    Defesa_Especial INT,
-    Velocidade INT,
-    Tipo VARCHAR,
-    fk_InstPokemon_Id_Pokemon_Inst INT
+-- CreateTable
+CREATE TABLE "BatalhaLider" (
+    "id" SERIAL NOT NULL,
+    "ganhou" BOOLEAN NOT NULL,
+    "perdeu" BOOLEAN NOT NULL,
+    "treinadorId" INTEGER NOT NULL,
+    "liderId" INTEGER NOT NULL,
+
+    CONSTRAINT "BatalhaLider_pkey" PRIMARY KEY ("id")
 );
 
-CREATE TABLE PokemonMetalico (
-    id INT,
-    ID_Pokemon INT,
-    Nome VARCHAR,
-    Nivel INT,
-    Experiencia INT,
-    Defesa_Especial INT,
-    Velocidade INT,
-    Tipo VARCHAR,
-    fk_InstPokemon_Id_Pokemon_Inst INT,
-    PRIMARY KEY (id, ID_Pokemon)
+-- CreateTable
+CREATE TABLE "BatalhaLiga" (
+    "id" SERIAL NOT NULL,
+    "ganhou" BOOLEAN NOT NULL,
+    "perdeu" BOOLEAN NOT NULL,
+    "treinadorId" INTEGER NOT NULL,
+    "npcId" INTEGER NOT NULL,
+    "ligaId" INTEGER NOT NULL,
+
+    CONSTRAINT "BatalhaLiga_pkey" PRIMARY KEY ("id")
 );
 
-CREATE TABLE PokemonFada (
-    id INT,
-    ID_Pokemon INT,
-    Nome VARCHAR,
-    Nivel INT,
-    Experiencia INT,
-    Defesa_Especial INT,
-    Velocidade INT,
-    Tipo VARCHAR,
-    fk_InstPokemon_Id_Pokemon_Inst INT,
-    PRIMARY KEY (id, ID_Pokemon)
+-- CreateTable
+CREATE TABLE "DesafioLiga" (
+    "id" SERIAL NOT NULL,
+    "treinadorId" INTEGER NOT NULL,
+    "ligaId" INTEGER NOT NULL,
+
+    CONSTRAINT "DesafioLiga_pkey" PRIMARY KEY ("id")
 );
 
-CREATE TABLE Inst_pokemon (
-    Id_Pokemon_Inst INT PRIMARY KEY,
-    Probabilidade_Surgimento INT
+-- CreateTable
+CREATE TABLE "LancamentoBall" (
+    "id" SERIAL NOT NULL,
+    "treinadorId" INTEGER NOT NULL,
+    "encontroId" INTEGER NOT NULL,
+    "pokeballId" INTEGER NOT NULL,
+
+    CONSTRAINT "LancamentoBall_pkey" PRIMARY KEY ("id")
 );
 
-CREATE TABLE Elite (
-    Multiplicador_Dificuldade INT,
-    ID_Liga INT PRIMARY KEY,
-    Descricao VARCHAR,
-    Numero_Insignias_Necessarias INT,
-    fk_Ginásio_ID_Ginasio INT
+-- CreateTable
+CREATE TABLE "Pokedex" (
+    "id" SERIAL NOT NULL,
+    "treinadorId" INTEGER NOT NULL,
+    "qtdPokemonVistos" INTEGER NOT NULL,
+    "qtdPokemonCapturados" INTEGER NOT NULL,
+    "qtdPokemonRegistrados" INTEGER NOT NULL,
+    "pokemonVistosId" INTEGER[],
+    "pokemonRegistradosId" INTEGER[],
+    "statusCompletude" BOOLEAN NOT NULL,
+    "dexRegistradosId" INTEGER[],
+
+    CONSTRAINT "Pokedex_pkey" PRIMARY KEY ("id")
 );
 
-CREATE TABLE Passa_por (
-    fk_Personagem_Pokedex_Equipe_ID_Personagem INT,
-    fk_Personagem_Pokedex_Equipe_ID_Pokedex INT,
-    fk_Rota_ID_Rota INT
-);
+-- CreateIndex
+CREATE UNIQUE INDEX "Treinador_timePokemonId_key" ON "Treinador"("timePokemonId");
 
-CREATE TABLE Lança (
-    fk_Personagem_Pokedex_Equipe_ID_Personagem INT,
-    fk_Personagem_Pokedex_Equipe_ID_Pokedex INT,
-    fk_Pokeball_ID_Pokebola INT
-);
+-- CreateIndex
+CREATE UNIQUE INDEX "Lider_ginasioId_key" ON "Lider"("ginasioId");
 
-CREATE TABLE Surge (
-    fk_Rota_ID_Rota INT,
-    fk_InstPokemon_Id_Pokemon_Inst INT
-);
- 
-ALTER TABLE Rota ADD CONSTRAINT FK_Rota_2
-    FOREIGN KEY (fk_Rota_ID_Rota)
-    REFERENCES Rota (ID_Rota);
+-- CreateIndex
+CREATE UNIQUE INDEX "Lider_timeLiderID_key" ON "Lider"("timeLiderID");
 
- 
+-- CreateIndex
+CREATE UNIQUE INDEX "Ginasio_cidadeId_key" ON "Ginasio"("cidadeId");
 
-ALTER TABLE Cidade ADD CONSTRAINT FK_Cidade_2
-    FOREIGN KEY (fk_Rota_ID_Rota)
-    REFERENCES Rota (ID_Rota)
-    ON DELETE SET NULL;
- 
-ALTER TABLE Lança ADD CONSTRAINT FK_Lança_2
-    FOREIGN KEY (fk_Pokeball_ID_Pokebola)
-    REFERENCES Pokeball (ID_Pokebola)
-    ON DELETE SET NULL;
- 
-ALTER TABLE Surge ADD CONSTRAINT FK_Surge_1
-    FOREIGN KEY (fk_Rota_ID_Rota)
-    REFERENCES Rota (ID_Rota)
-    ON DELETE SET NULL;
- 
-ALTER TABLE Surge ADD CONSTRAINT FK_Surge_2
-    FOREIGN KEY (fk_InstPokemon_Id_Pokemon_Inst)
-    REFERENCES Inst_pokemon (Id_Pokemon_Inst)
-    ON DELETE SET NULL;
+-- CreateIndex
+CREATE UNIQUE INDEX "Ginasio_liderId_key" ON "Ginasio"("liderId");
 
-INSERT INTO Rota (ID_Rota, fk_Rota_ID_Rota) VALUES (1, NULL);
-INSERT INTO Rota (ID_Rota, fk_Rota_ID_Rota) VALUES (2, 1);
-INSERT INTO Rota (ID_Rota, fk_Rota_ID_Rota) VALUES (3, 2);
+-- CreateIndex
+CREATE UNIQUE INDEX "NPC_TimeNPCId_key" ON "NPC"("TimeNPCId");
 
-INSERT INTO Pokeball (ID_Pokebola, Chance_captura) VALUES (1, 30);
-INSERT INTO Pokeball (ID_Pokebola, Chance_captura) VALUES (2, 50);
-INSERT INTO Pokeball (ID_Pokebola, Chance_captura) VALUES (3, 70);
+-- AddForeignKey
+ALTER TABLE "Treinador" ADD CONSTRAINT "Treinador_timePokemonId_fkey" FOREIGN KEY ("timePokemonId") REFERENCES "TimePokemon"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
-INSERT INTO Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe (ID_Lider, Nome, Biografia, ID_Ginasio, fk_Personagem_Pokedex_Equipe_ID_Personagem, ID_Insignia, Tipo, ID_Personagem, Pokebolas_Normais, Pokebolas_Greats, Pokebolas_Ultras, ID_Pokedex, Numero_Pokemons, Numero_Pokemons_Vistos, Numero_Pokemons_Capturados, Status_Completa, fk_Inst_pokemon_Id_Pokemon_Inst) 
-VALUES (1, 'Brock', 'Líder do Ginásio de Pewter', 1, 1, 1, 'Pedra', 'Ash', 3, 2, 1, 1, 3, 20, 15, 1, 1);
+-- AddForeignKey
+ALTER TABLE "RotaRota" ADD CONSTRAINT "RotaRota_origemRotaId_fkey" FOREIGN KEY ("origemRotaId") REFERENCES "Rota"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
-INSERT INTO Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe (ID_Lider, Nome, Biografia, ID_Ginasio, fk_Personagem_Pokedex_Equipe_ID_Personagem, ID_Insignia, Tipo, ID_Personagem, Pokebolas_Normais, Pokebolas_Greats, Pokebolas_Ultras, ID_Pokedex, Numero_Pokemons, Numero_Pokemons_Vistos, Numero_Pokemons_Capturados, Status_Completa, fk_Inst_pokemon_Id_Pokemon_Inst) 
-VALUES (2, 'Misty', 'Líder do Ginásio de Cerulean', 2, 2, 2, 'Água', 'Misty', 5, 1, 0, 2, 2, 25, 20, 1, 2);
+-- AddForeignKey
+ALTER TABLE "RotaRota" ADD CONSTRAINT "RotaRota_destinoRotaId_fkey" FOREIGN KEY ("destinoRotaId") REFERENCES "Rota"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
-INSERT INTO Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe (ID_Lider, Nome, Biografia, ID_Ginasio, fk_Personagem_Pokedex_Equipe_ID_Personagem, ID_Insignia, Tipo, ID_Personagem, Pokebolas_Normais, Pokebolas_Greats, Pokebolas_Ultras, ID_Pokedex, Numero_Pokemons, Numero_Pokemons_Vistos, Numero_Pokemons_Capturados, Status_Completa, fk_Inst_pokemon_Id_Pokemon_Inst) 
-VALUES (3, 'Lt. Surge', 'Líder do Ginásio de Vermilion', 3, 3, 3, 'Elétrico', 'Surge', 2, 3, 2, 3, 4, 30, 25, 1, 3);
+-- AddForeignKey
+ALTER TABLE "RotaRotaCidade" ADD CONSTRAINT "RotaRotaCidade_origemRotaId_fkey" FOREIGN KEY ("origemRotaId") REFERENCES "Rota"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
-INSERT INTO Cidade (Possui_Pokecenter, Possui_Pokemarket, Possui_Ginasio, fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Lider, fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Ginasio, fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Insignia, fk_Rota_ID_Rota) 
-VALUES (1, 1, 1, 1, 1, 1, 1);
+-- AddForeignKey
+ALTER TABLE "RotaRotaCidade" ADD CONSTRAINT "RotaRotaCidade_destinoCidadeId_fkey" FOREIGN KEY ("destinoCidadeId") REFERENCES "Cidade"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
-INSERT INTO Cidade (Possui_Pokecenter, Possui_Pokemarket, Possui_Ginasio, fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Lider, fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Ginasio, fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Insignia, fk_Rota_ID_Rota) 
-VALUES (1, 1, 0, NULL, NULL, NULL, 2);
+-- AddForeignKey
+ALTER TABLE "RotaCidadeRota" ADD CONSTRAINT "RotaCidadeRota_origemCidadeId_fkey" FOREIGN KEY ("origemCidadeId") REFERENCES "Cidade"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
-INSERT INTO Cidade (Possui_Pokecenter, Possui_Pokemarket, Possui_Ginasio, fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Lider, fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Ginasio, fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Insignia, fk_Rota_ID_Rota) 
-VALUES (0, 1, 1, 3, 3, 3, 3);
+-- AddForeignKey
+ALTER TABLE "RotaCidadeRota" ADD CONSTRAINT "RotaCidadeRota_destinoRotaId_fkey" FOREIGN KEY ("destinoRotaId") REFERENCES "Rota"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
-INSERT INTO Batalha_Batalha (ID_Batalha, Exp, Resultado, fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Lider, fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Ginasio, fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Insignia, fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Personagem, fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Pokedex) 
-VALUES (1, 300, 1, 1, 1, 1, 1, 1);
+-- AddForeignKey
+ALTER TABLE "Lider" ADD CONSTRAINT "Lider_timeLiderID_fkey" FOREIGN KEY ("timeLiderID") REFERENCES "TimeNPC"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
-INSERT INTO Batalha_Batalha (ID_Batalha, Exp, Resultado, fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Lider, fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Ginasio, fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Insignia, fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Personagem, fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Pokedex) 
-VALUES (2, 250, 0, 2, 2, 2, 2, 2);
+-- AddForeignKey
+ALTER TABLE "Insignia" ADD CONSTRAINT "Insignia_liderId_fkey" FOREIGN KEY ("liderId") REFERENCES "Lider"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
-INSERT INTO Batalha_Batalha (ID_Batalha, Exp, Resultado, fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Lider, fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Ginasio, fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Insignia, fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Personagem, fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Pokedex) 
-VALUES (3, 400, 1, 3, 3, 3, 3, 3);
+-- AddForeignKey
+ALTER TABLE "EntregaInsignia" ADD CONSTRAINT "EntregaInsignia_insigniaId_fkey" FOREIGN KEY ("insigniaId") REFERENCES "Insignia"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
-INSERT INTO PokemonDeAgua (
-    hydro_pump, id, ID_Pokemon, Nome, Nivel, Experiencia, Defesa_Especial, Velocidade, Tipo, fk_InstPokemon_Id_Pokemon_Inst
-) VALUES
-(100, 1, 1, 'Squirtle', 5, 20, 50, 43, 'Água', 1),
-(100, 2, 2, 'Tentacool', 10, 50, 60, 50, 'Água', 2);
+-- AddForeignKey
+ALTER TABLE "EntregaInsignia" ADD CONSTRAINT "EntregaInsignia_treinadorId_fkey" FOREIGN KEY ("treinadorId") REFERENCES "Treinador"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
-INSERT INTO PokemonEletrico (
-    fire_blast, ID_Pokemon, Nome, Nivel, Experiencia, Defesa_Especial, Velocidade, Tipo, fk_InstPokemon_Id_Pokemon_Inst
-) VALUES
-(120, 1, 'Pikachu', 5, 25, 40, 60, 'Elétrico', 1),
-(120, 2, 'Magnemite', 10, 50, 60, 40, 'Elétrico', 2);
+-- AddForeignKey
+ALTER TABLE "Ginasio" ADD CONSTRAINT "Ginasio_cidadeId_fkey" FOREIGN KEY ("cidadeId") REFERENCES "Cidade"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
-INSERT INTO PokemonInseto (
-    id, ID_Pokemon, Nome, Nivel, Experiencia, Defesa_Especial, Velocidade, Tipo, fk_InstPokemon_Id_Pokemon_Inst
-) VALUES
-(1, 1, 'Caterpie', 5, 25, 35, 45, 'Inseto', 1),
-(1, 2, 'Weedle', 10, 30, 40, 50, 'Inseto', 2);
+-- AddForeignKey
+ALTER TABLE "Ginasio" ADD CONSTRAINT "Ginasio_liderId_fkey" FOREIGN KEY ("liderId") REFERENCES "Lider"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
-INSERT INTO Inst_pokemon (
-    Id_Pokemon_Inst, Probabilidade_Surgimento
-) VALUES
-(1, 50),
-(2, 30);
+-- AddForeignKey
+ALTER TABLE "Ginasio" ADD CONSTRAINT "Ginasio_ligaId_fkey" FOREIGN KEY ("ligaId") REFERENCES "Liga"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
-INSERT INTO Elite (
-    Multiplicador_Dificuldade, ID_Liga, Descricao, Numero_Insignias_Necessarias, fk_Ginásio_ID_Ginasio
-) VALUES
-(2, 1, 'Elite 4', 8, 1),
-(3, 2, 'Champion', 8, 2);
+-- AddForeignKey
+ALTER TABLE "PokemonInst" ADD CONSTRAINT "PokemonInst_pokemonDex_fkey" FOREIGN KEY ("pokemonDex") REFERENCES "Pokemon"("dex") ON DELETE RESTRICT ON UPDATE CASCADE;
 
-INSERT INTO Passa_por (
-    fk_Personagem_Pokedex_Equipe_ID_Personagem, fk_Personagem_Pokedex_Equipe_ID_Pokedex, fk_Rota_ID_Rota
-) VALUES
-(1, 1, 1),
-(2, 2, 2);
+-- AddForeignKey
+ALTER TABLE "PokemonInst" ADD CONSTRAINT "PokemonInst_treinadorId_fkey" FOREIGN KEY ("treinadorId") REFERENCES "Treinador"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
-INSERT INTO Lança (
-    fk_Personagem_Pokedex_Equipe_ID_Personagem, fk_Personagem_Pokedex_Equipe_ID_Pokedex, fk_Pokeball_ID_Pokebola
-) VALUES
-(1, 1, 1),
-(2, 2, 2);
+-- AddForeignKey
+ALTER TABLE "PokemonInst" ADD CONSTRAINT "PokemonInst_timePokemonId_fkey" FOREIGN KEY ("timePokemonId") REFERENCES "TimePokemon"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
-INSERT INTO Surge (
-    fk_Rota_ID_Rota, fk_InstPokemon_Id_Pokemon_Inst
-) VALUES
-(1, 1),
-(2, 2);
+-- AddForeignKey
+ALTER TABLE "PokemonInst" ADD CONSTRAINT "PokemonInst_timeNPCId_fkey" FOREIGN KEY ("timeNPCId") REFERENCES "TimeNPC"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
+-- AddForeignKey
+ALTER TABLE "Pokemon" ADD CONSTRAINT "Pokemon_habilidadeId_fkey" FOREIGN KEY ("habilidadeId") REFERENCES "Habilidade"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Pokemon" ADD CONSTRAINT "Pokemon_evolucaoDex_fkey" FOREIGN KEY ("evolucaoDex") REFERENCES "Pokemon"("dex") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Pokemon" ADD CONSTRAINT "Pokemon_rotaId_fkey" FOREIGN KEY ("rotaId") REFERENCES "Rota"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "NPC" ADD CONSTRAINT "NPC_TimeNPCId_fkey" FOREIGN KEY ("TimeNPCId") REFERENCES "TimeNPC"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "NPC" ADD CONSTRAINT "NPC_ligaId_fkey" FOREIGN KEY ("ligaId") REFERENCES "Liga"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Captura" ADD CONSTRAINT "Captura_treinadorId_fkey" FOREIGN KEY ("treinadorId") REFERENCES "Treinador"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Captura" ADD CONSTRAINT "Captura_pokemonId_fkey" FOREIGN KEY ("pokemonId") REFERENCES "Pokemon"("dex") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Captura" ADD CONSTRAINT "Captura_pokeballId_fkey" FOREIGN KEY ("pokeballId") REFERENCES "Pokeball"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Surgimento" ADD CONSTRAINT "Surgimento_pokemonId_fkey" FOREIGN KEY ("pokemonId") REFERENCES "Pokemon"("dex") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Surgimento" ADD CONSTRAINT "Surgimento_rotaId_fkey" FOREIGN KEY ("rotaId") REFERENCES "Rota"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "EncontroPokemon" ADD CONSTRAINT "EncontroPokemon_pokemonId_fkey" FOREIGN KEY ("pokemonId") REFERENCES "Pokemon"("dex") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "EncontroPokemon" ADD CONSTRAINT "EncontroPokemon_treinadorId_fkey" FOREIGN KEY ("treinadorId") REFERENCES "Treinador"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "EncontroPokemon" ADD CONSTRAINT "EncontroPokemon_rotaId_fkey" FOREIGN KEY ("rotaId") REFERENCES "Rota"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "BatalhaLider" ADD CONSTRAINT "BatalhaLider_treinadorId_fkey" FOREIGN KEY ("treinadorId") REFERENCES "Treinador"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "BatalhaLider" ADD CONSTRAINT "BatalhaLider_liderId_fkey" FOREIGN KEY ("liderId") REFERENCES "Lider"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "BatalhaLiga" ADD CONSTRAINT "BatalhaLiga_treinadorId_fkey" FOREIGN KEY ("treinadorId") REFERENCES "Treinador"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "BatalhaLiga" ADD CONSTRAINT "BatalhaLiga_npcId_fkey" FOREIGN KEY ("npcId") REFERENCES "NPC"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "DesafioLiga" ADD CONSTRAINT "DesafioLiga_treinadorId_fkey" FOREIGN KEY ("treinadorId") REFERENCES "Treinador"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "DesafioLiga" ADD CONSTRAINT "DesafioLiga_ligaId_fkey" FOREIGN KEY ("ligaId") REFERENCES "Liga"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "LancamentoBall" ADD CONSTRAINT "LancamentoBall_treinadorId_fkey" FOREIGN KEY ("treinadorId") REFERENCES "Treinador"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "LancamentoBall" ADD CONSTRAINT "LancamentoBall_pokeballId_fkey" FOREIGN KEY ("pokeballId") REFERENCES "Pokeball"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "LancamentoBall" ADD CONSTRAINT "LancamentoBall_encontroId_fkey" FOREIGN KEY ("encontroId") REFERENCES "EncontroPokemon"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Pokedex" ADD CONSTRAINT "Pokedex_treinadorId_fkey" FOREIGN KEY ("treinadorId") REFERENCES "Treinador"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
