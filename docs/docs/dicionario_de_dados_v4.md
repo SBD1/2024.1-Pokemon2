@@ -509,4 +509,4 @@ Um dicionário de dados é uma ferramenta fundamental para documentar e organiza
 
 | Versão | Autor         | Descrição da Alteração                                                                                                                                      | Data       |
 |--------|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|
-| 4.0    | Carlos Gabriel  | Criação da terceira versão do dicionário de dados. | 19/08/2024|
+| 1.0    | Carlos Gabriel  | Criação da quarta versão do dicionário de dados. | 19/08/2024|
