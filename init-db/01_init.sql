@@ -1,9 +1,31 @@
 -- CreateEnum
-CREATE TYPE "TipoPokemon" AS ENUM ('AGUA', 'FOGO', 'GRAMA', 'ELETRICO', 'LUTADOR', 'PSIQUICO', 'VENENOSO', 'PEDRA', 'VOADOR', 'GELO', 'INSETO', 'DRAGAO', 'FANTASMA', 'SOMBRIO', 'TERRA', 'METAL', 'FADA');
-
+CREATE TYPE "TipoPokemon" AS ENUM (
+    'NORMAL',
+    'AGUA',
+    'FOGO',
+    'GRAMA',
+    'ELETRICO',
+    'LUTADOR',
+    'PSIQUICO',
+    'VENENOSO',
+    'PEDRA',
+    'VOADOR',
+    'GELO',
+    'INSETO',
+    'DRAGAO',
+    'FANTASMA',
+    'SOMBRIO',
+    'TERRA',
+    'METAL',
+    'FADA'
+);
 -- CreateEnum
-CREATE TYPE "PokeballTipo" AS ENUM ('POKEBALL', 'GREATBALL', 'ULTRABALL', 'MASTERBALL');
-
+CREATE TYPE "PokeballTipo" AS ENUM (
+    'POKEBALL',
+    'GREATBALL',
+    'ULTRABALL',
+    'MASTERBALL'
+);
 -- CreateTable
 CREATE TABLE "Treinador" (
     "id" SERIAL NOT NULL,
@@ -12,44 +34,34 @@ CREATE TABLE "Treinador" (
     "qtdUltraBall" INTEGER NOT NULL,
     "qtdMasterBall" INTEGER NOT NULL,
     "timePokemonId" INTEGER NOT NULL,
-
     CONSTRAINT "Treinador_pkey" PRIMARY KEY ("id")
 );
-
 -- CreateTable
 CREATE TABLE "Rota" (
     "id" SERIAL NOT NULL,
-
     CONSTRAINT "Rota_pkey" PRIMARY KEY ("id")
 );
-
 -- CreateTable
 CREATE TABLE "RotaRota" (
     "id" SERIAL NOT NULL,
     "origemRotaId" INTEGER NOT NULL,
     "destinoRotaId" INTEGER NOT NULL,
-
     CONSTRAINT "RotaRota_pkey" PRIMARY KEY ("id")
 );
-
 -- CreateTable
 CREATE TABLE "RotaRotaCidade" (
     "id" SERIAL NOT NULL,
     "origemRotaId" INTEGER NOT NULL,
     "destinoCidadeId" INTEGER NOT NULL,
-
     CONSTRAINT "RotaRotaCidade_pkey" PRIMARY KEY ("id")
 );
-
 -- CreateTable
 CREATE TABLE "RotaCidadeRota" (
     "id" SERIAL NOT NULL,
     "origemCidadeId" INTEGER NOT NULL,
     "destinoRotaId" INTEGER NOT NULL,
-
     CONSTRAINT "RotaCidadeRota_pkey" PRIMARY KEY ("id")
 );
-
 -- CreateTable
 CREATE TABLE "Cidade" (
     "id" SERIAL NOT NULL,
@@ -57,49 +69,39 @@ CREATE TABLE "Cidade" (
     "possui_pokemart" BOOLEAN NOT NULL,
     "possui_centro_pokemon" BOOLEAN NOT NULL,
     "possui_ginasio" BOOLEAN NOT NULL,
-
     CONSTRAINT "Cidade_pkey" PRIMARY KEY ("id")
 );
-
 -- CreateTable
 CREATE TABLE "Lider" (
     "id" SERIAL NOT NULL,
     "ginasioId" INTEGER NOT NULL,
     "biografia" TEXT NOT NULL,
     "timeLiderID" INTEGER NOT NULL,
-
     CONSTRAINT "Lider_pkey" PRIMARY KEY ("id")
 );
-
 -- CreateTable
 CREATE TABLE "Insignia" (
     "id" SERIAL NOT NULL,
     "nome" TEXT NOT NULL,
     "liderId" INTEGER NOT NULL,
     "tipoPokemon" "TipoPokemon" NOT NULL,
-
     CONSTRAINT "Insignia_pkey" PRIMARY KEY ("id")
 );
-
 -- CreateTable
 CREATE TABLE "EntregaInsignia" (
     "id" SERIAL NOT NULL,
     "insigniaId" INTEGER NOT NULL,
     "treinadorId" INTEGER NOT NULL,
-
     CONSTRAINT "EntregaInsignia_pkey" PRIMARY KEY ("id")
 );
-
 -- CreateTable
 CREATE TABLE "Ginasio" (
     "id" SERIAL NOT NULL,
     "cidadeId" INTEGER NOT NULL,
     "liderId" INTEGER NOT NULL,
     "ligaId" INTEGER,
-
     CONSTRAINT "Ginasio_pkey" PRIMARY KEY ("id")
 );
-
 -- CreateTable
 CREATE TABLE "Habilidade" (
     "id" SERIAL NOT NULL,
@@ -107,10 +109,8 @@ CREATE TABLE "Habilidade" (
     "tipo" "TipoPokemon" NOT NULL,
     "poder" INTEGER NOT NULL,
     "precisao" INTEGER NOT NULL,
-
     CONSTRAINT "Habilidade_pkey" PRIMARY KEY ("id")
 );
-
 -- CreateTable
 CREATE TABLE "PokemonInst" (
     "id" SERIAL NOT NULL,
@@ -125,10 +125,8 @@ CREATE TABLE "PokemonInst" (
     "spDefesa" INTEGER NOT NULL,
     "timePokemonId" INTEGER,
     "timeNPCId" INTEGER,
-
     CONSTRAINT "PokemonInst_pkey" PRIMARY KEY ("id")
 );
-
 -- CreateTable
 CREATE TABLE "Pokemon" (
     "dex" SERIAL NOT NULL,
@@ -142,72 +140,55 @@ CREATE TABLE "Pokemon" (
     "spDefesa" INTEGER NOT NULL,
     "evolucaoDex" INTEGER,
     "habilidadeId" INTEGER NOT NULL,
-    "pokemonDex" INTEGER NOT NULL,
     "rotaId" INTEGER,
-
     CONSTRAINT "Pokemon_pkey" PRIMARY KEY ("dex")
 );
-
 -- CreateTable
 CREATE TABLE "Liga" (
     "id" SERIAL NOT NULL,
     "descricao" TEXT NOT NULL,
     "nInsiginias" INTEGER NOT NULL,
-
     CONSTRAINT "Liga_pkey" PRIMARY KEY ("id")
 );
-
 -- CreateTable
 CREATE TABLE "NPC" (
     "id" SERIAL NOT NULL,
     "nome" TEXT NOT NULL,
     "TimeNPCId" INTEGER NOT NULL,
     "ligaId" INTEGER,
-
     CONSTRAINT "NPC_pkey" PRIMARY KEY ("id")
 );
-
 -- CreateTable
 CREATE TABLE "TimePokemon" (
     "id" SERIAL NOT NULL,
-
     CONSTRAINT "TimePokemon_pkey" PRIMARY KEY ("id")
 );
-
 -- CreateTable
 CREATE TABLE "TimeNPC" (
     "id" SERIAL NOT NULL,
-
     CONSTRAINT "TimeNPC_pkey" PRIMARY KEY ("id")
 );
-
 -- CreateTable
 CREATE TABLE "Pokeball" (
     "id" SERIAL NOT NULL,
     "tipo" "PokeballTipo" NOT NULL,
-
     CONSTRAINT "Pokeball_pkey" PRIMARY KEY ("id")
 );
-
 -- CreateTable
 CREATE TABLE "Captura" (
     "id" SERIAL NOT NULL,
     "treinadorId" INTEGER NOT NULL,
     "pokemonId" INTEGER NOT NULL,
     "pokeballId" INTEGER NOT NULL,
-
     CONSTRAINT "Captura_pkey" PRIMARY KEY ("id")
 );
-
 -- CreateTable
 CREATE TABLE "Surgimento" (
     "id" SERIAL NOT NULL,
     "pokemonId" INTEGER NOT NULL,
     "rotaId" INTEGER NOT NULL,
-
     CONSTRAINT "Surgimento_pkey" PRIMARY KEY ("id")
 );
-
 -- CreateTable
 CREATE TABLE "EncontroPokemon" (
     "id" SERIAL NOT NULL,
@@ -218,10 +199,8 @@ CREATE TABLE "EncontroPokemon" (
     "venceu" BOOLEAN NOT NULL,
     "correu" BOOLEAN NOT NULL,
     "perdeu" BOOLEAN NOT NULL,
-
     CONSTRAINT "EncontroPokemon_pkey" PRIMARY KEY ("id")
 );
-
 -- CreateTable
 CREATE TABLE "BatalhaLider" (
     "id" SERIAL NOT NULL,
@@ -229,10 +208,8 @@ CREATE TABLE "BatalhaLider" (
     "perdeu" BOOLEAN NOT NULL,
     "treinadorId" INTEGER NOT NULL,
     "liderId" INTEGER NOT NULL,
-
     CONSTRAINT "BatalhaLider_pkey" PRIMARY KEY ("id")
 );
-
 -- CreateTable
 CREATE TABLE "BatalhaLiga" (
     "id" SERIAL NOT NULL,
@@ -241,29 +218,23 @@ CREATE TABLE "BatalhaLiga" (
     "treinadorId" INTEGER NOT NULL,
     "npcId" INTEGER NOT NULL,
     "ligaId" INTEGER NOT NULL,
-
     CONSTRAINT "BatalhaLiga_pkey" PRIMARY KEY ("id")
 );
-
 -- CreateTable
 CREATE TABLE "DesafioLiga" (
     "id" SERIAL NOT NULL,
     "treinadorId" INTEGER NOT NULL,
     "ligaId" INTEGER NOT NULL,
-
     CONSTRAINT "DesafioLiga_pkey" PRIMARY KEY ("id")
 );
-
 -- CreateTable
 CREATE TABLE "LancamentoBall" (
     "id" SERIAL NOT NULL,
     "treinadorId" INTEGER NOT NULL,
     "encontroId" INTEGER NOT NULL,
     "pokeballId" INTEGER NOT NULL,
-
     CONSTRAINT "LancamentoBall_pkey" PRIMARY KEY ("id")
 );
-
 -- CreateTable
 CREATE TABLE "Pokedex" (
     "id" SERIAL NOT NULL,
@@ -271,227 +242,193 @@ CREATE TABLE "Pokedex" (
     "qtdPokemonVistos" INTEGER NOT NULL,
     "qtdPokemonCapturados" INTEGER NOT NULL,
     "qtdPokemonRegistrados" INTEGER NOT NULL,
-    "pokemonVistosId" INTEGER[],
-    "pokemonRegistradosId" INTEGER[],
+    "pokemonVistosId" INTEGER [],
+    "pokemonRegistradosId" INTEGER [],
     "statusCompletude" BOOLEAN NOT NULL,
-    "dexRegistradosId" INTEGER[],
-
+    "dexRegistradosId" INTEGER [],
     CONSTRAINT "Pokedex_pkey" PRIMARY KEY ("id")
 );
-
 -- CreateIndex
 CREATE UNIQUE INDEX "Treinador_timePokemonId_key" ON "Treinador"("timePokemonId");
-
 -- CreateIndex
 CREATE UNIQUE INDEX "Lider_ginasioId_key" ON "Lider"("ginasioId");
-
 -- CreateIndex
 CREATE UNIQUE INDEX "Lider_timeLiderID_key" ON "Lider"("timeLiderID");
-
 -- CreateIndex
 CREATE UNIQUE INDEX "Ginasio_cidadeId_key" ON "Ginasio"("cidadeId");
-
 -- CreateIndex
 CREATE UNIQUE INDEX "Ginasio_liderId_key" ON "Ginasio"("liderId");
-
 -- CreateIndex
 CREATE UNIQUE INDEX "NPC_TimeNPCId_key" ON "NPC"("TimeNPCId");
-
 -- AddForeignKey
-ALTER TABLE "Treinador" ADD CONSTRAINT "Treinador_timePokemonId_fkey" FOREIGN KEY ("timePokemonId") REFERENCES "TimePokemon"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
+ALTER TABLE "Treinador"
+ADD CONSTRAINT "Treinador_timePokemonId_fkey" FOREIGN KEY ("timePokemonId") REFERENCES "TimePokemon"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "RotaRota" ADD CONSTRAINT "RotaRota_origemRotaId_fkey" FOREIGN KEY ("origemRotaId") REFERENCES "Rota"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
+ALTER TABLE "RotaRota"
+ADD CONSTRAINT "RotaRota_origemRotaId_fkey" FOREIGN KEY ("origemRotaId") REFERENCES "Rota"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "RotaRota" ADD CONSTRAINT "RotaRota_destinoRotaId_fkey" FOREIGN KEY ("destinoRotaId") REFERENCES "Rota"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
+ALTER TABLE "RotaRota"
+ADD CONSTRAINT "RotaRota_destinoRotaId_fkey" FOREIGN KEY ("destinoRotaId") REFERENCES "Rota"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "RotaRotaCidade" ADD CONSTRAINT "RotaRotaCidade_origemRotaId_fkey" FOREIGN KEY ("origemRotaId") REFERENCES "Rota"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
+ALTER TABLE "RotaRotaCidade"
+ADD CONSTRAINT "RotaRotaCidade_origemRotaId_fkey" FOREIGN KEY ("origemRotaId") REFERENCES "Rota"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "RotaRotaCidade" ADD CONSTRAINT "RotaRotaCidade_destinoCidadeId_fkey" FOREIGN KEY ("destinoCidadeId") REFERENCES "Cidade"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
+ALTER TABLE "RotaRotaCidade"
+ADD CONSTRAINT "RotaRotaCidade_destinoCidadeId_fkey" FOREIGN KEY ("destinoCidadeId") REFERENCES "Cidade"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "RotaCidadeRota" ADD CONSTRAINT "RotaCidadeRota_origemCidadeId_fkey" FOREIGN KEY ("origemCidadeId") REFERENCES "Cidade"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
+ALTER TABLE "RotaCidadeRota"
+ADD CONSTRAINT "RotaCidadeRota_origemCidadeId_fkey" FOREIGN KEY ("origemCidadeId") REFERENCES "Cidade"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "RotaCidadeRota" ADD CONSTRAINT "RotaCidadeRota_destinoRotaId_fkey" FOREIGN KEY ("destinoRotaId") REFERENCES "Rota"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
+ALTER TABLE "RotaCidadeRota"
+ADD CONSTRAINT "RotaCidadeRota_destinoRotaId_fkey" FOREIGN KEY ("destinoRotaId") REFERENCES "Rota"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "Lider" ADD CONSTRAINT "Lider_timeLiderID_fkey" FOREIGN KEY ("timeLiderID") REFERENCES "TimeNPC"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
+ALTER TABLE "Lider"
+ADD CONSTRAINT "Lider_timeLiderID_fkey" FOREIGN KEY ("timeLiderID") REFERENCES "TimeNPC"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "Insignia" ADD CONSTRAINT "Insignia_liderId_fkey" FOREIGN KEY ("liderId") REFERENCES "Lider"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
+ALTER TABLE "Insignia"
+ADD CONSTRAINT "Insignia_liderId_fkey" FOREIGN KEY ("liderId") REFERENCES "Lider"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "EntregaInsignia" ADD CONSTRAINT "EntregaInsignia_insigniaId_fkey" FOREIGN KEY ("insigniaId") REFERENCES "Insignia"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
+ALTER TABLE "EntregaInsignia"
+ADD CONSTRAINT "EntregaInsignia_insigniaId_fkey" FOREIGN KEY ("insigniaId") REFERENCES "Insignia"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "EntregaInsignia" ADD CONSTRAINT "EntregaInsignia_treinadorId_fkey" FOREIGN KEY ("treinadorId") REFERENCES "Treinador"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
+ALTER TABLE "EntregaInsignia"
+ADD CONSTRAINT "EntregaInsignia_treinadorId_fkey" FOREIGN KEY ("treinadorId") REFERENCES "Treinador"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "Ginasio" ADD CONSTRAINT "Ginasio_cidadeId_fkey" FOREIGN KEY ("cidadeId") REFERENCES "Cidade"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
+ALTER TABLE "Ginasio"
+ADD CONSTRAINT "Ginasio_cidadeId_fkey" FOREIGN KEY ("cidadeId") REFERENCES "Cidade"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "Ginasio" ADD CONSTRAINT "Ginasio_liderId_fkey" FOREIGN KEY ("liderId") REFERENCES "Lider"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
+ALTER TABLE "Ginasio"
+ADD CONSTRAINT "Ginasio_liderId_fkey" FOREIGN KEY ("liderId") REFERENCES "Lider"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "Ginasio" ADD CONSTRAINT "Ginasio_ligaId_fkey" FOREIGN KEY ("ligaId") REFERENCES "Liga"("id") ON DELETE SET NULL ON UPDATE CASCADE;
-
+ALTER TABLE "Ginasio"
+ADD CONSTRAINT "Ginasio_ligaId_fkey" FOREIGN KEY ("ligaId") REFERENCES "Liga"("id") ON DELETE
+SET NULL ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "PokemonInst" ADD CONSTRAINT "PokemonInst_pokemonDex_fkey" FOREIGN KEY ("pokemonDex") REFERENCES "Pokemon"("dex") ON DELETE RESTRICT ON UPDATE CASCADE;
-
+ALTER TABLE "PokemonInst"
+ADD CONSTRAINT "PokemonInst_pokemonDex_fkey" FOREIGN KEY ("pokemonDex") REFERENCES "Pokemon"("dex") ON DELETE RESTRICT ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "PokemonInst" ADD CONSTRAINT "PokemonInst_treinadorId_fkey" FOREIGN KEY ("treinadorId") REFERENCES "Treinador"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
+ALTER TABLE "PokemonInst"
+ADD CONSTRAINT "PokemonInst_treinadorId_fkey" FOREIGN KEY ("treinadorId") REFERENCES "Treinador"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "PokemonInst" ADD CONSTRAINT "PokemonInst_timePokemonId_fkey" FOREIGN KEY ("timePokemonId") REFERENCES "TimePokemon"("id") ON DELETE SET NULL ON UPDATE CASCADE;
-
+ALTER TABLE "PokemonInst"
+ADD CONSTRAINT "PokemonInst_timePokemonId_fkey" FOREIGN KEY ("timePokemonId") REFERENCES "TimePokemon"("id") ON DELETE
+SET NULL ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "PokemonInst" ADD CONSTRAINT "PokemonInst_timeNPCId_fkey" FOREIGN KEY ("timeNPCId") REFERENCES "TimeNPC"("id") ON DELETE SET NULL ON UPDATE CASCADE;
-
+ALTER TABLE "PokemonInst"
+ADD CONSTRAINT "PokemonInst_timeNPCId_fkey" FOREIGN KEY ("timeNPCId") REFERENCES "TimeNPC"("id") ON DELETE
+SET NULL ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "Pokemon" ADD CONSTRAINT "Pokemon_habilidadeId_fkey" FOREIGN KEY ("habilidadeId") REFERENCES "Habilidade"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
+ALTER TABLE "Pokemon"
+ADD CONSTRAINT "Pokemon_habilidadeId_fkey" FOREIGN KEY ("habilidadeId") REFERENCES "Habilidade"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "Pokemon" ADD CONSTRAINT "Pokemon_evolucaoDex_fkey" FOREIGN KEY ("evolucaoDex") REFERENCES "Pokemon"("dex") ON DELETE SET NULL ON UPDATE CASCADE;
-
+ALTER TABLE "Pokemon"
+ADD CONSTRAINT "Pokemon_evolucaoDex_fkey" FOREIGN KEY ("evolucaoDex") REFERENCES "Pokemon"("dex") ON DELETE
+SET NULL ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "Pokemon" ADD CONSTRAINT "Pokemon_rotaId_fkey" FOREIGN KEY ("rotaId") REFERENCES "Rota"("id") ON DELETE SET NULL ON UPDATE CASCADE;
-
+ALTER TABLE "Pokemon"
+ADD CONSTRAINT "Pokemon_rotaId_fkey" FOREIGN KEY ("rotaId") REFERENCES "Rota"("id") ON DELETE
+SET NULL ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "NPC" ADD CONSTRAINT "NPC_TimeNPCId_fkey" FOREIGN KEY ("TimeNPCId") REFERENCES "TimeNPC"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
+ALTER TABLE "NPC"
+ADD CONSTRAINT "NPC_TimeNPCId_fkey" FOREIGN KEY ("TimeNPCId") REFERENCES "TimeNPC"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "NPC" ADD CONSTRAINT "NPC_ligaId_fkey" FOREIGN KEY ("ligaId") REFERENCES "Liga"("id") ON DELETE SET NULL ON UPDATE CASCADE;
-
+ALTER TABLE "NPC"
+ADD CONSTRAINT "NPC_ligaId_fkey" FOREIGN KEY ("ligaId") REFERENCES "Liga"("id") ON DELETE
+SET NULL ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "Captura" ADD CONSTRAINT "Captura_treinadorId_fkey" FOREIGN KEY ("treinadorId") REFERENCES "Treinador"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
+ALTER TABLE "Captura"
+ADD CONSTRAINT "Captura_treinadorId_fkey" FOREIGN KEY ("treinadorId") REFERENCES "Treinador"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "Captura" ADD CONSTRAINT "Captura_pokemonId_fkey" FOREIGN KEY ("pokemonId") REFERENCES "Pokemon"("dex") ON DELETE RESTRICT ON UPDATE CASCADE;
-
+ALTER TABLE "Captura"
+ADD CONSTRAINT "Captura_pokemonId_fkey" FOREIGN KEY ("pokemonId") REFERENCES "Pokemon"("dex") ON DELETE RESTRICT ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "Captura" ADD CONSTRAINT "Captura_pokeballId_fkey" FOREIGN KEY ("pokeballId") REFERENCES "Pokeball"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
+ALTER TABLE "Captura"
+ADD CONSTRAINT "Captura_pokeballId_fkey" FOREIGN KEY ("pokeballId") REFERENCES "Pokeball"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "Surgimento" ADD CONSTRAINT "Surgimento_pokemonId_fkey" FOREIGN KEY ("pokemonId") REFERENCES "Pokemon"("dex") ON DELETE RESTRICT ON UPDATE CASCADE;
-
+ALTER TABLE "Surgimento"
+ADD CONSTRAINT "Surgimento_pokemonId_fkey" FOREIGN KEY ("pokemonId") REFERENCES "Pokemon"("dex") ON DELETE RESTRICT ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "Surgimento" ADD CONSTRAINT "Surgimento_rotaId_fkey" FOREIGN KEY ("rotaId") REFERENCES "Rota"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
+ALTER TABLE "Surgimento"
+ADD CONSTRAINT "Surgimento_rotaId_fkey" FOREIGN KEY ("rotaId") REFERENCES "Rota"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "EncontroPokemon" ADD CONSTRAINT "EncontroPokemon_pokemonId_fkey" FOREIGN KEY ("pokemonId") REFERENCES "Pokemon"("dex") ON DELETE RESTRICT ON UPDATE CASCADE;
-
+ALTER TABLE "EncontroPokemon"
+ADD CONSTRAINT "EncontroPokemon_pokemonId_fkey" FOREIGN KEY ("pokemonId") REFERENCES "Pokemon"("dex") ON DELETE RESTRICT ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "EncontroPokemon" ADD CONSTRAINT "EncontroPokemon_treinadorId_fkey" FOREIGN KEY ("treinadorId") REFERENCES "Treinador"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
+ALTER TABLE "EncontroPokemon"
+ADD CONSTRAINT "EncontroPokemon_treinadorId_fkey" FOREIGN KEY ("treinadorId") REFERENCES "Treinador"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "EncontroPokemon" ADD CONSTRAINT "EncontroPokemon_rotaId_fkey" FOREIGN KEY ("rotaId") REFERENCES "Rota"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
+ALTER TABLE "EncontroPokemon"
+ADD CONSTRAINT "EncontroPokemon_rotaId_fkey" FOREIGN KEY ("rotaId") REFERENCES "Rota"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "BatalhaLider" ADD CONSTRAINT "BatalhaLider_treinadorId_fkey" FOREIGN KEY ("treinadorId") REFERENCES "Treinador"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
+ALTER TABLE "BatalhaLider"
+ADD CONSTRAINT "BatalhaLider_treinadorId_fkey" FOREIGN KEY ("treinadorId") REFERENCES "Treinador"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "BatalhaLider" ADD CONSTRAINT "BatalhaLider_liderId_fkey" FOREIGN KEY ("liderId") REFERENCES "Lider"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
+ALTER TABLE "BatalhaLider"
+ADD CONSTRAINT "BatalhaLider_liderId_fkey" FOREIGN KEY ("liderId") REFERENCES "Lider"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "BatalhaLiga" ADD CONSTRAINT "BatalhaLiga_treinadorId_fkey" FOREIGN KEY ("treinadorId") REFERENCES "Treinador"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
+ALTER TABLE "BatalhaLiga"
+ADD CONSTRAINT "BatalhaLiga_treinadorId_fkey" FOREIGN KEY ("treinadorId") REFERENCES "Treinador"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "BatalhaLiga" ADD CONSTRAINT "BatalhaLiga_npcId_fkey" FOREIGN KEY ("npcId") REFERENCES "NPC"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
+ALTER TABLE "BatalhaLiga"
+ADD CONSTRAINT "BatalhaLiga_npcId_fkey" FOREIGN KEY ("npcId") REFERENCES "NPC"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "DesafioLiga" ADD CONSTRAINT "DesafioLiga_treinadorId_fkey" FOREIGN KEY ("treinadorId") REFERENCES "Treinador"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
+ALTER TABLE "DesafioLiga"
+ADD CONSTRAINT "DesafioLiga_treinadorId_fkey" FOREIGN KEY ("treinadorId") REFERENCES "Treinador"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "DesafioLiga" ADD CONSTRAINT "DesafioLiga_ligaId_fkey" FOREIGN KEY ("ligaId") REFERENCES "Liga"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
+ALTER TABLE "DesafioLiga"
+ADD CONSTRAINT "DesafioLiga_ligaId_fkey" FOREIGN KEY ("ligaId") REFERENCES "Liga"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "LancamentoBall" ADD CONSTRAINT "LancamentoBall_treinadorId_fkey" FOREIGN KEY ("treinadorId") REFERENCES "Treinador"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
+ALTER TABLE "LancamentoBall"
+ADD CONSTRAINT "LancamentoBall_treinadorId_fkey" FOREIGN KEY ("treinadorId") REFERENCES "Treinador"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "LancamentoBall" ADD CONSTRAINT "LancamentoBall_pokeballId_fkey" FOREIGN KEY ("pokeballId") REFERENCES "Pokeball"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
+ALTER TABLE "LancamentoBall"
+ADD CONSTRAINT "LancamentoBall_pokeballId_fkey" FOREIGN KEY ("pokeballId") REFERENCES "Pokeball"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "LancamentoBall" ADD CONSTRAINT "LancamentoBall_encontroId_fkey" FOREIGN KEY ("encontroId") REFERENCES "EncontroPokemon"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
+ALTER TABLE "LancamentoBall"
+ADD CONSTRAINT "LancamentoBall_encontroId_fkey" FOREIGN KEY ("encontroId") REFERENCES "EncontroPokemon"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 -- AddForeignKey
-ALTER TABLE "Pokedex" ADD CONSTRAINT "Pokedex_treinadorId_fkey" FOREIGN KEY ("treinadorId") REFERENCES "Treinador"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
-CREATE OR REPLACE FUNCTION update_pokedex_on_capture_func()
-RETURNS TRIGGER AS $$
-BEGIN
-    UPDATE "Pokedex"
-    SET "qtdPokemonCapturados" = "qtdPokemonCapturados" + 1,
-        "dexRegistradosId" = array_append("dexRegistradosId", NEW."pokemonId")
-    WHERE "treinadorId" = NEW."treinadorId";
-
-    RETURN NEW;
+ALTER TABLE "Pokedex"
+ADD CONSTRAINT "Pokedex_treinadorId_fkey" FOREIGN KEY ("treinadorId") REFERENCES "Treinador"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+CREATE OR REPLACE FUNCTION update_pokedex_on_capture_func() RETURNS TRIGGER AS $$ BEGIN
+UPDATE "Pokedex"
+SET "qtdPokemonCapturados" = "qtdPokemonCapturados" + 1,
+    "dexRegistradosId" = array_append("dexRegistradosId", NEW."pokemonId")
+WHERE "treinadorId" = NEW."treinadorId";
+RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
-
 CREATE TRIGGER update_pokedex_on_capture
-AFTER INSERT ON "Captura"
-FOR EACH ROW
-EXECUTE FUNCTION update_pokedex_on_capture_func();
-
-
-CREATE OR REPLACE FUNCTION prevent_duplicate_pokemon_in_team_func()
-RETURNS TRIGGER AS $$
-BEGIN
-    IF NEW."timePokemonId" IS NOT NULL THEN
-        IF EXISTS (
-            SELECT 1 FROM "PokemonInst"
-            WHERE "timePokemonId" = NEW."timePokemonId"
+AFTER
+INSERT ON "Captura" FOR EACH ROW EXECUTE FUNCTION update_pokedex_on_capture_func();
+CREATE OR REPLACE FUNCTION prevent_duplicate_pokemon_in_team_func() RETURNS TRIGGER AS $$ BEGIN IF NEW."timePokemonId" IS NOT NULL THEN IF EXISTS (
+        SELECT 1
+        FROM "PokemonInst"
+        WHERE "timePokemonId" = NEW."timePokemonId"
             AND "pokemonDex" = NEW."pokemonDex"
-        ) THEN
-            RAISE EXCEPTION 'Este Pokémon já está no time!';
-        END IF;
-    END IF;
-
-    RETURN NEW;
+    ) THEN RAISE EXCEPTION 'Este Pokémon já está no time!';
+END IF;
+END IF;
+RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
-
-CREATE TRIGGER prevent_duplicate_pokemon_in_team
-BEFORE INSERT ON "PokemonInst"
-FOR EACH ROW
-EXECUTE FUNCTION prevent_duplicate_pokemon_in_team_func();
-
-CREATE OR REPLACE FUNCTION set_update_date()
-RETURNS TRIGGER AS $$
-BEGIN
-    NEW."dataAtualizacao" := CURRENT_DATE;
-    RETURN NEW;
+CREATE TRIGGER prevent_duplicate_pokemon_in_team BEFORE
+INSERT ON "PokemonInst" FOR EACH ROW EXECUTE FUNCTION prevent_duplicate_pokemon_in_team_func();
+CREATE OR REPLACE FUNCTION set_update_date() RETURNS TRIGGER AS $$ BEGIN NEW."dataAtualizacao" := CURRENT_DATE;
+RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
-
-CREATE TRIGGER before_update_pokemoninst
-BEFORE UPDATE ON "PokemonInst"
-FOR EACH ROW
-EXECUTE FUNCTION set_update_date();
-
-CREATE OR REPLACE FUNCTION prevent_important_pokemon_deletion()
-RETURNS TRIGGER AS $$
-BEGIN
-    IF OLD."nivel" > 50 THEN
-        RAISE EXCEPTION 'Não é permitido excluir Pokémons importantes com nível superior a 50: %', OLD."nome";
-    END IF;
-    RETURN OLD;
+CREATE TRIGGER before_update_pokemoninst BEFORE
+UPDATE ON "PokemonInst" FOR EACH ROW EXECUTE FUNCTION set_update_date();
+CREATE OR REPLACE FUNCTION prevent_important_pokemon_deletion() RETURNS TRIGGER AS $$ BEGIN IF OLD."nivel" > 50 THEN RAISE EXCEPTION 'Não é permitido excluir Pokémons importantes com nível superior a 50: %',
+    OLD."nome";
+END IF;
+RETURN OLD;
 END;
 $$ LANGUAGE plpgsql;
-
-CREATE TRIGGER before_delete_pokemon_important
-BEFORE DELETE ON "PokemonInst"
-FOR EACH ROW
-EXECUTE FUNCTION prevent_important_pokemon_deletion();
-
+CREATE TRIGGER before_delete_pokemon_important BEFORE DELETE ON "PokemonInst" FOR EACH ROW EXECUTE FUNCTION prevent_important_pokemon_deletion();
 -- Inserir dados na tabela TimePokemon
 INSERT INTO "TimePokemon" ("id")
-VALUES
-    (1),
+VALUES (1),
     (2),
     (3),
     (4),
@@ -499,43 +436,49 @@ VALUES
     (6),
     (7),
     (8);
-
-
-INSERT INTO "Treinador" ("qtdPokeball", "qtdGreatBall", "qtdUltraBall", "qtdMasterBall", "timePokemonId")
-VALUES 
-(10, 5, 3, 1, 1),
-(20, 10, 6, 2, 2),
-(15, 8, 4, 3, 3),
-(25, 12, 7, 3, 4),
-(18, 9, 5, 2, 5),
-(22, 11, 6, 1, 6),
-(30, 15, 8, 4, 7),
-(12, 6, 3, 1, 8);
-
-
-INSERT INTO "Rota" DEFAULT VALUES;  
-INSERT INTO "Rota" DEFAULT VALUES; 
-INSERT INTO "Rota" DEFAULT VALUES;
-INSERT INTO "Rota" DEFAULT VALUES;
-INSERT INTO "Rota" DEFAULT VALUES;  -- Adiciona mais rotas para os IDs que você precisa
-INSERT INTO "Rota" DEFAULT VALUES;
-
-
-
+INSERT INTO "Treinador" (
+        "qtdPokeball",
+        "qtdGreatBall",
+        "qtdUltraBall",
+        "qtdMasterBall",
+        "timePokemonId"
+    )
+VALUES (10, 5, 3, 1, 1),
+    (20, 10, 6, 2, 2),
+    (15, 8, 4, 3, 3),
+    (25, 12, 7, 3, 4),
+    (18, 9, 5, 2, 5),
+    (22, 11, 6, 1, 6),
+    (30, 15, 8, 4, 7),
+    (12, 6, 3, 1, 8);
+INSERT INTO "Rota" DEFAULT
+VALUES;
+INSERT INTO "Rota" DEFAULT
+VALUES;
+INSERT INTO "Rota" DEFAULT
+VALUES;
+INSERT INTO "Rota" DEFAULT
+VALUES;
+INSERT INTO "Rota" DEFAULT
+VALUES;
+-- Adiciona mais rotas para os IDs que você precisa
+INSERT INTO "Rota" DEFAULT
+VALUES;
 INSERT INTO "RotaRota" ("origemRotaId", "destinoRotaId")
-VALUES 
-(1, 2),
-(2, 3),
-(3, 1),
-(4, 5),
-(5, 6),
-(6, 4);
-
-
+VALUES (1, 2),
+    (2, 3),
+    (3, 1),
+    (4, 5),
+    (5, 6),
+    (6, 4);
 -- Inserir dados na tabela Cidade
-INSERT INTO "Cidade" ("nome", "possui_pokemart", "possui_centro_pokemon", "possui_ginasio")
-VALUES
-    ('Cidade A', TRUE, TRUE, TRUE),
+INSERT INTO "Cidade" (
+        "nome",
+        "possui_pokemart",
+        "possui_centro_pokemon",
+        "possui_ginasio"
+    )
+VALUES ('Cidade A', TRUE, TRUE, TRUE),
     ('Cidade B', FALSE, TRUE, FALSE),
     ('Cidade C', TRUE, FALSE, TRUE),
     ('Cidade D', TRUE, TRUE, FALSE),
@@ -543,12 +486,9 @@ VALUES
     ('Cidade F', TRUE, TRUE, FALSE),
     ('Cidade G', FALSE, TRUE, TRUE),
     ('Cidade H', TRUE, FALSE, FALSE);
-
-
 -- Inserir dados na tabela TimeNPC
 INSERT INTO "TimeNPC" ("id")
-VALUES
-    (1),
+VALUES (1),
     (2),
     (3),
     (4),
@@ -556,42 +496,36 @@ VALUES
     (6),
     (7),
     (8);
-
 -- Inserir dados na tabela RotaRotaCidade
 INSERT INTO "RotaRotaCidade" ("origemRotaId", "destinoCidadeId")
-VALUES 
-    (1, 1),
+VALUES (1, 1),
     (2, 2),
     (3, 3),
     (4, 4),
     (5, 5);
-
 -- Inserir dados na tabela RotaCidadeRota
 INSERT INTO "RotaCidadeRota" ("origemCidadeId", "destinoRotaId")
-VALUES 
-    (1, 1),
+VALUES (1, 1),
     (2, 2),
     (3, 3),
     (4, 4),
     (5, 5),
     (6, 6);
-
-
 INSERT INTO "Lider" ("ginasioId", "biografia", "timeLiderID")
-VALUES 
-(1, 'Líder experiente com grande conhecimento de Pokémon.', 1),
-(2, 'Especialista em Pokémon de tipo Fogo.', 2),
-(3, 'Treinador renomado no tipo Água.', 3),
-(4, 'Mestre dos Pokémon Elétricos.', 4),
-(5, 'Especialista em Pokémon de tipo Planta.', 5),
-(6, 'Líder de Pokémon do tipo Psíquico.', 6),
-(7, 'Experiente em Pokémon do tipo Gelo.', 7),
-(8, 'Conhecedor de Pokémon do tipo Dragão.', 8);
-
-
+VALUES (
+        1,
+        'Líder experiente com grande conhecimento de Pokémon.',
+        1
+    ),
+    (2, 'Especialista em Pokémon de tipo Fogo.', 2),
+    (3, 'Treinador renomado no tipo Água.', 3),
+    (4, 'Mestre dos Pokémon Elétricos.', 4),
+    (5, 'Especialista em Pokémon de tipo Planta.', 5),
+    (6, 'Líder de Pokémon do tipo Psíquico.', 6),
+    (7, 'Experiente em Pokémon do tipo Gelo.', 7),
+    (8, 'Conhecedor de Pokémon do tipo Dragão.', 8);
 INSERT INTO "Liga" ("descricao", "nInsiginias")
-VALUES 
-    ('Liga de Kanto', 8),
+VALUES ('Liga de Kanto', 8),
     ('Liga de Johto', 8),
     ('Liga de Hoenn', 8),
     ('Liga de Sinnoh', 8),
@@ -599,16 +533,12 @@ VALUES
     ('Liga de Kalos', 8),
     ('Liga de Alola', 8),
     ('Liga de Galar', 8);
-
-
 INSERT INTO "Ginasio" ("cidadeId", "liderId", "ligaId")
-VALUES 
-(1, 1, 1),
-(2, 2, 2),
-(3, 3, 3),
-(4, 4, 4),
-(5, 5, 5),
-(6, 6, 6),
-(7, 7, 7),
-(8, 8, 8);
-
+VALUES (1, 1, 1),
+    (2, 2, 2),
+    (3, 3, 3),
+    (4, 4, 4),
+    (5, 5, 5),
+    (6, 6, 6),
+    (7, 7, 7),
+    (8, 8, 8);
