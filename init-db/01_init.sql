@@ -40,6 +40,8 @@ CREATE TABLE "Treinador" (
 -- CreateTable
 CREATE TABLE "Rota" (
     "id" SERIAL NOT NULL,
+    "rotaDestinoId" INTEGER,
+    "cidadeDestinoId" INTEGER,
     CONSTRAINT "Rota_pkey" PRIMARY KEY ("id")
 );
 -- CreateTable
@@ -70,6 +72,7 @@ CREATE TABLE "Cidade" (
     "possui_pokemart" BOOLEAN NOT NULL,
     "possui_centro_pokemon" BOOLEAN NOT NULL,
     "possui_ginasio" BOOLEAN NOT NULL,
+    "rotaId" INTEGER,
     CONSTRAINT "Cidade_pkey" PRIMARY KEY ("id")
 );
 -- CreateTable
@@ -450,11 +453,18 @@ INSERT INTO "Treinador" (
         "qtdGreatBall",
         "qtdUltraBall",
         "qtdMasterBall",
-        "timePokemonId"
+        "timePokemonId",
+        "rotaAtualId"
     )
-VALUES ('Ash Ketchum', 5, 0, 0, 0, 1);
-INSERT INTO "Rota" DEFAULT
-VALUES;
+VALUES ('Ash Ketchum', 5, 0, 0, 0, 1, 1);
+INSERT INTO "Rota" (
+        "rotaDestinoId",
+        "cidadeDestinoId"
+    )
+VALUES (1, 1),
+    (2, 3),
+    (3, NULL),
+    (4, 3);
 INSERT INTO "Rota" DEFAULT
 VALUES;
 INSERT INTO "Rota" DEFAULT
