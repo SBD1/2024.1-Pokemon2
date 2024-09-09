@@ -412,35 +412,26 @@ END IF;
 RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
-
-
-CREATE OR REPLACE FUNCTION check_timepokemon_id()
-RETURNS TRIGGER AS $$
-BEGIN
-    IF NEW."timePokemonId" IS NULL THEN
-        RAISE EXCEPTION 'timePokemonId não pode ser nulo';
-    END IF;
-
-    IF NOT EXISTS (SELECT 1 FROM "TimePokemon" WHERE "id" = NEW."timePokemonId") THEN
-        RAISE EXCEPTION 'O valor de timePokemonId % não existe na tabela TimePokemon', NEW."timePokemonId";
-    END IF;
-
-    RETURN NEW;
+CREATE OR REPLACE FUNCTION check_timepokemon_id() RETURNS TRIGGER AS $$ BEGIN IF NEW."timePokemonId" IS NULL THEN RAISE EXCEPTION 'timePokemonId não pode ser nulo';
+END IF;
+IF NOT EXISTS (
+    SELECT 1
+    FROM "TimePokemon"
+    WHERE "id" = NEW."timePokemonId"
+) THEN RAISE EXCEPTION 'O valor de timePokemonId % não existe na tabela TimePokemon',
+NEW."timePokemonId";
+END IF;
+RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
-
-CREATE TRIGGER trg_check_timepokemon_id
-BEFORE INSERT ON "Treinador"
-FOR EACH ROW
-EXECUTE FUNCTION check_timepokemon_id();
-
+CREATE TRIGGER trg_check_timepokemon_id BEFORE
+INSERT ON "Treinador" FOR EACH ROW EXECUTE FUNCTION check_timepokemon_id();
 CREATE TRIGGER prevent_duplicate_pokemon_in_team BEFORE
 INSERT ON "PokemonInst" FOR EACH ROW EXECUTE FUNCTION prevent_duplicate_pokemon_in_team_func();
 CREATE OR REPLACE FUNCTION set_update_date() RETURNS TRIGGER AS $$ BEGIN NEW."dataAtualizacao" := CURRENT_DATE;
 RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
-
 CREATE TRIGGER before_update_pokemoninst BEFORE
 UPDATE ON "PokemonInst" FOR EACH ROW EXECUTE FUNCTION set_update_date();
 CREATE OR REPLACE FUNCTION prevent_important_pokemon_deletion() RETURNS TRIGGER AS $$ BEGIN IF OLD."nivel" > 50 THEN RAISE EXCEPTION 'Não é permitido excluir Pokémons importantes com nível superior a 50: %',
@@ -452,22 +443,16 @@ $$ LANGUAGE plpgsql;
 CREATE TRIGGER before_delete_pokemon_important BEFORE DELETE ON "PokemonInst" FOR EACH ROW EXECUTE FUNCTION prevent_important_pokemon_deletion();
 -- Inserir dados na tabela TimePokemon
 INSERT INTO "TimePokemon" ("id")
-VALUES (1),
-    (2),
-    (3),
-    (4),
-    (5),
-    (6),
-    (7),
-    (8);INSERT INTO "Treinador" ("nome", "qtdPokeball", "qtdGreatBall", "qtdUltraBall", "qtdMasterBall", "timePokemonId") 
-VALUES ('Ash Ketchum', 10, 5, 3, 1, 1);
-
-INSERT INTO "Treinador" ("nome", "qtdPokeball", "qtdGreatBall", "qtdUltraBall", "qtdMasterBall", "timePokemonId") 
-VALUES ('Misty Waterflower', 8, 4, 2, 1, 2);
-
-INSERT INTO "Treinador" ("nome", "qtdPokeball", "qtdGreatBall", "qtdUltraBall", "qtdMasterBall", "timePokemonId") 
-VALUES ('Brock Harrison', 12, 3, 1, 0, 3);
-
+VALUES (1);
+INSERT INTO "Treinador" (
+        "nome",
+        "qtdPokeball",
+        "qtdGreatBall",
+        "qtdUltraBall",
+        "qtdMasterBall",
+        "timePokemonId"
+    )
+VALUES ('Ash Ketchum', 5, 0, 0, 0, 1);
 INSERT INTO "Rota" DEFAULT
 VALUES;
 INSERT INTO "Rota" DEFAULT
@@ -476,18 +461,6 @@ INSERT INTO "Rota" DEFAULT
 VALUES;
 INSERT INTO "Rota" DEFAULT
 VALUES;
-INSERT INTO "Rota" DEFAULT
-VALUES;
--- Adiciona mais rotas para os IDs que você precisa
-INSERT INTO "Rota" DEFAULT
-VALUES;
-INSERT INTO "RotaRota" ("origemRotaId", "destinoRotaId")
-VALUES (1, 2),
-    (2, 3),
-    (3, 1),
-    (4, 5),
-    (5, 6),
-    (6, 4);
 -- Inserir dados na tabela Cidade
 INSERT INTO "Cidade" (
         "nome",
@@ -497,121 +470,67 @@ INSERT INTO "Cidade" (
     )
 VALUES ('Cidade A', TRUE, TRUE, TRUE),
     ('Cidade B', FALSE, TRUE, FALSE),
-    ('Cidade C', TRUE, FALSE, TRUE),
-    ('Cidade D', TRUE, TRUE, FALSE),
-    ('Cidade E', FALSE, FALSE, TRUE),
-    ('Cidade F', TRUE, TRUE, FALSE),
-    ('Cidade G', FALSE, TRUE, TRUE),
-    ('Cidade H', TRUE, FALSE, FALSE);
+    ('Cidade C', TRUE, FALSE, TRUE);
 -- Inserir dados na tabela TimeNPC
 INSERT INTO "TimeNPC" ("id")
 VALUES (1),
     (2),
-    (3),
-    (4),
-    (5),
-    (6),
-    (7),
-    (8);
+    (3);
+INSERT INTO "RotaRota" ("origemRotaId", "destinoRotaId")
+VALUES (2, 3);
 -- Inserir dados na tabela RotaRotaCidade
 INSERT INTO "RotaRotaCidade" ("origemRotaId", "destinoCidadeId")
 VALUES (1, 1),
-    (2, 2),
-    (3, 3),
-    (4, 4),
-    (5, 5);
--- Habilidades para cada tipo de Pokémon
-
-INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
-VALUES ('Ataque Rápido', 'NORMAL', 40, 100);
-
-INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
-VALUES ('Jato D’Água', 'AGUA', 40, 100);
-
-INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
-VALUES ('Lança-Chamas', 'FOGO', 85, 100);
-
-INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
-VALUES ('Chicote de Vinha', 'GRAMA', 45, 100);
-
-INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
-VALUES ('Choque do Trovão', 'ELETRICO', 90, 100);
-
-INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
-VALUES ('Soco do Meteoro', 'LUTADOR', 100, 85);
-
-INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
-VALUES ('Psicocinese', 'PSIQUICO', 90, 100);
-
-INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
-VALUES ('Chicote de Veneno', 'VENENOSO', 50, 100);
-
-INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
-VALUES ('Pedrada', 'PEDRA', 50, 100);
-
-INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
-VALUES ('Asa de Aço', 'VOADOR', 60, 100);
-
-INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
-VALUES ('Gelo Seco', 'GELO', 55, 95);
-
-INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
-VALUES ('Picada', 'INSETO', 60, 100);
-
-INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
-VALUES ('Dragão Claw', 'DRAGAO', 80, 100);
-
-INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
-VALUES ('Fantasma', 'FANTASMA', 70, 100);
-
-INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
-VALUES ('Garra Sombria', 'SOMBRIO', 80, 100);
-
-INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
-VALUES ('Terremoto', 'TERRA', 100, 100);
-
-INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
-VALUES ('Ferroada', 'METAL', 60, 100);
-
-INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
-VALUES ('Beijo do Amor', 'FADA', 90, 100);
-
+    (3, 2),
+    (4, 3);
+-- Inserir dados na tabela RotaCidadeRota
 INSERT INTO "RotaCidadeRota" ("origemCidadeId", "destinoRotaId")
-VALUES (1, 1),
-    (2, 2),
-    (3, 3),
-    (4, 4),
-    (5, 5),
-    (6, 6);
+VALUES (1, 2),
+    (2, 4);
 INSERT INTO "Lider" ("ginasioId", "biografia", "timeLiderID")
-VALUES (
-        1,
-        'Líder experiente com grande conhecimento de Pokémon.',
-        1
-    ),
+VALUES (1, 'Líder experiente de Pokémon.', 1),
     (2, 'Especialista em Pokémon de tipo Fogo.', 2),
-    (3, 'Treinador renomado no tipo Água.', 3),
-    (4, 'Mestre dos Pokémon Elétricos.', 4),
-    (5, 'Especialista em Pokémon de tipo Planta.', 5),
-    (6, 'Líder de Pokémon do tipo Psíquico.', 6),
-    (7, 'Experiente em Pokémon do tipo Gelo.', 7),
-    (8, 'Conhecedor de Pokémon do tipo Dragão.', 8);
+    (3, 'Treinador renomado no tipo Água.', 3);
 INSERT INTO "Liga" ("descricao", "nInsiginias")
-VALUES ('Liga de Kanto', 8),
-    ('Liga de Johto', 8),
-    ('Liga de Hoenn', 8),
-    ('Liga de Sinnoh', 8),
-    ('Liga de Unova', 8),
-    ('Liga de Kalos', 8),
-    ('Liga de Alola', 8),
-    ('Liga de Galar', 8);
+VALUES ('Liga de Kanto', 3);
 INSERT INTO "Ginasio" ("cidadeId", "liderId", "ligaId")
 VALUES (1, 1, 1),
-    (2, 2, 2),
-    (3, 3, 3),
-    (4, 4, 4),
-    (5, 5, 5),
-    (6, 6, 6),
-    (7, 7, 7),
-    (8, 8, 8);
-
+    (2, 2, 1),
+    (3, 3, 1);
+-- Habilidades para cada tipo de Pokémon
+INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
+VALUES ('Ataque Rápido', 'NORMAL', 40, 100);
+INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
+VALUES ('Jato D’Água', 'AGUA', 40, 100);
+INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
+VALUES ('Lança-Chamas', 'FOGO', 85, 100);
+INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
+VALUES ('Chicote de Vinha', 'GRAMA', 45, 100);
+INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
+VALUES ('Choque do Trovão', 'ELETRICO', 90, 100);
+INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
+VALUES ('Soco do Meteoro', 'LUTADOR', 100, 85);
+INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
+VALUES ('Psicocinese', 'PSIQUICO', 90, 100);
+INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
+VALUES ('Chicote de Veneno', 'VENENOSO', 50, 100);
+INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
+VALUES ('Pedrada', 'PEDRA', 50, 100);
+INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
+VALUES ('Asa de Aço', 'VOADOR', 60, 100);
+INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
+VALUES ('Gelo Seco', 'GELO', 55, 95);
+INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
+VALUES ('Picada', 'INSETO', 60, 100);
+INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
+VALUES ('Dragão Claw', 'DRAGAO', 80, 100);
+INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
+VALUES ('Fantasma', 'FANTASMA', 70, 100);
+INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
+VALUES ('Garra Sombria', 'SOMBRIO', 80, 100);
+INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
+VALUES ('Terremoto', 'TERRA', 100, 100);
+INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
+VALUES ('Ferroada', 'METAL', 60, 100);
+INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
+VALUES ('Beijo do Amor', 'FADA', 90, 100);
