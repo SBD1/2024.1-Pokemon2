@@ -35,6 +35,7 @@ CREATE TABLE "Treinador" (
     "qtdUltraBall" INTEGER NOT NULL,
     "qtdMasterBall" INTEGER NOT NULL,
     "timePokemonId" INTEGER NOT NULL,
+    "rotaAtualId" INTEGER NOT NULL,
     CONSTRAINT "Treinador_pkey" PRIMARY KEY ("id")
 );
 -- CreateTable
