@@ -412,12 +412,35 @@ END IF;
 RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
+
+
+CREATE OR REPLACE FUNCTION check_timepokemon_id()
+RETURNS TRIGGER AS $$
+BEGIN
+    IF NEW."timePokemonId" IS NULL THEN
+        RAISE EXCEPTION 'timePokemonId não pode ser nulo';
+    END IF;
+
+    IF NOT EXISTS (SELECT 1 FROM "TimePokemon" WHERE "id" = NEW."timePokemonId") THEN
+        RAISE EXCEPTION 'O valor de timePokemonId % não existe na tabela TimePokemon', NEW."timePokemonId";
+    END IF;
+
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trg_check_timepokemon_id
+BEFORE INSERT ON "Treinador"
+FOR EACH ROW
+EXECUTE FUNCTION check_timepokemon_id();
+
 CREATE TRIGGER prevent_duplicate_pokemon_in_team BEFORE
 INSERT ON "PokemonInst" FOR EACH ROW EXECUTE FUNCTION prevent_duplicate_pokemon_in_team_func();
 CREATE OR REPLACE FUNCTION set_update_date() RETURNS TRIGGER AS $$ BEGIN NEW."dataAtualizacao" := CURRENT_DATE;
 RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
+
 CREATE TRIGGER before_update_pokemoninst BEFORE
 UPDATE ON "PokemonInst" FOR EACH ROW EXECUTE FUNCTION set_update_date();
 CREATE OR REPLACE FUNCTION prevent_important_pokemon_deletion() RETURNS TRIGGER AS $$ BEGIN IF OLD."nivel" > 50 THEN RAISE EXCEPTION 'Não é permitido excluir Pokémons importantes com nível superior a 50: %',
@@ -536,3 +559,4 @@ VALUES (1, 1, 1),
     (6, 6, 6),
     (7, 7, 7),
     (8, 8, 8);
+
