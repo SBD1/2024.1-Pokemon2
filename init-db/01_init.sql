@@ -419,3 +419,196 @@ ALTER TABLE "LancamentoBall" ADD CONSTRAINT "LancamentoBall_encontroId_fkey" FOR
 
 -- AddForeignKey
 ALTER TABLE "Pokedex" ADD CONSTRAINT "Pokedex_treinadorId_fkey" FOREIGN KEY ("treinadorId") REFERENCES "Treinador"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+CREATE OR REPLACE FUNCTION update_pokedex_on_capture_func()
+RETURNS TRIGGER AS $$
+BEGIN
+    UPDATE "Pokedex"
+    SET "qtdPokemonCapturados" = "qtdPokemonCapturados" + 1,
+        "dexRegistradosId" = array_append("dexRegistradosId", NEW."pokemonId")
+    WHERE "treinadorId" = NEW."treinadorId";
+
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER update_pokedex_on_capture
+AFTER INSERT ON "Captura"
+FOR EACH ROW
+EXECUTE FUNCTION update_pokedex_on_capture_func();
+
+
+CREATE OR REPLACE FUNCTION prevent_duplicate_pokemon_in_team_func()
+RETURNS TRIGGER AS $$
+BEGIN
+    IF NEW."timePokemonId" IS NOT NULL THEN
+        IF EXISTS (
+            SELECT 1 FROM "PokemonInst"
+            WHERE "timePokemonId" = NEW."timePokemonId"
+            AND "pokemonDex" = NEW."pokemonDex"
+        ) THEN
+            RAISE EXCEPTION 'Este Pokémon já está no time!';
+        END IF;
+    END IF;
+
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER prevent_duplicate_pokemon_in_team
+BEFORE INSERT ON "PokemonInst"
+FOR EACH ROW
+EXECUTE FUNCTION prevent_duplicate_pokemon_in_team_func();
+
+CREATE OR REPLACE FUNCTION set_update_date()
+RETURNS TRIGGER AS $$
+BEGIN
+    NEW."dataAtualizacao" := CURRENT_DATE;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER before_update_pokemoninst
+BEFORE UPDATE ON "PokemonInst"
+FOR EACH ROW
+EXECUTE FUNCTION set_update_date();
+
+CREATE OR REPLACE FUNCTION prevent_important_pokemon_deletion()
+RETURNS TRIGGER AS $$
+BEGIN
+    IF OLD."nivel" > 50 THEN
+        RAISE EXCEPTION 'Não é permitido excluir Pokémons importantes com nível superior a 50: %', OLD."nome";
+    END IF;
+    RETURN OLD;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER before_delete_pokemon_important
+BEFORE DELETE ON "PokemonInst"
+FOR EACH ROW
+EXECUTE FUNCTION prevent_important_pokemon_deletion();
+
+-- Inserir dados na tabela TimePokemon
+INSERT INTO "TimePokemon" ("id")
+VALUES
+    (1),
+    (2),
+    (3),
+    (4),
+    (5),
+    (6),
+    (7),
+    (8);
+
+
+INSERT INTO "Treinador" ("qtdPokeball", "qtdGreatBall", "qtdUltraBall", "qtdMasterBall", "timePokemonId")
+VALUES 
+(10, 5, 3, 1, 1),
+(20, 10, 6, 2, 2),
+(15, 8, 4, 3, 3),
+(25, 12, 7, 3, 4),
+(18, 9, 5, 2, 5),
+(22, 11, 6, 1, 6),
+(30, 15, 8, 4, 7),
+(12, 6, 3, 1, 8);
+
+
+INSERT INTO "Rota" DEFAULT VALUES;  
+INSERT INTO "Rota" DEFAULT VALUES; 
+INSERT INTO "Rota" DEFAULT VALUES;
+INSERT INTO "Rota" DEFAULT VALUES;
+INSERT INTO "Rota" DEFAULT VALUES;  -- Adiciona mais rotas para os IDs que você precisa
+INSERT INTO "Rota" DEFAULT VALUES;
+
+
+
+INSERT INTO "RotaRota" ("origemRotaId", "destinoRotaId")
+VALUES 
+(1, 2),
+(2, 3),
+(3, 1),
+(4, 5),
+(5, 6),
+(6, 4);
+
+
+-- Inserir dados na tabela Cidade
+INSERT INTO "Cidade" ("nome", "possui_pokemart", "possui_centro_pokemon", "possui_ginasio")
+VALUES
+    ('Cidade A', TRUE, TRUE, TRUE),
+    ('Cidade B', FALSE, TRUE, FALSE),
+    ('Cidade C', TRUE, FALSE, TRUE),
+    ('Cidade D', TRUE, TRUE, FALSE),
+    ('Cidade E', FALSE, FALSE, TRUE),
+    ('Cidade F', TRUE, TRUE, FALSE),
+    ('Cidade G', FALSE, TRUE, TRUE),
+    ('Cidade H', TRUE, FALSE, FALSE);
+
+
+-- Inserir dados na tabela TimeNPC
+INSERT INTO "TimeNPC" ("id")
+VALUES
+    (1),
+    (2),
+    (3),
+    (4),
+    (5),
+    (6),
+    (7),
+    (8);
+
+-- Inserir dados na tabela RotaRotaCidade
+INSERT INTO "RotaRotaCidade" ("origemRotaId", "destinoCidadeId")
+VALUES 
+    (1, 1),
+    (2, 2),
+    (3, 3),
+    (4, 4),
+    (5, 5);
+
+-- Inserir dados na tabela RotaCidadeRota
+INSERT INTO "RotaCidadeRota" ("origemCidadeId", "destinoRotaId")
+VALUES 
+    (1, 1),
+    (2, 2),
+    (3, 3),
+    (4, 4),
+    (5, 5),
+    (6, 6);
+
+
+INSERT INTO "Lider" ("ginasioId", "biografia", "timeLiderID")
+VALUES 
+(1, 'Líder experiente com grande conhecimento de Pokémon.', 1),
+(2, 'Especialista em Pokémon de tipo Fogo.', 2),
+(3, 'Treinador renomado no tipo Água.', 3),
+(4, 'Mestre dos Pokémon Elétricos.', 4),
+(5, 'Especialista em Pokémon de tipo Planta.', 5),
+(6, 'Líder de Pokémon do tipo Psíquico.', 6),
+(7, 'Experiente em Pokémon do tipo Gelo.', 7),
+(8, 'Conhecedor de Pokémon do tipo Dragão.', 8);
+
+
+INSERT INTO "Liga" ("descricao", "nInsiginias")
+VALUES 
+    ('Liga de Kanto', 8),
+    ('Liga de Johto', 8),
+    ('Liga de Hoenn', 8),
+    ('Liga de Sinnoh', 8),
+    ('Liga de Unova', 8),
+    ('Liga de Kalos', 8),
+    ('Liga de Alola', 8),
+    ('Liga de Galar', 8);
+
+
+INSERT INTO "Ginasio" ("cidadeId", "liderId", "ligaId")
+VALUES 
+(1, 1, 1),
+(2, 2, 2),
+(3, 3, 3),
+(4, 4, 4),
+(5, 5, 5),
+(6, 6, 6),
+(7, 7, 7),
+(8, 8, 8);
+
