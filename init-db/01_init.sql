@@ -520,7 +520,62 @@ VALUES (1, 1),
     (3, 3),
     (4, 4),
     (5, 5);
--- Inserir dados na tabela RotaCidadeRota
+-- Habilidades para cada tipo de Pokémon
+
+INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
+VALUES ('Ataque Rápido', 'NORMAL', 40, 100);
+
+INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
+VALUES ('Jato D’Água', 'AGUA', 40, 100);
+
+INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
+VALUES ('Lança-Chamas', 'FOGO', 85, 100);
+
+INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
+VALUES ('Chicote de Vinha', 'GRAMA', 45, 100);
+
+INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
+VALUES ('Choque do Trovão', 'ELETRICO', 90, 100);
+
+INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
+VALUES ('Soco do Meteoro', 'LUTADOR', 100, 85);
+
+INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
+VALUES ('Psicocinese', 'PSIQUICO', 90, 100);
+
+INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
+VALUES ('Chicote de Veneno', 'VENENOSO', 50, 100);
+
+INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
+VALUES ('Pedrada', 'PEDRA', 50, 100);
+
+INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
+VALUES ('Asa de Aço', 'VOADOR', 60, 100);
+
+INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
+VALUES ('Gelo Seco', 'GELO', 55, 95);
+
+INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
+VALUES ('Picada', 'INSETO', 60, 100);
+
+INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
+VALUES ('Dragão Claw', 'DRAGAO', 80, 100);
+
+INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
+VALUES ('Fantasma', 'FANTASMA', 70, 100);
+
+INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
+VALUES ('Garra Sombria', 'SOMBRIO', 80, 100);
+
+INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
+VALUES ('Terremoto', 'TERRA', 100, 100);
+
+INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
+VALUES ('Ferroada', 'METAL', 60, 100);
+
+INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
+VALUES ('Beijo do Amor', 'FADA', 90, 100);
+
 INSERT INTO "RotaCidadeRota" ("origemCidadeId", "destinoRotaId")
 VALUES (1, 1),
     (2, 2),
