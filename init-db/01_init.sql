@@ -29,6 +29,7 @@ CREATE TYPE "PokeballTipo" AS ENUM (
 -- CreateTable
 CREATE TABLE "Treinador" (
     "id" SERIAL NOT NULL,
+    "nome" TEXT NOT NULL,
     "qtdPokeball" INTEGER NOT NULL,
     "qtdGreatBall" INTEGER NOT NULL,
     "qtdUltraBall" INTEGER NOT NULL,
@@ -435,22 +436,15 @@ VALUES (1),
     (5),
     (6),
     (7),
-    (8);
-INSERT INTO "Treinador" (
-        "qtdPokeball",
-        "qtdGreatBall",
-        "qtdUltraBall",
-        "qtdMasterBall",
-        "timePokemonId"
-    )
-VALUES (10, 5, 3, 1, 1),
-    (20, 10, 6, 2, 2),
-    (15, 8, 4, 3, 3),
-    (25, 12, 7, 3, 4),
-    (18, 9, 5, 2, 5),
-    (22, 11, 6, 1, 6),
-    (30, 15, 8, 4, 7),
-    (12, 6, 3, 1, 8);
+    (8);INSERT INTO "Treinador" ("nome", "qtdPokeball", "qtdGreatBall", "qtdUltraBall", "qtdMasterBall", "timePokemonId") 
+VALUES ('Ash Ketchum', 10, 5, 3, 1, 1);
+
+INSERT INTO "Treinador" ("nome", "qtdPokeball", "qtdGreatBall", "qtdUltraBall", "qtdMasterBall", "timePokemonId") 
+VALUES ('Misty Waterflower', 8, 4, 2, 1, 2);
+
+INSERT INTO "Treinador" ("nome", "qtdPokeball", "qtdGreatBall", "qtdUltraBall", "qtdMasterBall", "timePokemonId") 
+VALUES ('Brock Harrison', 12, 3, 1, 0, 3);
+
 INSERT INTO "Rota" DEFAULT
 VALUES;
 INSERT INTO "Rota" DEFAULT
