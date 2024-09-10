@@ -33,7 +33,7 @@ theme:
 
 
 nav:
-  - Home: geral/index.md
+  - Home: index.md
   - Artefatos :
     - DER: 
       - V1: der_dicionario/der_v1.md
