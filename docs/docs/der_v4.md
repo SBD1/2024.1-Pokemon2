@@ -1,3 +1,43 @@
+# **Descrição do Artefato DER - Quarta Versão**
+
+## DER:
+
+![Image](der_v4.png)
+
+## Principais Alterações
+
+- Melhor organização do Diagrama e geral
+- Adicionando especializacao/generalizacao para tipos
+
+
+## Exemplo de Integridade na Insercao de dados
+
+
+- Integridade dos Dados Obrigatórios (Parâmetros da Genérica):
+
+    Checagem de Nulos: A procedure verifica se todos os parâmetros obrigatórios da tabela genérica Pokemon não são nulos. Isso inclui dex, nome, tipo, hp, ataque, defesa, velocidade, spAtaque, spDefesa, evolucaoDex, habilidadeId, pokemonDex, e rotaId. Se algum desses parâmetros for nulo, a procedure não prossegue com a inserção e exibe uma mensagem de erro.
+
+- Integridade dos Dados Específicos (Parâmetros da Específica)
+
+    Checagem de Nulos: A procedure verifica se pelo menos um dos parâmetros específicos não é nulo antes de tentar inserir os dados nas tabelas específicas (PokemonDeAgua, PokemonDeFogo, PokemonDePlanta, etc.). Se todos os parâmetros específicos forem nulos, a procedure exibe uma mensagem de erro e não tenta realizar a inserção.
+    Inserção na Tabela Genérica
+
+    Se todos os parâmetros obrigatórios estão presentes e válidos, a procedure insere os dados na tabela Pokemon. A chave primária (ou identificador único) gerada (dex) é retornada e armazenada na variável aux. Isso garante que a mesma chave primária seja usada para as inserções subsequentes nas tabelas específicas.
+
+- Inserção nas Tabelas Específicas:
+    
+    A procedure insere dados nas tabelas específicas de acordo com os parâmetros fornecidos. Por exemplo, se _hydro_pump não for nulo, insere um registro na tabela PokemonDeAgua com o id retornado da tabela Pokemon e o valor de _hydro_pump.
+
+- Restrições de Integridade: 
+    
+    Cada tabela específica tem sua própria restrição de integridade, geralmente assegurando que o id é uma chave estrangeira válida que corresponde a um dex na tabela Pokemon. Isso garante que não haja registros órfãos e que todos os dados específicos estejam associados a um Pokémon existente.
+
+- Mensagens de Erro: 
+    
+    Se algum dos parâmetros obrigatórios da tabela genérica estiver faltando ou se todos os parâmetros específicos estiverem nulos, a procedure levanta uma mensagem de erro apropriada usando RAISE NOTICE. Isso ajuda na depuração e garante que o usuário saiba o que está errado.
+
+```sql
+
 -- DDL
 
 DROP TABLE IF EXISTS Pokemon CASCADE;
@@ -301,3 +341,5 @@ REVOKE INSERT ON PokemonDragao FROM PUBLIC;
 REVOKE INSERT ON PokemonSombrio FROM PUBLIC;
 REVOKE INSERT ON PokemonMetalico FROM PUBLIC;
 REVOKE INSERT ON PokemonFada FROM PUBLIC;
+```
+
