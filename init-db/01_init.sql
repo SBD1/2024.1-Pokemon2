@@ -35,41 +35,25 @@ CREATE TABLE "Treinador" (
     "qtdUltraBall" INTEGER NOT NULL,
     "qtdMasterBall" INTEGER NOT NULL,
     "timePokemonId" INTEGER NOT NULL,
+    "rotaAtualId" INTEGER,
+    "cidadeAtualId" INTEGER,
     CONSTRAINT "Treinador_pkey" PRIMARY KEY ("id")
 );
--- CreateTable
+-- CreateTable Rota com Foreign Keys
 CREATE TABLE "Rota" (
     "id" SERIAL NOT NULL,
+    "rotaDestinoId" INTEGER,
+    "cidadeDestinoId" INTEGER,
     CONSTRAINT "Rota_pkey" PRIMARY KEY ("id")
 );
--- CreateTable
-CREATE TABLE "RotaRota" (
-    "id" SERIAL NOT NULL,
-    "origemRotaId" INTEGER NOT NULL,
-    "destinoRotaId" INTEGER NOT NULL,
-    CONSTRAINT "RotaRota_pkey" PRIMARY KEY ("id")
-);
--- CreateTable
-CREATE TABLE "RotaRotaCidade" (
-    "id" SERIAL NOT NULL,
-    "origemRotaId" INTEGER NOT NULL,
-    "destinoCidadeId" INTEGER NOT NULL,
-    CONSTRAINT "RotaRotaCidade_pkey" PRIMARY KEY ("id")
-);
--- CreateTable
-CREATE TABLE "RotaCidadeRota" (
-    "id" SERIAL NOT NULL,
-    "origemCidadeId" INTEGER NOT NULL,
-    "destinoRotaId" INTEGER NOT NULL,
-    CONSTRAINT "RotaCidadeRota_pkey" PRIMARY KEY ("id")
-);
--- CreateTable
+-- CreateTable Cidade com Foreign Key para Rota
 CREATE TABLE "Cidade" (
     "id" SERIAL NOT NULL,
     "nome" TEXT NOT NULL,
     "possui_pokemart" BOOLEAN NOT NULL,
     "possui_centro_pokemon" BOOLEAN NOT NULL,
     "possui_ginasio" BOOLEAN NOT NULL,
+    "rotaId" INTEGER,
     CONSTRAINT "Cidade_pkey" PRIMARY KEY ("id")
 );
 -- CreateTable
@@ -173,6 +157,7 @@ CREATE TABLE "TimeNPC" (
 CREATE TABLE "Pokeball" (
     "id" SERIAL NOT NULL,
     "tipo" "PokeballTipo" NOT NULL,
+    "chanceCaptura" INTEGER NOT NULL,
     CONSTRAINT "Pokeball_pkey" PRIMARY KEY ("id")
 );
 -- CreateTable
@@ -264,24 +249,6 @@ CREATE UNIQUE INDEX "NPC_TimeNPCId_key" ON "NPC"("TimeNPCId");
 -- AddForeignKey
 ALTER TABLE "Treinador"
 ADD CONSTRAINT "Treinador_timePokemonId_fkey" FOREIGN KEY ("timePokemonId") REFERENCES "TimePokemon"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
--- AddForeignKey
-ALTER TABLE "RotaRota"
-ADD CONSTRAINT "RotaRota_origemRotaId_fkey" FOREIGN KEY ("origemRotaId") REFERENCES "Rota"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
--- AddForeignKey
-ALTER TABLE "RotaRota"
-ADD CONSTRAINT "RotaRota_destinoRotaId_fkey" FOREIGN KEY ("destinoRotaId") REFERENCES "Rota"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
--- AddForeignKey
-ALTER TABLE "RotaRotaCidade"
-ADD CONSTRAINT "RotaRotaCidade_origemRotaId_fkey" FOREIGN KEY ("origemRotaId") REFERENCES "Rota"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
--- AddForeignKey
-ALTER TABLE "RotaRotaCidade"
-ADD CONSTRAINT "RotaRotaCidade_destinoCidadeId_fkey" FOREIGN KEY ("destinoCidadeId") REFERENCES "Cidade"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
--- AddForeignKey
-ALTER TABLE "RotaCidadeRota"
-ADD CONSTRAINT "RotaCidadeRota_origemCidadeId_fkey" FOREIGN KEY ("origemCidadeId") REFERENCES "Cidade"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
--- AddForeignKey
-ALTER TABLE "RotaCidadeRota"
-ADD CONSTRAINT "RotaCidadeRota_destinoRotaId_fkey" FOREIGN KEY ("destinoRotaId") REFERENCES "Rota"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 -- AddForeignKey
 ALTER TABLE "Lider"
 ADD CONSTRAINT "Lider_timeLiderID_fkey" FOREIGN KEY ("timeLiderID") REFERENCES "TimeNPC"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
@@ -450,18 +417,20 @@ INSERT INTO "Treinador" (
         "qtdGreatBall",
         "qtdUltraBall",
         "qtdMasterBall",
-        "timePokemonId"
+        "timePokemonId",
+        "rotaAtualId",
+        "cidadeAtualId"
     )
-VALUES ('Ash Ketchum', 5, 0, 0, 0, 1);
-INSERT INTO "Rota" DEFAULT
-VALUES;
-INSERT INTO "Rota" DEFAULT
-VALUES;
-INSERT INTO "Rota" DEFAULT
-VALUES;
-INSERT INTO "Rota" DEFAULT
-VALUES;
--- Inserir dados na tabela Cidade
+VALUES ('Ash Ketchum', 5, 0, 0, 0, 1, 1, NULL);
+INSERT INTO "Rota" (
+        "rotaDestinoId",
+        "cidadeDestinoId"
+    )
+VALUES(1, 2),
+    (2, 3),
+    (3, 1),
+    (3, 2),
+    (2, 1);
 INSERT INTO "Cidade" (
         "nome",
         "possui_pokemart",
@@ -476,17 +445,6 @@ INSERT INTO "TimeNPC" ("id")
 VALUES (1),
     (2),
     (3);
-INSERT INTO "RotaRota" ("origemRotaId", "destinoRotaId")
-VALUES (2, 3);
--- Inserir dados na tabela RotaRotaCidade
-INSERT INTO "RotaRotaCidade" ("origemRotaId", "destinoCidadeId")
-VALUES (1, 1),
-    (3, 2),
-    (4, 3);
--- Inserir dados na tabela RotaCidadeRota
-INSERT INTO "RotaCidadeRota" ("origemCidadeId", "destinoRotaId")
-VALUES (1, 2),
-    (2, 4);
 INSERT INTO "Lider" ("ginasioId", "biografia", "timeLiderID")
 VALUES (1, 'Líder experiente de Pokémon.', 1),
     (2, 'Especialista em Pokémon de tipo Fogo.', 2),
@@ -534,3 +492,11 @@ INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
 VALUES ('Ferroada', 'METAL', 60, 100);
 INSERT INTO "Habilidade" (nome, tipo, poder, precisao)
 VALUES ('Beijo do Amor', 'FADA', 90, 100);
+INSERT INTO "Pokeball" (tipo, "chanceCaptura")
+VALUES ('POKEBALL', 50);
+INSERT INTO "Pokeball" (tipo, "chanceCaptura")
+VALUES ('GREATBALL', 75);
+INSERT INTO "Pokeball" (tipo, "chanceCaptura")
+VALUES ('ULTRABALL', 90);
+INSERT INTO "Pokeball" (tipo, "chanceCaptura")
+VALUES ('MASTERBALL', 100);
