@@ -33,24 +33,29 @@ theme:
 
 
 nav:
-  - Home: index.md
+  - Home: geral/index.md
   - Artefatos :
     - DER: 
-      - V1: der_v1.md
-      - V2: der_v2.md
-      - V3: der_v3.md
-      - V4: der_v4.md 
+      - V1: der_dicionario/der_v1.md
+      - V2: der_dicionario/der_v2.md
+      - V3: der_dicionario/der_v3.md
+      - V4: der_dicionario/der_v4.md 
     - Dicionário de Dados:
-      - V1: dicionario_de_dados_v1.md
-      - V2: dicionario_de_dados_v2.md
-      - V3: dicionario_de_dados_v3.md
-      - V4: dicionario_de_dados_v4.md
-    - Modelos Relacional: modelo_logico.md
+      - V1: der_dicionario/dicionario_de_dados_v1.md
+      - V2: der_dicionario/dicionario_de_dados_v2.md
+      - V3: der_dicionario/dicionario_de_dados_v3.md
+      - V4: der_dicionario/dicionario_de_dados_v4.md
+      - V5: der_dicionario/dicionario_de_dados_v5.md
+    - Modelos Relacional: 
+      - V1: modelo_logico/modelo_logico.md
+      - V2: modelo_logico/modelo_logico_v2.md
+      - V3: modelo_logico/modelo_logico_v3.md
 
   - Geral:
-    - Ata de Reuniões: ata_de_reunioes.md
-    - Apresentações: apresentacoes.md
-
+    - Ata de Reuniões: geral/ata_de_reunioes.md
+    - Apresentações: geral/apresentacoes.md
+  - Jogo:
+    - Jogo: game/game.md
 
 
 extra_javascript:

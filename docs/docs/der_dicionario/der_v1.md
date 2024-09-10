@@ -2,7 +2,7 @@
 
 ## DER:
 
-![Image](der_v1.png)
+![Image](imagens/der_v1.png)
 
 ### Entidades:
 

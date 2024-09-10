@@ -4,7 +4,11 @@
 
 ## Entrega do Trabalho - Módulo 2
 
+- [Entrega do Trabalho - Módulo 2](https://www.youtube.com/watch?v=O-SqRkyf6m8&ab_channel=ArthurFerreira)
+
 ## Entrega do Trabalho - Módulo 3
+
+- [Entrega do Trabalho - Módulo 3]()
 
 ## Histórico de Versões
 

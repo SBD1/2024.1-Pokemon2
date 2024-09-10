@@ -2,7 +2,7 @@
 
 ## DER:
 
-![Image](der_v2.png)
+![Image](imagens/der_v2.png)
 
 
 <details>

@@ -2,7 +2,7 @@
 
 ## DER:
 
-![Image](der_v4.png)
+![Image](imagens/der_v4.png)
 
 ## Principais Alterações
 

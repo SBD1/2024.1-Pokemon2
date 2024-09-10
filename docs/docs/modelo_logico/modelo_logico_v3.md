@@ -1,4 +1,4 @@
-# Modelo Lógico
+# Modelo Lógico V3
 
 ## Introducao:
 
@@ -10,7 +10,7 @@ Ele descreve como os dados serão armazenados e organizados em tabelas, colunas,
 
 ## Representação:
 
-![Image](modelo_logico.png)
+![Image](imagens/logico_v3.png)
 
 
 ## Introdução
