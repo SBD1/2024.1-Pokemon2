@@ -445,19 +445,32 @@ INSERT INTO "Cidade" (
         "possui_ginasio"
     )
 VALUES ('Cidade A', TRUE, TRUE, TRUE),
-    ('Cidade B', FALSE, TRUE, FALSE),
-    ('Cidade C', TRUE, FALSE, TRUE);
+    ('Cidade B', FALSE, TRUE, TRUE),
+    ('Cidade C', TRUE, FALSE, TRUE),
+    ('Cidade D', TRUE, TRUE, FALSE),
+    ('Cidade E', FALSE, FALSE, TRUE);
 -- Inserir dados na tabela TimeNPC
 INSERT INTO "TimeNPC" ("id")
 VALUES (1),
     (2),
-    (3);
+    (3),
+    (4),
+    (5),
+    (6);
 INSERT INTO "Lider" ("ginasioId", "biografia", "timeLiderID")
 VALUES (1, 'Líder experiente de Pokémon.', 1),
     (2, 'Especialista em Pokémon de tipo Fogo.', 2),
     (3, 'Treinador renomado no tipo Água.', 3);
 INSERT INTO "Liga" ("descricao", "nInsiginias")
-VALUES ('Liga de Kanto', 3);
+VALUES ('Liga de Kanto', 3),
+('Liga de Johto', 3),
+('Liga de Hoenn', 3),
+('Liga de Sinnoh', 3),
+('Liga de Unova', 3),
+('Liga de Kalos', 3),
+('Liga de Alola', 3),
+('Liga de Galar', 3);
+
 INSERT INTO "Ginasio" ("cidadeId", "liderId", "ligaId")
 VALUES (1, 1, 1),
     (2, 2, 1),
@@ -515,4 +528,10 @@ VALUES ('Gary Oak', 1, 1),
 INSERT INTO "Insignia" (nome, "liderId", "tipoPokemon")
 VALUES ('Insignia de Pedra', 1, 'PEDRA'),
     ('Insignia de Cascata', 2, 'AGUA'),
-    ('Insignia de Trovão', 3, 'ELETRICO');
+    ('Insignia de Trovão', 3, 'ELETRICO'),
+    ('Insignia de Alma', 1, 'FANTASMA'),
+    ('Insignia de Arco-Íris', 2, 'NORMAL'),
+    ('Insignia de Lama', 3, 'VENENOSO'),
+    ('Insignia de Vulcão', 1, 'FOGO'),
+    ('Insignia de Terra', 2, 'TERRA'),
+    ('Insignia de Alma', 3, 'FANTASMA');
