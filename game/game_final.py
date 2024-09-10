@@ -65,12 +65,13 @@ def criar_novo_treinador(db_engine):
     qtdMasterBall = 0
     timePokemonId = get_ultimo_id_time(db_engine) + 1
     rotaInicial = 1
+    cidadeAtual = 1
     
     criar_novo_time(db_engine, timePokemonId)
     
     query = text("""
         INSERT INTO public."Treinador" ("nome", "qtdPokeball", "qtdGreatBall", "qtdUltraBall", "qtdMasterBall", "timePokemonId", "rotaAtualId", "cidadeAtualId") 
-        VALUES (:nome_treinador, :qtdPokeball, :qtdGreatBall, :qtdUltraBall, :qtdMasterBall, :timePokemonId, :rotaInicial, NULL)
+        VALUES (:nome_treinador, :qtdPokeball, :qtdGreatBall, :qtdUltraBall, :qtdMasterBall, :timePokemonId, :rotaInicial, :cidadeAtualId)
         RETURNING id;
     """)
 
@@ -82,7 +83,8 @@ def criar_novo_treinador(db_engine):
             "qtdUltraBall": qtdUltraBall,
             "qtdMasterBall": qtdMasterBall,
             "timePokemonId": timePokemonId,
-            "rotaInicial": rotaInicial
+            "rotaInicial": rotaInicial,
+            "cidadeAtualId": cidadeAtual
         })
 
         treinador= result.fetchone()
@@ -139,6 +141,17 @@ def carregar_treinador(db_engine):
         slow_print(f"Erro ao carregar treinador: {e}")
         return None
 
+def get_treinador(db_engine, treinador_id):
+    query = text(f"""
+        SELECT * FROM public."Treinador" WHERE "id" = {treinador_id}
+    """)
+    try:
+        result = db_engine.execute(query)
+        treinador = result.fetchone()
+        return treinador
+    except Exception as e:
+        slow_print(f"Erro ao buscar treinador {treinador_id}: {e}")
+        return None
         
 def navega_rotas(db_engine, player_treinador, destinos):
     andou = False
@@ -195,6 +208,8 @@ def navega_cidades(db_engine, player_treinador, destinos_cidade):
         return None
     
 def set_posicao_treinador_rota(db_engine, player_treinador, rotaAtual):
+    if rotaAtual == None:
+        rotaAtual = "NULL"
     query_rotaAtual = text(f"""
         UPDATE public."Treinador" SET "rotaAtualId" = {rotaAtual} WHERE "id" = {player_treinador}
     """)
@@ -249,6 +264,8 @@ def get_cidade(db_engine, cidadeId):
         return None
     
 def get_destinos_rota(db_engine, rotaAtual):    
+    if rotaAtual == None:
+        rotaAtual = 1
     query = text(f"""
         SELECT "rotaDestinoId", "cidadeDestinoId" FROM public."Rota" WHERE "id" = {rotaAtual}
     """)
@@ -371,30 +388,66 @@ def spawn_pokemon(db_engine, player_treinador):
                     pokeball = int(pokeball)
                     reduzir_pokeball(db_engine, player_treinador, pokeball)
                     capturado = capturar_pokemon(db_engine, pokemon, player_treinador, pokeball)
-                    if capturado:
+                    if capturado:  # Se o pokemon foi capturado, sair do loop
                         break
                 else:
                     slow_print("Opção inválida. Tente novamente.")
             elif escolha == '2':
                 slow_print(f"Você fugiu do {pokemon.nome}!")
+                break
             else:
                 slow_print("Opção inválida. Tente novamente.")
                 
     except Exception as e:
         slow_print(f"Erro ao buscar pokemons: {e}")
+
+def criar_instancia_pokemon(pokemon, treinador):
+    pokemon = list(pokemon)
+    
+    if pokemon[9] is None:
+        pokemon[9] = 1
+    query = text("""
+        INSERT INTO public."PokemonInst" ("pokemonDex", "treinadorId", "nivel", "hp", "ataque", "defesa", "velocidade", "spAtaque", "spDefesa", "timePokemonId")
+        VALUES (:pokemonDex, :treinadorId, :nivel, :hp, :ataque, :defesa, :velocidade, :spAtaque, :spDefesa, :timePokemonId)
+        RETURNING id;
+    """)
+
+    print(pokemon)
+    try:
+        result = db_engine.execute(query, {
+            "pokemonDex": pokemon[0],   # 'dex' é o primeiro campo
+            "treinadorId": treinador.id,
+            "nivel": pokemon[9],        # 'nivel' é o décimo campo
+            "hp": pokemon[3],           # 'hp' é o quarto campo
+            "ataque": pokemon[4],       # 'ataque' é o quinto campo
+            "defesa": pokemon[5],       # 'defesa' é o sexto campo
+            "velocidade": pokemon[6],   # 'velocidade' é o sétimo campo
+            "spAtaque": pokemon[7],     # 'spAtaque' é o oitavo campo
+            "spDefesa": pokemon[8],      # 'spDefesa' é o nono campo
+            "timePokemonId": treinador.timePokemonId
+        })
+        id_pokemon = result.fetchone()
+        db_engine.commit()
+        return id_pokemon
+    except Exception as e:
+        slow_print(f"Erro ao criar instância do Pokémon: {e}")
+        return None
+    
         
 def capturar_pokemon(db_engine, pokemon_adversario, id_treinador, pokeball):
-    
+    print(f"Capturando {pokemon_adversario.nome} com a pokeball {pokeball}")
     query_chance_pokeball = text(f"""
         SELECT "chanceCaptura" FROM public."Pokeball" WHERE "id" = {int(pokeball)}
     """)
                    
-    print(f"Chance de captura da pokeball: {type(pokeball)}")
+
     try:
         print(f"Tentando capturar {pokemon_adversario.nome} com a pokeball {pokeball}")
         result = db_engine.execute(query_chance_pokeball)
         multiplicador_bola = result.scalar()
-        
+
+        print(f"Chance de captura da pokeball: {multiplicador_bola}")
+
         if multiplicador_bola == 100:
             slow_print(f"Parabéns! Você capturou o {pokemon_adversario.nome}!")
             print(f"Tentando adicionar {pokemon_adversario.nome} ao time.")
@@ -409,9 +462,11 @@ def capturar_pokemon(db_engine, pokemon_adversario, id_treinador, pokeball):
                 slow_print(f"Parabéns! Você capturou o {pokemon_adversario.nome}!")
                 print(f"Tentando adicionar {pokemon_adversario.nome} ao time.")
                 if id_treinador and pokemon_adversario.nome:
-                    id_pokemon = criar_instancia_pokemon(pokemon_adversario, id_treinador)
-                    if id_pokemon:
-                        #adicionar_ao_inventario(id_treinador, "Pokemon", pokemon_adversario['nome'])
+                    treinador = get_treinador(db_engine, id_treinador)
+                    id_pokemon = criar_instancia_pokemon(pokemon_adversario, treinador)
+                    print(f"ID do Pokémon capturado: {id_pokemon[0]}")
+                    if id_pokemon[0]:
+                        slow_print(f"Parabéns! Você capturou o {pokemon_adversario[2]}!")
                         pass
                     else:
                         print("Erro ao criar instância do Pokémon capturado.")
@@ -419,36 +474,13 @@ def capturar_pokemon(db_engine, pokemon_adversario, id_treinador, pokeball):
                     print(f"Erro: id_treinador ou nome do Pokémon não foi definido corretamente.")
                 return True
             elif chance_captura < 10:
-                slow_print(f"Você não conseguiu capturar o {pokemon_adversario['nome']}. Ele escapou!")
-                return False
+                slow_print(f"Você não conseguiu capturar o {pokemon_adversario[2]}. Ele escapou!")
+                return
     except Exception as e:
         slow_print(f"Erro ao buscar chance de captura da pokeball: {e}")
         return None
     
     return False
-    
-    
-def criar_instancia_pokemon(pokemon, id_treinador):
-    query = text("""
-        INSERT INTO public."PokemonTreinador" ("id_treinador", "id_pokemon", "nivel", "hp") 
-        VALUES (:id_treinador, :id_pokemon, :nivel, :hp)
-        RETURNING id;
-    """)
-    
-    try:
-        result = db_engine.execute(query, {
-            "id_treinador": id_treinador,
-            "id_pokemon": pokemon['id'],
-            "nivel": pokemon['nivel'],
-            "hp": pokemon['hp']
-        })
-        
-        id_pokemon = result.fetchone()
-        db_engine.commit()
-        return id_pokemon
-    except Exception as e:
-        slow_print(f"Erro ao criar instância do Pokémon: {e}")
-        return None
     
 def adicionar_ao_time(id_treinador):
     pass
@@ -457,10 +489,9 @@ def adicionar_ao_time(id_treinador):
 
 def jogar(db_engine, player_treinador):
     while True:
-        
-        rotaAtual = db_engine.execute(text(f"""
-        SELECT "rotaAtualId" FROM public."Treinador" WHERE id = {player_treinador}
-    """)).scalar()
+        rotaAtual = db_engine.execute(text("""
+            SELECT "rotaAtualId" FROM public."Treinador" WHERE id = :player_treinador
+        """), {"player_treinador": player_treinador}).scalar()
     
         slow_print(f"Você está na rota {rotaAtual}.")
         
@@ -468,42 +499,305 @@ def jogar(db_engine, player_treinador):
         slow_print("O que você deseja fazer?")
         slow_print("1 - Explorar a rota")
         slow_print("2 - Ver informações do treinador")
-        slow_print("3 - Salvar e sair")
+        slow_print("3 - Ver insígnias obtidas")
+        slow_print("4 - Ver Pokemons capturados")
+        slow_print("5 - Salvar e sair")
+        print("\n")
         opcao = slow_input("Escolha uma opção: ")
-        
+        print("\n")
         if opcao == '1':
             cidade = is_on_cidade(db_engine, player_treinador)
             andou = False
-            if cidade == None:
+            
+            if cidade is None:
                 destinos = get_destinos_rota(db_engine, rotaAtual)
                 andou = navega_rotas(db_engine, player_treinador, destinos)
             else:
+                # Está na cidade, pode haver um ginásio
+                clear_terminal()
+                slow_print(f"Você está na cidade {cidade}.")
                 destinos = get_destinos_cidade(db_engine, cidade)
+                print("\n")
+                slow_print("Deseja visitar o ginásio? (S/N)")
+                visita_ginasio = slow_input("Escolha uma opção: ")
+                
+                if visita_ginasio == 's':
+                    print("Visitar ginásio", cidade)
+                    print("\n")
+                    ginasio = get_ginasio_cidade(db_engine, cidade)
+       
+                    if ginasio.possui_ginasio:
+                        npc_ginasio = get_ginasio_npc(db_engine, cidade)
+                        if npc_ginasio:
+                            clear_terminal()
+                            slow_print(f"Você encontrou o líder de ginásio {npc_ginasio.nome}! Prepare-se para a batalha.")
+                            lutar_npc(db_engine, player_treinador, npc_ginasio)
+                        
+
+                
+                    else:
+                        slow_print("Não há ginásio nesta cidade.")
+                
                 andou = navega_cidades(db_engine, player_treinador, destinos)
+            
             if andou:
                 spawn_pokemon(db_engine, player_treinador)
-            
+        
         elif opcao == '2':
-            # Mostra Infos Treinador
-            
-            query = text(f"""
-                SELECT * FROM public."Treinador" WHERE "id" = {player_treinador}
+            query = text("""
+                SELECT * FROM public."Treinador" WHERE "id" = :player_treinador
             """)
             
             try:
-                result = db_engine.execute(query)
+                result = db_engine.execute(query, {"player_treinador": player_treinador})
                 treinador = result.fetchone()
-                slow_print(f"Treinador {treinador[1]}:")
-                slow_print(f"Pokeballs: {treinador[2]}, Great Balls: {treinador[3]}, Ultra Balls: {treinador[4]}, Master Balls: {treinador[5]}")
+                print(treinador)
+                slow_print(f"Treinador {treinador.nome}:")
+                slow_print(f"Pokeballs: {treinador.qtdPokeball}, Great Balls: {treinador.qtdGreatBall}, Ultra Balls: {treinador.qtdUltraBall}, Master Balls: {treinador.qtdMasterBall}")
             except Exception as e:
                 slow_print(f"Erro ao buscar informações do treinador: {e}")
         elif opcao == '3':
+            buscar_insignas(db_engine, player_treinador)
+        
+        elif opcao == '4':
+            mostrar_pokemons(db_engine, player_treinador)
+
+        elif opcao == '5':
             slow_print("Salvando e saindo...")
             break
         else:
             slow_print("Opção inválida. Tente novamente.")
         
         wait_for_keypress()
+
+def mostrar_pokemons(db_engine, player_treinador):
+    query = text("""
+        SELECT * FROM public."DetalhesPokemon" WHERE "treinadorId" = :player_treinador
+    """)
+    
+    try:
+        result = db_engine.execute(query, {"player_treinador": player_treinador})
+        pokemons = result.fetchall()
+        
+        if pokemons:
+            slow_print("Pokémons capturados:")
+            for pokemon in pokemons:
+                slow_print(f" ----{pokemon.nome} ( -Nível {pokemon.nivel})")
+        else:
+            slow_print("Nenhum pokémon capturado.")
+    except Exception as e:
+        slow_print(f"Erro ao buscar pokémons do treinador: {e}")
+
+def batalhar_pokemon(db_engine, player_treinador, npc_ginasio):
+    pokemon = escolher_pokemon_batalha(db_engine, player_treinador)
+    pokemon_npc = escolher_pokemon_npc(db_engine, npc_ginasio)
+
+    if pokemon:
+        slow_print(f"Você escolheu o {pokemon[13]} para a batalha!")
+        if pokemon_npc:
+            slow_print(f"O líder de ginásio escolheu o {pokemon_npc[13]} para a batalha!")
+            resultado = batalhar(db_engine, player_treinador, pokemon, pokemon_npc)
+            if resultado:
+                slow_print("Você venceu a batalha!")
+                buscar_insere_insignia(db_engine, player_treinador, npc_ginasio)
+                return True
+            else:
+                slow_print("Você perdeu a batalha!")
+                return False
+            
+def buscar_insignas(db_engine, player_treinador):
+    query = text("""
+        SELECT * FROM public."EntregaInsignia" 
+        INNER JOIN public."Insignia" ON "EntregaInsignia"."insigniaId" = "Insignia"."id"
+            WHERE "treinadorId" = :player_treinador
+    """)
+    try:
+        result = db_engine.execute(query, {"player_treinador": player_treinador})
+        insignas = result.fetchall()
+        if insignas:
+            slow_print("Insignias obtidas:")
+            print(insignas)
+            for insigna in insignas:
+                slow_print(f"Você possui a I{insigna.nome}")
+        else:
+            slow_print("Nenhuma insígnia obtida.")
+    except Exception as e:
+        slow_print(f"Erro ao buscar insígnias: {e}")
+
+def buscar_insere_insignia(db_engine, player_treinador, npc_ginasio):    
+    print(npc_ginasio)
+    query = text("""
+        SELECT * FROM public."Insignia" WHERE "liderId" = :npc_ginasio
+    """)
+
+    try:
+        result = db_engine.execute(query, {"npc_ginasio": npc_ginasio.id})
+        insignia = result.fetchone()
+        print(insignia)
+        if insignia:
+            query_entrega = text("""
+                INSERT INTO public."EntregaInsignia" ("insigniaId", "treinadorId")
+                VALUES (:insigniaId, :treinadorId)
+            """)
+            
+            try:
+                db_engine.execute(query_entrega, {"insigniaId": insignia.id, "treinadorId": player_treinador})
+                db_engine.commit()
+                slow_print(f"Parabéns! Você recebeu a insígnia {insignia.nome}!")
+                return True
+            except Exception as e:
+                slow_print(f"Erro ao entregar insígnia: {e}")
+                return False
+        else:
+            slow_print("Insignia não encontrada.")
+            return False
+    except Exception as e:
+        slow_print(f"Erro ao buscar insígnia: {e}")
+        return False
+
+
+def batalhar(db_engine, player_treinador, pokemon, pokemon_npc):
+    # Calcula dano
+    dano = calcular_dano(pokemon, pokemon_npc)
+    slow_print(f"O {pokemon.nome} causou {dano} de dano ao {pokemon_npc.nome}!")
+    
+    # Verifica se o pokemon foi derrotado
+    if pokemon_npc.hp - dano <= 0:
+        slow_print(f"O {pokemon_npc.nome} foi derrotado!")
+        return True
+    else:
+        slow_print(f"O {pokemon_npc.nome} contra-atacou!")
+        dano_npc = calcular_dano(pokemon_npc, pokemon)
+        slow_print(f"O {pokemon_npc.nome} causou {dano_npc} de dano ao {pokemon.nome}!")
+        
+        # Verifica se o pokemon do jogador foi derrotado
+        if pokemon.hp - dano_npc <= 0:
+            slow_print(f"O {pokemon.nome} foi derrotado!")
+            return False
+        else:
+            slow_print("A batalha continua...")
+            batalhar(db_engine, player_treinador, pokemon, pokemon_npc)
+
+def calcular_dano(pokemon_atacante, pokemon_defensor):
+    dano = (pokemon_atacante.ataque / pokemon_defensor.defesa) * pokemon_atacante.nivel
+    return dano
+
+
+def escolher_pokemon_npc(db_engine, npc_ginasio):
+    query = text("""
+        SELECT * FROM public."PokemonInst" r
+        INNER JOIN public."Pokemon" p ON r."pokemonDex" = p."dex"
+        WHERE r."treinadorId" = :npc_ginasio
+    """)
+
+    try:
+        result = db_engine.execute(query, {"npc_ginasio": npc_ginasio.id})
+        pokemons = result.fetchall()
+        
+        if pokemons:
+            random_pokemon = random.choice(pokemons)
+            return random_pokemon
+        else:
+            slow_print("Nenhum pokemon encontrado. Ande em rotas para encontrar pokemons e captura-los.")
+            return None
+    except Exception as e:
+        slow_print(f"Erro ao buscar pokémons do treinador: {e}")
+        return None
+
+
+def get_ginasio_npc(db_engine, cidade):
+
+    query = text("""
+        SELECT "NPC"."nome", "NPC"."id" FROM public."NPC"
+        JOIN public."Ginasio" ON "NPC"."id" = "Ginasio"."liderId"
+        WHERE "Ginasio"."cidadeId" = :cidade
+    """)
+
+    try:
+        result = db_engine.execute(query, {"cidade": cidade})
+        npc_ginasio = result.fetchone()
+        return npc_ginasio
+    except Exception as e:
+        slow_print(f"Erro ao buscar NPC do ginásio: {e}")
+        return None
+    
+def get_ginasio_cidade(db_engine, cidade):
+    query = text("""
+                 SELECT * FROM public."Cidade" WHERE "id" = :cidade
+                    """)
+    try:
+        result = db_engine.execute(query, {"cidade": cidade})
+        possui_ginasio = result.fetchone()
+        print(possui_ginasio)
+        return possui_ginasio
+    except Exception as e:
+        slow_print(f"Erro ao buscar NPC do ginásio: {e}")
+        return None
+    
+def lutar_npc(db_engine, player_treinador, npc_ginasio):
+
+    print(f"Você deseja lutar contra o líder de ginásio {npc_ginasio.nome}? (S/N)")
+    escolha = slow_input("Escolha uma opção: ")
+    print(npc_ginasio)
+
+    if escolha == 's':
+        resultado = batalhar_pokemon(db_engine, player_treinador, npc_ginasio)
+        if resultado:
+            slow_print(f"Parabéns! Você derrotou o líder de ginásio {npc_ginasio.nome}!")
+        else:
+            slow_print(f"Você foi derrotado pelo líder de ginásio {npc_ginasio.nome}.")
+        query = text("""
+            INSERT INTO public."BatalhaLider" ("ganhou", "perdeu", "treinadorId", "liderId")
+            VALUES (:ganhou, :perdeu , :treinadorId, :liderId)
+        """)
+        if resultado:
+            ganhou = True
+            perdeu = False
+        else:
+            ganhou = False
+            perdeu = True
+        try:
+            db_engine.execute(query, {"ganhou": ganhou, "perdeu": perdeu, "treinadorId": player_treinador, "liderId": npc_ginasio.id})
+            db_engine.commit()
+            return True
+        except Exception as e:
+            slow_print(f"Erro ao iniciar batalha com líder de ginásio: {e}")
+    else:
+        slow_print("Você fugiu da batalha contra o líder de ginásio.")
+        return False
+
+# Função para escolher o pokemon da batalha
+def escolher_pokemon_batalha(db_engine, player_treinador):
+    query = text("""
+        SELECT * FROM public."PokemonInst" 
+        INNER JOIN public."Pokemon" ON "PokemonInst"."pokemonDex" = "Pokemon"."dex"
+        WHERE "PokemonInst"."treinadorId" = :player_treinador
+    """)
+    
+    try:
+        result = db_engine.execute(query, {"player_treinador": player_treinador})
+        pokemons = result.fetchall()
+        if pokemons:
+            slow_print("Escolha um Pokémon para a batalha:")
+            for idx, pokemon in enumerate(pokemons):
+                nome = pokemon[13]
+                nivel = pokemon[1]
+                slow_print(f"{idx+1} - {nome} (Nível {nivel})")
+            
+            escolha = int(slow_input("Escolha um Pokémon: "))
+            if escolha in range(1, len(pokemons)+1):
+                return pokemons[escolha-1]
+            else:
+                slow_print("Opção inválida. Tente novamente.")
+                return None
+        else:
+            slow_print("Nenhum Pokémon disponível para a batalha.")
+            slow_input("Capture pokémons em rotas para poder batalhar.")
+            return None
+    except Exception as e:
+        slow_print(f"Erro ao buscar pokémons do treinador: {e}")
+        return None
+
         
 # Função principal que inicia o jogo
 def iniciar_jogo(db_engine):

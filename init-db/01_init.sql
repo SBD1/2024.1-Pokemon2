@@ -418,28 +418,19 @@ INSERT INTO "Treinador" (
         "qtdUltraBall",
         "qtdMasterBall",
         "timePokemonId",
-        << << << < HEAD "rotaAtualId",
+        "rotaAtualId",
         "cidadeAtualId"
     )
-VALUES ('Ash Ketchum', 5, 0, 0, 0, 1, 1, NULL);
-== == == = "rotaAtualId"
-)
-VALUES ('Ash Ketchum', 5, 0, 0, 0, 1, 1);
->> >> >> > fdb9d4c4d212246fd8cb7dd5c91fc6d37f28393c
+VALUES ('Ash Ketchum', 20, 0, 0, 0, 1, 1, NULL);
 INSERT INTO "Rota" (
         "rotaDestinoId",
         "cidadeDestinoId"
-    ) << << << < HEAD
+    ) 
 VALUES(1, 2),
     (2, 3),
     (3, 1),
     (3, 2),
     (2, 1);
-== == == =
-VALUES (1, 1),
-    (2, 3),
-    (3, NULL),
-    (4, 3);
 INSERT INTO "Rota" DEFAULT
 VALUES;
 INSERT INTO "Rota" DEFAULT
@@ -447,7 +438,6 @@ VALUES;
 INSERT INTO "Rota" DEFAULT
 VALUES;
 -- Inserir dados na tabela Cidade
->> >> >> > fdb9d4c4d212246fd8cb7dd5c91fc6d37f28393c
 INSERT INTO "Cidade" (
         "nome",
         "possui_pokemart",
@@ -517,3 +507,12 @@ INSERT INTO "Pokeball" (tipo, "chanceCaptura")
 VALUES ('ULTRABALL', 90);
 INSERT INTO "Pokeball" (tipo, "chanceCaptura")
 VALUES ('MASTERBALL', 100);
+INSERT INTO "NPC" (nome, "TimeNPCId", "ligaId")
+VALUES ('Gary Oak', 1, 1),
+    ('Misty', 2, 1),
+    ('Brock', 3, 1);
+
+INSERT INTO "Insignia" (nome, "liderId", "tipoPokemon")
+VALUES ('Insignia de Pedra', 1, 'PEDRA'),
+    ('Insignia de Cascata', 2, 'AGUA'),
+    ('Insignia de Trovão', 3, 'ELETRICO');
