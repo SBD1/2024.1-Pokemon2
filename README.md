@@ -1,6 +1,6 @@
 # 2024.1-Pokemon2
 
-Repositório utilizados para criar o modelo da disciplina de banco de dados (SBD1) do jogo Pokémon
+Repositório utilizado para criar o modelo da disciplina de banco de dados (SBD1) do jogo Pokémon
 
 <p align="center">
   <img src="https://github.com/SBD1/2024.1-Pokemon2/blob/main/docs/docs/A.jpg" align="center"/>
