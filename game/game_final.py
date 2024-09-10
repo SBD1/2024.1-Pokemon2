@@ -635,10 +635,7 @@ def participar_liga(db_engine, player_treinador, liga):
                 slow_print("Você venceu a Liga!")
                 slow_print("Você é um mestre Pokémon!")
                 slow_print("Voce ganhou 3 insiginias!")
-                slow_print("Você ganhou 5 ultra balls!")
-                slow_print("Você ganhou 5 master balls!")
-                insere_pokeballs(db_engine, player_treinador, "qtdMasterBall", 5)
-                insere_pokeballs(db_engine, player_treinador, "qtdUltraBall", 5)
+                insere_pokeballs(db_engine, player_treinador, 5)
                 buscar_insere_insignia(db_engine, player_treinador, npc)
                 buscar_insere_insignia(db_engine, player_treinador, npc)
                 buscar_insere_insignia(db_engine, player_treinador, npc)
@@ -653,16 +650,20 @@ def participar_liga(db_engine, player_treinador, liga):
         slow_print(f"Erro ao buscar NPC da liga: {e}")
         return None
     
-def insere_pokeballs(db_engine, player_treinador, pokeball, qtd):
+def insere_pokeballs(db_engine, player_treinador, qtd):
 
-    query = f"""
-        UPDATE public."Treinador" 
-        SET "{pokeball}" = COALESCE("{pokeball}", 0) + :qtd
-        WHERE "id" = :player_treinador
-    """
+    update_ultra = text("""
+        UPDATE public."Treinador" SET "qtdUltraBall" = :qtd WHERE "id" = :player_treinador
+    """)
+    update_master = text("""
+        UPDATE public."Treinador" SET "qtdMasterBall" = :qtd WHERE "id" = :player_treinador
+    """)
     try:
-        db_engine.execute(query, {"pokeball": pokeball, "qtd": qtd, "player_treinador": player_treinador})
+        db_engine.execute(update_ultra, { "qtd": qtd, "player_treinador": player_treinador })
+        db_engine.execute(update_master, { "qtd": qtd, "player_treinador": player_treinador })
         db_engine.commit()
+        print(f"Você ganhou {qtd} ultra balls!")
+        print(f"Você ganhou {qtd} master balls!")
     except Exception as e:
         slow_print(f"Erro ao adicionar pokeballs: {e}")
         return None
