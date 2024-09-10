@@ -1,3 +1,4 @@
+
 CREATE VIEW "DetalhesPokemon" AS
 SELECT p."dex",
     p."nome",

@@ -34,20 +34,18 @@ theme:
 
 nav:
   - Home: index.md
-  - Primeira Entrega:
+  - Artefatos :
     - DER: 
       - V1: der_v1.md
       - V2: der_v2.md
       - V3: der_v3.md
+      - V4: der_v4.md 
     - Dicionário de Dados:
       - V1: dicionario_de_dados_v1.md
       - V2: dicionario_de_dados_v2.md
+      - V3: dicionario_de_dados_v3.md
+      - V4: dicionario_de_dados_v4.md
     - Modelos Relacional: modelo_logico.md
-  - Segunda Entrega:
-    - Data Definition Language (DDL): segunda_entrega/ddl.md
-    - Data Manipulation Language (DML): segunda_entrega/dml.md
-    - Data Query Language (DQL): segunda_entrega/dql.md
-    - Álgebra Relacional (DDL): segunda_entrega/algebra_relacional.md
 
   - Geral:
     - Ata de Reuniões: ata_de_reunioes.md

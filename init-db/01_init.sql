@@ -418,19 +418,36 @@ INSERT INTO "Treinador" (
         "qtdUltraBall",
         "qtdMasterBall",
         "timePokemonId",
-        "rotaAtualId",
+        << << << < HEAD "rotaAtualId",
         "cidadeAtualId"
     )
 VALUES ('Ash Ketchum', 5, 0, 0, 0, 1, 1, NULL);
+== == == = "rotaAtualId"
+)
+VALUES ('Ash Ketchum', 5, 0, 0, 0, 1, 1);
+>> >> >> > fdb9d4c4d212246fd8cb7dd5c91fc6d37f28393c
 INSERT INTO "Rota" (
         "rotaDestinoId",
         "cidadeDestinoId"
-    )
+    ) << << << < HEAD
 VALUES(1, 2),
     (2, 3),
     (3, 1),
     (3, 2),
     (2, 1);
+== == == =
+VALUES (1, 1),
+    (2, 3),
+    (3, NULL),
+    (4, 3);
+INSERT INTO "Rota" DEFAULT
+VALUES;
+INSERT INTO "Rota" DEFAULT
+VALUES;
+INSERT INTO "Rota" DEFAULT
+VALUES;
+-- Inserir dados na tabela Cidade
+>> >> >> > fdb9d4c4d212246fd8cb7dd5c91fc6d37f28393c
 INSERT INTO "Cidade" (
         "nome",
         "possui_pokemart",
