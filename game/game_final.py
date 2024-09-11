@@ -133,6 +133,7 @@ def carregar_treinador(db_engine):
 
         if treinador:
             slow_print(f"Treinador {treinador.nome} carregado com sucesso!")
+            wait_for_keypress()
             return treinador
         else:
             slow_print(f"Treinador com ID {treinador_id} não encontrado.")
@@ -178,10 +179,10 @@ def navega_rotas(db_engine, player_treinador, destinos):
                 # Visitar cidade
                 if (escolha>2):
                     set_posicao_treinador_cidade(db_engine, player_treinador, destinos[escolha/2][1])
-                    slow_print(f"Você chegou a cidade de {get_cidade(db_engine, destinos[escolha/2][1])}")
+                    slow_print(f"Você chegou a cidade de {get_cidade(db_engine, destinos[escolha/2][1]).nome}")
                 else:
                     set_posicao_treinador_cidade(db_engine, player_treinador, destinos[0][1])
-                    slow_print(f"Você chegou a cidade de {get_cidade(db_engine, destinos[0][1])}")              
+                    slow_print(f"Você chegou a cidade de {get_cidade(db_engine, destinos[0][1]).nome}")              
     else:
         slow_print("Nenhum destino encontrado.")
         #TODO:fazer retorno
@@ -401,7 +402,7 @@ def spawn_pokemon(db_engine, player_treinador):
     except Exception as e:
         slow_print(f"Erro ao buscar pokemons: {e}")
 
-def criar_instancia_pokemon(pokemon, treinador):
+def criar_instancia_pokemon(db_engine, pokemon, treinador):
     pokemon = list(pokemon)
     
     if pokemon[9] is None:
@@ -463,10 +464,10 @@ def capturar_pokemon(db_engine, pokemon_adversario, id_treinador, pokeball):
                 print(f"Tentando adicionar {pokemon_adversario.nome} ao time.")
                 if id_treinador and pokemon_adversario.nome:
                     treinador = get_treinador(db_engine, id_treinador)
-                    id_pokemon = criar_instancia_pokemon(pokemon_adversario, treinador)
+                    id_pokemon = criar_instancia_pokemon(db_engine, pokemon_adversario, treinador)
                     print(f"ID do Pokémon capturado: {id_pokemon[0]}")
                     if id_pokemon[0]:
-                        slow_print(f"Parabéns! Você capturou o {pokemon_adversario[2]}!")
+                        slow_print(f"Parabéns! Você capturou o {pokemon_adversario.nome}!")
                         pass
                     else:
                         print("Erro ao criar instância do Pokémon capturado.")
@@ -480,66 +481,81 @@ def capturar_pokemon(db_engine, pokemon_adversario, id_treinador, pokeball):
         slow_print(f"Erro ao buscar chance de captura da pokeball: {e}")
         return None
     
-    return False
-    
-def adicionar_ao_time(id_treinador):
-    pass
-    
-    
+    return False  
 
 def jogar(db_engine, player_treinador):
     while True:
         rotaAtual = db_engine.execute(text("""
             SELECT "rotaAtualId" FROM public."Treinador" WHERE id = :player_treinador
         """), {"player_treinador": player_treinador}).scalar()
-    
-        slow_print(f"Você está na rota {rotaAtual}.")
-        
         clear_terminal()
+        cidade = is_on_cidade(db_engine, player_treinador)
         slow_print("O que você deseja fazer?")
-        slow_print("1 - Explorar a rota")
+        
+        if cidade is None:
+            slow_print(f"Você está na rota {rotaAtual}.")
+
+            slow_print("1 - Explorar a rota")
+        else:
+            cidade_info = get_cidade(db_engine, cidade)
+            
+            slow_print(f"Você está na cidade {cidade_info.nome}.")
+            
+            slow_print("1 - Explorar a cidade")
+                     
         slow_print("2 - Ver informações do treinador")
         slow_print("3 - Ver insígnias obtidas")
         slow_print("4 - Ver Pokemons capturados")
         slow_print("5 - Participar da Liga Pokémon")
-        slow_print("6 - Salvar e sair")
+        slow_print("6 - Salvar e retornar ao menu principal")
         print("\n")
         opcao = slow_input("Escolha uma opção: ")
-        print("\n")
-        if opcao == '1':
-            cidade = is_on_cidade(db_engine, player_treinador)
-            andou = False
             
-            if cidade is None:
-                destinos = get_destinos_rota(db_engine, rotaAtual)
-                andou = navega_rotas(db_engine, player_treinador, destinos)
-            else:
-                # Está na cidade, pode haver um ginásio
-                clear_terminal()
-                slow_print(f"Você está na cidade {cidade}.")
-                destinos = get_destinos_cidade(db_engine, cidade)
-                print("\n")
-                slow_print("Deseja visitar o ginásio? (S/N)")
-                visita_ginasio = slow_input("Escolha uma opção: ")
-                
-                if visita_ginasio == 's':
-                    print("Visitar ginásio", cidade)
-                    print("\n")
-                    ginasio = get_ginasio_cidade(db_engine, cidade)
-       
-                    if ginasio.possui_ginasio:
-                        npc_ginasio = get_ginasio_npc(db_engine, cidade)
-                        if npc_ginasio:
-                            clear_terminal()
-                            slow_print(f"Você encontrou o líder de ginásio {npc_ginasio.nome}! Prepare-se para a batalha.")
-                            lutar_npc(db_engine, player_treinador, npc_ginasio, liga=False)
-                    else:
-                        slow_print("Não há ginásio nesta cidade.")
-                
-                andou = navega_cidades(db_engine, player_treinador, destinos)
-            
-            if andou:
+        clear_terminal()
+        if opcao == '1' and cidade is None:            
+            destinos = get_destinos_rota(db_engine, rotaAtual)
+            if navega_rotas(db_engine, player_treinador, destinos):
                 spawn_pokemon(db_engine, player_treinador)
+        elif opcao == '1' and cidade is not None:
+            slow_print(f"Você está na cidade {cidade}.")
+            destinos = get_destinos_cidade(db_engine, cidade)
+            ginasioId = get_ginasio_cidade(db_engine, cidade)
+            print("\n")
+            
+            menu = "O que você deseja fazer?\n"
+            cont = 0
+            if cidade_info.rotaId:
+                cont += 1
+                menu += "S - Explorar rotas\n"
+            if ginasioId:
+                cont += 1
+                menu += "G - Visitar ginásio\n"
+            if cidade_info.possui_centro_pokemon:
+                cont += 1
+                menu += "C - Visitar Centro Pokémon\n"
+            if cidade_info.possui_pokemart:
+                cont += 1
+                menu += "M - Visitar PokeMart\n"
+                
+            slow_print(menu)
+            entrada = slow_input("Escolha uma opção: ")
+            
+            clear_terminal()
+            if entrada.upper() == 'S':
+                if navega_cidades(db_engine, player_treinador, cidade):
+                    spawn_pokemon(db_engine, player_treinador)
+            elif entrada.upper() == 'G':
+                slow_print("Você entrou no ginásio!")
+                npc_ginasio = get_ginasio_npc(db_engine, ginasioId.id)
+                batalhar_pokemon(db_engine, player_treinador, npc_ginasio)
+            elif entrada.upper() == 'C':
+                slow_print("Você entrou no Centro Pokémon!")
+                curar_pokemons(db_engine, player_treinador)
+            elif entrada.upper() == 'M':
+                slow_print("Você entrou no PokeMart!")
+                presentear_pokeballs(db_engine, player_treinador)
+            else:
+                slow_print("Opção inválida. Tente novamente.")
         
         elif opcao == '2':
             query = text("""
@@ -565,11 +581,52 @@ def jogar(db_engine, player_treinador):
 
         elif opcao == '6':
             slow_print("Salvando e saindo...")
+            main()
             break
         else:
             slow_print("Opção inválida. Tente novamente.")
         
         wait_for_keypress()
+        
+def presentear_pokeballs(db_engine, player_treinador):
+    insere_pokeballs(db_engine, player_treinador, 5)
+        
+def curar_pokemons(db_engine, player_treinador):
+    query = text("""
+        SELECT * FROM public."DetalhesPokemon" WHERE "treinadorId" = :player_treinador
+    """)
+    
+    try:
+        result = db_engine.execute(query, {"player_treinador": player_treinador})
+        pokemons = result.fetchall()
+        
+        if pokemons:
+            slow_print("Pokémons curados:")
+            for pokemon in pokemons:
+                curar_pokemon(db_engine, pokemon)
+        else:
+            slow_print("Nenhum pokémon para curar.")
+    except Exception as e:
+        slow_print(f"Erro ao buscar pokémons do treinador: {e}")
+        
+def curar_pokemon(db_engine, pokemon):
+    query = text("""
+        UPDATE public."DetalhesPokemon" SET "hp" = :maxHp WHERE "id" = :pokemon_id
+    """)
+    
+    query_get_maxHp = text("""
+        SELECT "hp" FROM public."Pokemon" WHERE "id" = :pokemon_id
+    """)
+    
+    try:       
+        result = db_engine.execute(query_get_maxHp, {"pokemon_id": pokemon.id})
+        maxHp = result.scalar()
+        
+        db_engine.execute(query, {"pokemon_id": pokemon.id, "maxHp": maxHp})
+        db_engine.commit()
+        slow_print(f"{pokemon.nome} foi curado!")
+    except Exception as e:
+        slow_print(f"Erro ao curar pokémon {pokemon.nome}: {e}")
 
 def liga_pokemon(db_engine, player_treinador):
 
@@ -680,7 +737,8 @@ def mostrar_pokemons(db_engine, player_treinador):
         if pokemons:
             slow_print("Pokémons capturados:")
             for pokemon in pokemons:
-                slow_print(f" ----{pokemon.nome} ( -Nível {pokemon.nivel})")
+                # Print pokemon name and hp
+                slow_print(f"{pokemon.nome} - HP: {pokemon.hp}")
         else:
             slow_print("Nenhum pokémon capturado.")
     except Exception as e:
@@ -691,9 +749,9 @@ def batalhar_pokemon(db_engine, player_treinador, npc_ginasio):
     pokemon_npc = escolher_pokemon_npc(db_engine, npc_ginasio)
 
     if pokemon:
-        slow_print(f"Você escolheu o {pokemon[13]} para a batalha!")
+        slow_print(f"Você escolheu o {pokemon.nome} para a batalha!")
         if pokemon_npc:
-            slow_print(f"O líder de ginásio escolheu o {pokemon_npc[13]} para a batalha!")
+            slow_print(f"O líder de ginásio escolheu o {pokemon_npc.nome} para a batalha!")
             resultado = batalhar(db_engine, player_treinador, pokemon, pokemon_npc)
             if resultado:
                 slow_print("Você venceu a batalha!")
@@ -714,9 +772,8 @@ def buscar_insignas(db_engine, player_treinador):
         insignas = result.fetchall()
         if insignas:
             slow_print("Insignias obtidas:")
-            print(insignas)
             for insigna in insignas:
-                slow_print(f"Você possui a I{insigna.nome}")
+                slow_print(f"- {insigna.nome}")
         else:
             slow_print("Nenhuma insígnia obtida.")
     except Exception as e:
@@ -751,39 +808,57 @@ def buscar_insere_insignia(db_engine, player_treinador, npc_ginasio):
         slow_print(f"Erro ao buscar insígnia: {e}")
         return False
 
-
 def batalhar(db_engine, player_treinador, pokemon, pokemon_npc):
-    # Calcula dano
-    dano = calcular_dano(pokemon, pokemon_npc)
-    slow_print(f"O {pokemon.nome} causou {dano} de dano ao {pokemon_npc.nome}!")
-    
-    # Verifica se o pokemon foi derrotado
-    if pokemon_npc.hp - dano <= 0:
-        slow_print(f"O {pokemon_npc.nome} foi derrotado!")
-        return True
-    else:
-        slow_print(f"O {pokemon_npc.nome} contra-atacou!")
-        dano_npc = calcular_dano(pokemon_npc, pokemon)
-        slow_print(f"O {pokemon_npc.nome} causou {dano_npc} de dano ao {pokemon.nome}!")
+    hp_pokemon_npc = pokemon_npc.hp
+    while True:
+        if pokemon_npc.velocidade > pokemon.velocidade:
+            slow_print(f"O {pokemon_npc.nome} atacou primeiro!")
         
-        # Verifica se o pokemon do jogador foi derrotado
-        if pokemon.hp - dano_npc <= 0:
-            slow_print(f"O {pokemon.nome} foi derrotado!")
-            return False
+            dano = calcular_dano(pokemon_npc, pokemon)
+            hp_pokemon = pokemon.hp - dano
+            slow_print(f"O {pokemon_npc.nome} causou {dano} de dano no {pokemon.nome}!")
+            slow_print(f"HP do {pokemon.nome}: {hp_pokemon}")
+            if hp_pokemon <= 0:
+                slow_print(f"O {pokemon.nome} foi derrotado!")
+                return False
+            
+            dano = calcular_dano(pokemon, pokemon_npc)
+            hp_pokemon_npc = hp_pokemon_npc - dano
+            slow_print(f"O {pokemon.nome} causou {dano} de dano no {pokemon_npc.nome}!")
+            slow_print(f"HP do {pokemon_npc.nome}: {hp_pokemon_npc}")
+            if hp_pokemon_npc <= 0:
+                slow_print(f"O {pokemon_npc.nome} foi derrotado!")
+                return True
         else:
-            slow_print("A batalha continua...")
-            batalhar(db_engine, player_treinador, pokemon, pokemon_npc)
-
+            slow_print(f"O {pokemon.nome} atacou primeiro!")
+            
+            dano = calcular_dano(pokemon, pokemon_npc)
+            hp_pokemon_npc = hp_pokemon_npc - dano
+            slow_print(f"O {pokemon.nome} causou {dano} de dano no {pokemon_npc.nome}!")
+            slow_print(f"HP do {pokemon_npc.nome}: {hp_pokemon_npc}")
+            if hp_pokemon_npc <= 0:
+                slow_print(f"O {pokemon_npc.nome} foi derrotado!")
+                return True
+            
+            dano = calcular_dano(pokemon_npc, pokemon)
+            hp_pokemon = pokemon.hp - dano
+            slow_print(f"O {pokemon_npc.nome} causou {dano} de dano no {pokemon.nome}!")
+            slow_print(f"HP do {pokemon.nome}: {hp_pokemon}")
+            if hp_pokemon <= 0:
+                slow_print(f"O {pokemon.nome} foi derrotado!")
+                return False
+        slow_print("Próxima rodada...")
+        wait_for_keypress()   
+        
 def calcular_dano(pokemon_atacante, pokemon_defensor):
     dano = (pokemon_atacante.ataque / pokemon_defensor.defesa) * pokemon_atacante.nivel
     return dano
 
-
 def escolher_pokemon_npc(db_engine, npc_ginasio):
     query = text("""
-        SELECT * FROM public."PokemonInst" r
+        SELECT * FROM public."PokemonInstNPC" r
         INNER JOIN public."Pokemon" p ON r."pokemonDex" = p."dex"
-        WHERE r."treinadorId" = :npc_ginasio
+        WHERE r."timeNPCId" = :npc_ginasio
     """)
 
     try:
@@ -794,12 +869,11 @@ def escolher_pokemon_npc(db_engine, npc_ginasio):
             random_pokemon = random.choice(pokemons)
             return random_pokemon
         else:
-            slow_print("Nenhum pokemon encontrado. Ande em rotas para encontrar pokemons e captura-los.")
+            slow_print("Nenhum pokemon encontrado para este NPC.")
             return None
     except Exception as e:
         slow_print(f"Erro ao buscar pokémons do treinador: {e}")
         return None
-
 
 def get_ginasio_npc(db_engine, cidade):
 
@@ -824,10 +898,9 @@ def get_ginasio_cidade(db_engine, cidade):
     try:
         result = db_engine.execute(query, {"cidade": cidade})
         possui_ginasio = result.fetchone()
-        print(possui_ginasio)
         return possui_ginasio
     except Exception as e:
-        slow_print(f"Erro ao buscar NPC do ginásio: {e}")
+        slow_print(f"Erro ao buscar ginásio: {e}")
         return None
     
 def lutar_npc(db_engine, player_treinador, npc_ginasio, liga):
@@ -880,8 +953,9 @@ def escolher_pokemon_batalha(db_engine, player_treinador):
             slow_print("Escolha um Pokémon para a batalha:")
             for idx, pokemon in enumerate(pokemons):
                 nome = pokemon[13]
-                nivel = pokemon[1]
-                slow_print(f"{idx+1} - {nome} (Nível {nivel})")
+                hp = pokemon.hp
+                slow_print(f"{idx+1} - {nome} - HP: {hp}")
+                
             
             escolha = int(slow_input("Escolha um Pokémon: "))
             if escolha in range(1, len(pokemons)+1):
@@ -907,23 +981,31 @@ def iniciar_jogo(db_engine):
         slow_print("2 - Carregar treinador salvo")
         slow_print("3 - Sair")
         opcao = slow_input("Escolha uma opção: ")
-
+        clear_terminal()
         if opcao == '1':
             player_treinador = criar_novo_treinador(db_engine)
             break
         elif opcao == '2':
             player_treinador = carregar_treinador(db_engine)
             if player_treinador:
+                clear_terminal()
                 slow_print(f"Treinador {player_treinador.nome} pronto para jogar!")
+                wait_for_keypress()
             break
         elif opcao == '3':
             slow_print("Saindo do jogo...")
-            break
+            exit()
         else:
             slow_print("Opção inválida. Tente novamente.")
         
         wait_for_keypress()
     return player_treinador
+
+def main():
+    db_engine = get_db_engine().connect()
+        
+    player_treinador = iniciar_jogo(db_engine).id
+    jogar(db_engine, player_treinador)
 
 if __name__ == "__main__":
     db_engine = get_db_engine().connect()

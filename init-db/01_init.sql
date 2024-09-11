@@ -108,9 +108,23 @@ CREATE TABLE "PokemonInst" (
     "velocidade" INTEGER NOT NULL,
     "spAtaque" INTEGER NOT NULL,
     "spDefesa" INTEGER NOT NULL,
-    "timePokemonId" INTEGER,
+    "timePokemonId" INTEGER NOT NULL,
     "timeNPCId" INTEGER,
     CONSTRAINT "PokemonInst_pkey" PRIMARY KEY ("id")
+);
+-- CreateTable
+CREATE TABLE "PokemonInstNPC" (
+    "id" SERIAL NOT NULL,
+    "pokemonDex" INTEGER NOT NULL,
+    "timeNPCId" INTEGER NOT NULL,
+    "nivel" INTEGER NOT NULL,
+    "hp" INTEGER NOT NULL,
+    "ataque" INTEGER NOT NULL,
+    "defesa" INTEGER NOT NULL,
+    "velocidade" INTEGER NOT NULL,
+    "spAtaque" INTEGER NOT NULL,
+    "spDefesa" INTEGER NOT NULL,
+    CONSTRAINT "PokemonInstNPC_pkey" PRIMARY KEY ("id")
 );
 -- CreateTable
 CREATE TABLE "Pokemon" (
@@ -421,34 +435,27 @@ INSERT INTO "Treinador" (
         "rotaAtualId",
         "cidadeAtualId"
     )
-VALUES ('Ash Ketchum', 20, 0, 0, 0, 1, 1, NULL);
+VALUES ('Ash Ketchum', 20, 0, 0, 0, 1, NULL, 1);
 INSERT INTO "Rota" (
         "rotaDestinoId",
         "cidadeDestinoId"
-    ) 
-VALUES(1, 2),
-    (2, 3),
-    (3, 1),
-    (3, 2),
-    (2, 1);
-INSERT INTO "Rota" DEFAULT
-VALUES;
-INSERT INTO "Rota" DEFAULT
-VALUES;
-INSERT INTO "Rota" DEFAULT
-VALUES;
+    )
+VALUES (NULL, 2),
+    (3, NULL),
+    (4, 3),
+    (NULL, 4);
 -- Inserir dados na tabela Cidade
 INSERT INTO "Cidade" (
         "nome",
         "possui_pokemart",
         "possui_centro_pokemon",
-        "possui_ginasio"
+        "possui_ginasio",
+        "rotaId"
     )
-VALUES ('Cidade A', TRUE, TRUE, TRUE),
-    ('Cidade B', FALSE, TRUE, TRUE),
-    ('Cidade C', TRUE, FALSE, TRUE),
-    ('Cidade D', TRUE, TRUE, FALSE),
-    ('Cidade E', FALSE, FALSE, TRUE);
+VALUES ('Cidade Inicial', False, False, False, 1),
+    ('Cidade Montanhosa', FALSE, TRUE, TRUE, 2),
+    ('Cidade Vulcanosa', TRUE, FALSE, TRUE, 4),
+    ('Cidade Marítimica', TRUE, TRUE, TRUE, 5);
 -- Inserir dados na tabela TimeNPC
 INSERT INTO "TimeNPC" ("id")
 VALUES (1),
@@ -458,19 +465,11 @@ VALUES (1),
     (5),
     (6);
 INSERT INTO "Lider" ("ginasioId", "biografia", "timeLiderID")
-VALUES (1, 'Líder experiente de Pokémon.', 1),
+VALUES (1, 'Líder experiente de Pokémons tipo Pedra.', 1),
     (2, 'Especialista em Pokémon de tipo Fogo.', 2),
     (3, 'Treinador renomado no tipo Água.', 3);
 INSERT INTO "Liga" ("descricao", "nInsiginias")
-VALUES ('Liga de Kanto', 3),
-('Liga de Johto', 3),
-('Liga de Hoenn', 3),
-('Liga de Sinnoh', 3),
-('Liga de Unova', 3),
-('Liga de Kalos', 3),
-('Liga de Alola', 3),
-('Liga de Galar', 3);
-
+VALUES ('Liga de Kanto', 3);
 INSERT INTO "Ginasio" ("cidadeId", "liderId", "ligaId")
 VALUES (1, 1, 1),
     (2, 2, 1),
@@ -521,17 +520,10 @@ VALUES ('ULTRABALL', 90);
 INSERT INTO "Pokeball" (tipo, "chanceCaptura")
 VALUES ('MASTERBALL', 100);
 INSERT INTO "NPC" (nome, "TimeNPCId", "ligaId")
-VALUES ('Gary Oak', 1, 1),
-    ('Misty', 2, 1),
-    ('Brock', 3, 1);
-
+VALUES ('Gary Oak', 4, 1),
+    ('Misty', 5, 1),
+    ('Brock', 6, 1);
 INSERT INTO "Insignia" (nome, "liderId", "tipoPokemon")
 VALUES ('Insignia de Pedra', 1, 'PEDRA'),
     ('Insignia de Cascata', 2, 'AGUA'),
-    ('Insignia de Trovão', 3, 'ELETRICO'),
-    ('Insignia de Alma', 1, 'FANTASMA'),
-    ('Insignia de Arco-Íris', 2, 'NORMAL'),
-    ('Insignia de Lama', 3, 'VENENOSO'),
-    ('Insignia de Vulcão', 1, 'FOGO'),
-    ('Insignia de Terra', 2, 'TERRA'),
-    ('Insignia de Alma', 3, 'FANTASMA');
+    ('Insignia de Trovão', 3, 'ELETRICO');

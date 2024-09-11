@@ -986,21 +986,3 @@ INSERT INTO public."Pokemon" (nome,tipo,hp,ataque,defesa,velocidade,"spAtaque","
 	 ('Glastrier','GELO'::public."TipoPokemon",100,145,130,30,65,110,NULL,11,2),
 	 ('Spectrier','FANTASMA'::public."TipoPokemon",100,65,60,130,145,80,NULL,14,2),
 	 ('Calyrex','PSIQUICO'::public."TipoPokemon",100,80,80,80,80,80,NULL,7,2);
-
-
-INSERT INTO "PokemonInst" (
-        "pokemonDex",
-        "treinadorId",
-        "nivel",
-        "hp",
-        "ataque",
-        "defesa",
-        "velocidade",
-        "spAtaque",
-        "spDefesa",
-        "timePokemonId",
-        "timeNPCId"
-    )
-VALUES (1, 1, 5, 20, 10, 10, 10, 10, 10, NULL, 1),
-    (2, 1, 5, 20, 10, 10, 10, 10, 10, NULL, 2),
-    (3, 1, 5, 20, 10, 10, 10, 10, 10, NULL, 3);
