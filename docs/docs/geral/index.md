@@ -20,7 +20,7 @@ Nosso objetivo é construir um banco de dados funcional para um jogo no universo
 
 - Entrega do Trabalho - Módulo 1: [link](https://youtu.be/BzyO2wMSp1A)
 - Entrega do Trabalho - Módulo 2: [link](https://youtu.be/O-SqRkyf6m8)
-- Entrega do trabalho - Módulo 3: [link]()
+- Entrega do trabalho - Módulo 3: [link](https://youtu.be/wq15aTOOnYQ)
 
 ## Rodando o Jogo
 

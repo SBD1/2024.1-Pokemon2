@@ -8,7 +8,7 @@
 
 ## Entrega do Trabalho - Módulo 3
 
-- [Entrega do Trabalho - Módulo 3]()
+- [Entrega do Trabalho - Módulo 3](https://youtu.be/wq15aTOOnYQ)
 
 ## Histórico de Versões
 
