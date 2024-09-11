@@ -1,0 +1,1730 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../geral/apresentacoes/">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Jogo - Pokemon</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#jogo-pokemon" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="Pokemon" class="md-header__button md-logo" aria-label="Pokemon" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Pokemon
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Jogo
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Pokemon" class="md-nav__button md-logo" aria-label="Pokemon" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Pokemon
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Artefatos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Artefatos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    DER
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            DER
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../der_dicionario/der_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../der_dicionario/der_v2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../der_dicionario/der_v3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../der_dicionario/der_v4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Dicionário de Dados
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Dicionário de Dados
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../der_dicionario/dicionario_de_dados_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../der_dicionario/dicionario_de_dados_v2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../der_dicionario/dicionario_de_dados_v3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../der_dicionario/dicionario_de_dados_v4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../der_dicionario/dicionario_de_dados_v5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Modelos Relacional
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Modelos Relacional
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelo_logico/modelo_logico/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelo_logico/modelo_logico_v2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelo_logico/modelo_logico_v3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Geral
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Geral
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geral/ata_de_reunioes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ata de Reuniões
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geral/apresentacoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apresentações
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Jogo
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Jogo
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Jogo
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Jogo
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rodando-o-jogo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rodando o Jogo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funcoes-do-jogo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funcoes do Jogo
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Funcoes do Jogo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slow_printtext-delay01" class="md-nav__link">
+    <span class="md-ellipsis">
+      slow_print(text, delay=0.1)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slow_inputprompt-delay01" class="md-nav__link">
+    <span class="md-ellipsis">
+      slow_input(prompt, delay=0.1)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clear_terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      clear_terminal()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wait_for_keypress" class="md-nav__link">
+    <span class="md-ellipsis">
+      wait_for_keypress()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_db_engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_db_engine()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_ultimo_id_timedb_engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_ultimo_id_time(db_engine)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criar_novo_timedb_engine-new_time_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      criar_novo_time(db_engine, new_time_id)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criar_novo_treinadordb_engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      criar_novo_treinador(db_engine)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listar_treinadoresdb_engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      listar_treinadores(db_engine)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#carregar_treinadordb_engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      carregar_treinador(db_engine)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_treinadordb_engine-treinador_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_treinador(db_engine, treinador_id)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navega_rotasdb_engine-player_treinador-destinos" class="md-nav__link">
+    <span class="md-ellipsis">
+      navega_rotas(db_engine, player_treinador, destinos)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navega_cidadesdb_engine-player_treinador-destinos_cidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      navega_cidades(db_engine, player_treinador, destinos_cidade)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set_posicao_treinador_rotadb_engine-player_treinador-rotaatual" class="md-nav__link">
+    <span class="md-ellipsis">
+      set_posicao_treinador_rota(db_engine, player_treinador, rotaAtual)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set_posicao_treinador_cidadedb_engine-player_treinador-cidadeatual" class="md-nav__link">
+    <span class="md-ellipsis">
+      set_posicao_treinador_cidade(db_engine, player_treinador, cidadeAtual)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_cidadedb_engine-cidadeid" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_cidade(db_engine, cidadeId)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_destinos_rotadb_engine-rotaatual" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_destinos_rota(db_engine, rotaAtual)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_destinos_cidadedb_engine-cidadeatual" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_destinos_cidade(db_engine, cidadeAtual)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is_on_cidadedb_engine-player_treinador" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_on_cidade(db_engine, player_treinador)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criar_instancia_pokemonpokemon-treinador" class="md-nav__link">
+    <span class="md-ellipsis">
+      criar_instancia_pokemon(pokemon, treinador)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capturar_pokemondb_engine-pokemon_adversario-id_treinador-pokeball" class="md-nav__link">
+    <span class="md-ellipsis">
+      capturar_pokemon(db_engine, pokemon_adversario, id_treinador, pokeball)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jogardb_engine-player_treinador" class="md-nav__link">
+    <span class="md-ellipsis">
+      jogar(db_engine, player_treinador)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mostrar_pokemonsdb_engine-player_treinador" class="md-nav__link">
+    <span class="md-ellipsis">
+      mostrar_pokemons(db_engine, player_treinador)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batalhar_pokemondb_engine-player_treinador-npc_ginasio" class="md-nav__link">
+    <span class="md-ellipsis">
+      batalhar_pokemon(db_engine, player_treinador, npc_ginasio)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buscar_insignasdb_engine-player_treinador" class="md-nav__link">
+    <span class="md-ellipsis">
+      buscar_insignas(db_engine, player_treinador)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buscar_insere_insigniadb_engine-player_treinador-npc_ginasio" class="md-nav__link">
+    <span class="md-ellipsis">
+      buscar_insere_insignia(db_engine, player_treinador, npc_ginasio)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batalhardb_engine-player_treinador-pokemon-pokemon_npc" class="md-nav__link">
+    <span class="md-ellipsis">
+      batalhar(db_engine, player_treinador, pokemon, pokemon_npc)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calcular_danopokemon_atacante-pokemon_defensor" class="md-nav__link">
+    <span class="md-ellipsis">
+      calcular_dano(pokemon_atacante, pokemon_defensor)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#escolher_pokemon_npcdb_engine-npc_ginasio" class="md-nav__link">
+    <span class="md-ellipsis">
+      escolher_pokemon_npc(db_engine, npc_ginasio)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_ginasio_npcdb_engine-cidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_ginasio_npc(db_engine, cidade)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_ginasio_cidadedb_engine-cidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_ginasio_cidade(db_engine, cidade)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lutar_npcdb_engine-player_treinador-npc_ginasio" class="md-nav__link">
+    <span class="md-ellipsis">
+      lutar_npc(db_engine, player_treinador, npc_ginasio)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#escolher_pokemon_batalhadb_engine-player_treinador" class="md-nav__link">
+    <span class="md-ellipsis">
+      escolher_pokemon_batalha(db_engine, player_treinador)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iniciar_jogodb_engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      iniciar_jogo(db_engine)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rodando-o-jogo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rodando o Jogo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funcoes-do-jogo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funcoes do Jogo
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Funcoes do Jogo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slow_printtext-delay01" class="md-nav__link">
+    <span class="md-ellipsis">
+      slow_print(text, delay=0.1)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slow_inputprompt-delay01" class="md-nav__link">
+    <span class="md-ellipsis">
+      slow_input(prompt, delay=0.1)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clear_terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      clear_terminal()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wait_for_keypress" class="md-nav__link">
+    <span class="md-ellipsis">
+      wait_for_keypress()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_db_engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_db_engine()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_ultimo_id_timedb_engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_ultimo_id_time(db_engine)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criar_novo_timedb_engine-new_time_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      criar_novo_time(db_engine, new_time_id)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criar_novo_treinadordb_engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      criar_novo_treinador(db_engine)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listar_treinadoresdb_engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      listar_treinadores(db_engine)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#carregar_treinadordb_engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      carregar_treinador(db_engine)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_treinadordb_engine-treinador_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_treinador(db_engine, treinador_id)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navega_rotasdb_engine-player_treinador-destinos" class="md-nav__link">
+    <span class="md-ellipsis">
+      navega_rotas(db_engine, player_treinador, destinos)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navega_cidadesdb_engine-player_treinador-destinos_cidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      navega_cidades(db_engine, player_treinador, destinos_cidade)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set_posicao_treinador_rotadb_engine-player_treinador-rotaatual" class="md-nav__link">
+    <span class="md-ellipsis">
+      set_posicao_treinador_rota(db_engine, player_treinador, rotaAtual)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set_posicao_treinador_cidadedb_engine-player_treinador-cidadeatual" class="md-nav__link">
+    <span class="md-ellipsis">
+      set_posicao_treinador_cidade(db_engine, player_treinador, cidadeAtual)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_cidadedb_engine-cidadeid" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_cidade(db_engine, cidadeId)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_destinos_rotadb_engine-rotaatual" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_destinos_rota(db_engine, rotaAtual)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_destinos_cidadedb_engine-cidadeatual" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_destinos_cidade(db_engine, cidadeAtual)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is_on_cidadedb_engine-player_treinador" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_on_cidade(db_engine, player_treinador)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criar_instancia_pokemonpokemon-treinador" class="md-nav__link">
+    <span class="md-ellipsis">
+      criar_instancia_pokemon(pokemon, treinador)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capturar_pokemondb_engine-pokemon_adversario-id_treinador-pokeball" class="md-nav__link">
+    <span class="md-ellipsis">
+      capturar_pokemon(db_engine, pokemon_adversario, id_treinador, pokeball)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jogardb_engine-player_treinador" class="md-nav__link">
+    <span class="md-ellipsis">
+      jogar(db_engine, player_treinador)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mostrar_pokemonsdb_engine-player_treinador" class="md-nav__link">
+    <span class="md-ellipsis">
+      mostrar_pokemons(db_engine, player_treinador)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batalhar_pokemondb_engine-player_treinador-npc_ginasio" class="md-nav__link">
+    <span class="md-ellipsis">
+      batalhar_pokemon(db_engine, player_treinador, npc_ginasio)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buscar_insignasdb_engine-player_treinador" class="md-nav__link">
+    <span class="md-ellipsis">
+      buscar_insignas(db_engine, player_treinador)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buscar_insere_insigniadb_engine-player_treinador-npc_ginasio" class="md-nav__link">
+    <span class="md-ellipsis">
+      buscar_insere_insignia(db_engine, player_treinador, npc_ginasio)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batalhardb_engine-player_treinador-pokemon-pokemon_npc" class="md-nav__link">
+    <span class="md-ellipsis">
+      batalhar(db_engine, player_treinador, pokemon, pokemon_npc)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calcular_danopokemon_atacante-pokemon_defensor" class="md-nav__link">
+    <span class="md-ellipsis">
+      calcular_dano(pokemon_atacante, pokemon_defensor)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#escolher_pokemon_npcdb_engine-npc_ginasio" class="md-nav__link">
+    <span class="md-ellipsis">
+      escolher_pokemon_npc(db_engine, npc_ginasio)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_ginasio_npcdb_engine-cidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_ginasio_npc(db_engine, cidade)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_ginasio_cidadedb_engine-cidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_ginasio_cidade(db_engine, cidade)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lutar_npcdb_engine-player_treinador-npc_ginasio" class="md-nav__link">
+    <span class="md-ellipsis">
+      lutar_npc(db_engine, player_treinador, npc_ginasio)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#escolher_pokemon_batalhadb_engine-player_treinador" class="md-nav__link">
+    <span class="md-ellipsis">
+      escolher_pokemon_batalha(db_engine, player_treinador)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iniciar_jogodb_engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      iniciar_jogo(db_engine)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="jogo-pokemon">Jogo Pokemon</h1>
+<h2 id="rodando-o-jogo">Rodando o Jogo</h2>
+<p>Suba o docker compose</p>
+<pre><code class="language-bash">docker compose up -d
+</code></pre>
+<p>Crie um novo ambiente virtual com:</p>
+<pre><code class="language-bash">Python3 -m venv venv
+</code></pre>
+<p>Entre no manager</p>
+<pre><code class="language-bash">. venv/bin/activate
+</code></pre>
+<p>Instale os Requirements </p>
+<pre><code class="language-bash">pip3 install -r game/requirements.txt
+</code></pre>
+<p>Rode o arquivo</p>
+<pre><code class="language-bash">python3 game/game_final.py 
+</code></pre>
+<h2 id="funcoes-do-jogo">Funcoes do Jogo</h2>
+<h4 id="slow_printtext-delay01"><code>slow_print(text, delay=0.1)</code></h4>
+<p>Esta função imprime o texto de maneira lenta, caractere por caractere, com um atraso ajustável entre os caracteres. Ela também verifica a entrada do usuário para interromper a impressão e mostrar o restante do texto rapidamente se houver uma interrupção.</p>
+<h4 id="slow_inputprompt-delay01"><code>slow_input(prompt, delay=0.1)</code></h4>
+<p>Exibe uma mensagem com a função <code>slow_print</code> e aguarda a entrada do usuário.</p>
+<h4 id="clear_terminal"><code>clear_terminal()</code></h4>
+<p>Limpa a tela do terminal, utilizando o comando apropriado dependendo do sistema operacional (Windows ou Unix-like).</p>
+<h4 id="wait_for_keypress"><code>wait_for_keypress()</code></h4>
+<p>Imprime uma mensagem solicitando que o usuário pressione qualquer tecla para continuar, e aguarda a entrada do usuário.</p>
+<h4 id="get_db_engine"><code>get_db_engine()</code></h4>
+<p>Cria e retorna uma conexão com o banco de dados PostgreSQL usando SQLAlchemy.</p>
+<h4 id="get_ultimo_id_timedb_engine"><code>get_ultimo_id_time(db_engine)</code></h4>
+<p>Obtém o maior ID presente na tabela <code>TimePokemon</code> do banco de dados. Se houver um erro, uma mensagem é exibida e retorna <code>None</code>.</p>
+<h4 id="criar_novo_timedb_engine-new_time_id"><code>criar_novo_time(db_engine, new_time_id)</code></h4>
+<p>Insere um novo registro na tabela <code>TimePokemon</code> com o <code>id</code> fornecido. Exibe uma mensagem de erro caso a inserção falhe.</p>
+<h4 id="criar_novo_treinadordb_engine"><code>criar_novo_treinador(db_engine)</code></h4>
+<p>Cria um novo treinador no banco de dados, inserindo dados como nome, número de pokébolas, e um novo time. Retorna o treinador criado ou exibe uma mensagem de erro se algo der errado.</p>
+<h4 id="listar_treinadoresdb_engine"><code>listar_treinadores(db_engine)</code></h4>
+<p>Lista todos os treinadores presentes no banco de dados, exibindo suas informações detalhadas. Em caso de erro, exibe uma mensagem correspondente.</p>
+<h4 id="carregar_treinadordb_engine"><code>carregar_treinador(db_engine)</code></h4>
+<p>Lista os treinadores disponíveis e permite ao usuário carregar um treinador com base no ID selecionado. Retorna o treinador carregado ou exibe uma mensagem de erro se o treinador não for encontrado ou outro problema ocorrer.</p>
+<h4 id="get_treinadordb_engine-treinador_id"><code>get_treinador(db_engine, treinador_id)</code></h4>
+<p>Recupera e retorna os dados completos de um treinador a partir de seu <code>id</code>. Em caso de erro, retorna <code>None</code> e exibe uma mensagem.</p>
+<h4 id="navega_rotasdb_engine-player_treinador-destinos"><code>navega_rotas(db_engine, player_treinador, destinos)</code></h4>
+<p>Permite ao jogador escolher entre destinos disponíveis nas rotas, seja uma nova cidade ou continuar na rota. Atualiza a posição do treinador e retorna se ele se moveu ou não.</p>
+<h4 id="navega_cidadesdb_engine-player_treinador-destinos_cidade"><code>navega_cidades(db_engine, player_treinador, destinos_cidade)</code></h4>
+<p>Oferece ao jogador a opção de permanecer na cidade ou seguir para a próxima rota. Atualiza a posição do treinador e retorna um valor booleano dependendo da escolha.</p>
+<h4 id="set_posicao_treinador_rotadb_engine-player_treinador-rotaatual"><code>set_posicao_treinador_rota(db_engine, player_treinador, rotaAtual)</code></h4>
+<p>Atualiza a posição do treinador para a rota atual no banco de dados, resetando a cidade atual. Em caso de erro, exibe uma mensagem.</p>
+<h4 id="set_posicao_treinador_cidadedb_engine-player_treinador-cidadeatual"><code>set_posicao_treinador_cidade(db_engine, player_treinador, cidadeAtual)</code></h4>
+<p>Atualiza a posição do treinador para a cidade atual no banco de dados, resetando a rota atual. Exibe uma mensagem de erro caso a atualização falhe.</p>
+<h4 id="get_cidadedb_engine-cidadeid"><code>get_cidade(db_engine, cidadeId)</code></h4>
+<p>Retorna os dados de uma cidade a partir do seu <code>id</code>. Em caso de erro, retorna <code>None</code>.</p>
+<h4 id="get_destinos_rotadb_engine-rotaatual"><code>get_destinos_rota(db_engine, rotaAtual)</code></h4>
+<p>Retorna os destinos (rotas ou cidades) disponíveis a partir de uma rota específica. Se houver erro, retorna <code>None</code>.</p>
+<h4 id="get_destinos_cidadedb_engine-cidadeatual"><code>get_destinos_cidade(db_engine, cidadeAtual)</code></h4>
+<p>Obtém as rotas associadas a uma cidade específica. Em caso de erro, retorna <code>None</code>.</p>
+<h4 id="is_on_cidadedb_engine-player_treinador"><code>is_on_cidade(db_engine, player_treinador)</code></h4>
+<p>Verifica se o treinador está em uma cidade. Retorna o <code>id</code> da cidade atual ou <code>None</code> se o treinador não estiver em uma cidade.</p>
+<h4 id="criar_instancia_pokemonpokemon-treinador"><code>criar_instancia_pokemon(pokemon, treinador)</code></h4>
+<p>Cria uma instância de um Pokémon no banco de dados associada a um treinador, inserindo suas estatísticas como nível, HP, ataque, defesa e outros atributos.</p>
+<h4 id="capturar_pokemondb_engine-pokemon_adversario-id_treinador-pokeball"><code>capturar_pokemon(db_engine, pokemon_adversario, id_treinador, pokeball)</code></h4>
+<p>Tenta capturar um Pokémon adversário com base na chance de captura da pokebola escolhida. Se capturado, cria uma instância do Pokémon para o treinador.</p>
+<h4 id="jogardb_engine-player_treinador"><code>jogar(db_engine, player_treinador)</code></h4>
+<p>Controla o fluxo do jogo, permitindo que o jogador explore rotas, veja informações do treinador, insígnias, Pokémon capturados ou salve o progresso.</p>
+<h4 id="mostrar_pokemonsdb_engine-player_treinador"><code>mostrar_pokemons(db_engine, player_treinador)</code></h4>
+<p>Exibe uma lista dos Pokémon capturados pelo treinador, consultando o banco de dados.</p>
+<h4 id="batalhar_pokemondb_engine-player_treinador-npc_ginasio"><code>batalhar_pokemon(db_engine, player_treinador, npc_ginasio)</code></h4>
+<p>Inicia uma batalha entre o Pokémon do jogador e o Pokémon de um líder de ginásio, determinando o resultado da batalha.</p>
+<h4 id="buscar_insignasdb_engine-player_treinador"><code>buscar_insignas(db_engine, player_treinador)</code></h4>
+<p>Exibe as insígnias obtidas pelo treinador, realizando uma consulta ao banco de dados.</p>
+<h4 id="buscar_insere_insigniadb_engine-player_treinador-npc_ginasio"><code>buscar_insere_insignia(db_engine, player_treinador, npc_ginasio)</code></h4>
+<p>Entrega uma insígnia ao treinador após a vitória contra um líder de ginásio, inserindo o registro no banco de dados.</p>
+<h4 id="batalhardb_engine-player_treinador-pokemon-pokemon_npc"><code>batalhar(db_engine, player_treinador, pokemon, pokemon_npc)</code></h4>
+<p>Executa uma batalha entre o Pokémon do jogador e o Pokémon NPC, calculando danos e determinando o vencedor.</p>
+<h4 id="calcular_danopokemon_atacante-pokemon_defensor"><code>calcular_dano(pokemon_atacante, pokemon_defensor)</code></h4>
+<p>Calcula o dano causado pelo Pokémon atacante com base no ataque, defesa e nível dos Pokémons envolvidos.</p>
+<h4 id="escolher_pokemon_npcdb_engine-npc_ginasio"><code>escolher_pokemon_npc(db_engine, npc_ginasio)</code></h4>
+<p>Seleciona um Pokémon aleatório pertencente ao NPC de um ginásio para a batalha.</p>
+<h4 id="get_ginasio_npcdb_engine-cidade"><code>get_ginasio_npc(db_engine, cidade)</code></h4>
+<p>Obtém o NPC líder do ginásio de uma determinada cidade a partir do banco de dados.</p>
+<h4 id="get_ginasio_cidadedb_engine-cidade"><code>get_ginasio_cidade(db_engine, cidade)</code></h4>
+<p>Verifica se uma cidade possui ginásio consultando o banco de dados.</p>
+<h4 id="lutar_npcdb_engine-player_treinador-npc_ginasio"><code>lutar_npc(db_engine, player_treinador, npc_ginasio)</code></h4>
+<p>Inicia uma batalha contra o líder de ginásio, registrando o resultado no banco de dados.</p>
+<h4 id="escolher_pokemon_batalhadb_engine-player_treinador"><code>escolher_pokemon_batalha(db_engine, player_treinador)</code></h4>
+<p>Permite ao jogador escolher um Pokémon de sua equipe para participar de uma batalha.</p>
+<h4 id="iniciar_jogodb_engine"><code>iniciar_jogo(db_engine)</code></h4>
+<p>Exibe o menu principal do jogo, permitindo ao jogador criar um novo treinador, carregar um salvo ou sair.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.path", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+        <script src="../../js/custom.js"></script>
+      
+    
+  </body>
+</html>

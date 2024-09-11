@@ -1,0 +1,4371 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../dicionario_de_dados_v3/">
+      
+      
+        <link rel="next" href="../dicionario_de_dados_v5/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>V4 - Pokemon</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dicionario-de-dados" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="Pokemon" class="md-header__button md-logo" aria-label="Pokemon" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Pokemon
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              V4
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Pokemon" class="md-nav__button md-logo" aria-label="Pokemon" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Pokemon
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Artefatos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Artefatos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    DER
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            DER
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../der_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../der_v2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../der_v3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../der_v4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Dicionário de Dados
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Dicionário de Dados
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dicionario_de_dados_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dicionario_de_dados_v2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dicionario_de_dados_v3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    V4
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    V4
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introdução
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desenvolvimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desenvolvimento
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Desenvolvimento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pokedex" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pokedex
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#personagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Personagem
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rota" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rota
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokeball" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pokeball
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batalha" class="md-nav__link">
+    <span class="md-ellipsis">
+      Batalha
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lider_ginasio_insignia_personagem_pokedex_equipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liga-pokemon" class="md-nav__link">
+    <span class="md-ellipsis">
+      Liga Pokemon
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cidade
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batalha_batalha" class="md-nav__link">
+    <span class="md-ellipsis">
+      Batalha_Batalha
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#captura_captura" class="md-nav__link">
+    <span class="md-ellipsis">
+      Captura_Captura
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encontro_encontra" class="md-nav__link">
+    <span class="md-ellipsis">
+      Encontro_Encontra
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokemondeagua" class="md-nav__link">
+    <span class="md-ellipsis">
+      PokemonDeAgua
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokemoneletrico" class="md-nav__link">
+    <span class="md-ellipsis">
+      PokemonEletrico
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokemondefogo" class="md-nav__link">
+    <span class="md-ellipsis">
+      PokemonDeFogo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokemondeplanta" class="md-nav__link">
+    <span class="md-ellipsis">
+      PokemonDePlanta
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokemondegelo" class="md-nav__link">
+    <span class="md-ellipsis">
+      PokemonDeGelo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokemonlutador" class="md-nav__link">
+    <span class="md-ellipsis">
+      PokemonLutador
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokemonvenenoso" class="md-nav__link">
+    <span class="md-ellipsis">
+      PokemonVenenoso
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokemonterrestre" class="md-nav__link">
+    <span class="md-ellipsis">
+      PokemonTerrestre
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokemonvoador" class="md-nav__link">
+    <span class="md-ellipsis">
+      PokemonVoador
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokemonpsiquico" class="md-nav__link">
+    <span class="md-ellipsis">
+      PokemonPsíquico
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokemoninseto" class="md-nav__link">
+    <span class="md-ellipsis">
+      PokemonInseto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokemondepedra" class="md-nav__link">
+    <span class="md-ellipsis">
+      PokemonDePedra
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokemonfantasma" class="md-nav__link">
+    <span class="md-ellipsis">
+      PokemonFantasma
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokemondragao" class="md-nav__link">
+    <span class="md-ellipsis">
+      PokemonDragao
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokemonsombrio" class="md-nav__link">
+    <span class="md-ellipsis">
+      PokemonSombrio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokemonmetalico" class="md-nav__link">
+    <span class="md-ellipsis">
+      PokemonMetalico
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokemonfada" class="md-nav__link">
+    <span class="md-ellipsis">
+      PokemonFada
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inst-pokemon" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inst Pokemon
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elite
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passa-por" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passa por
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lanca" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lança
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#surge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Surge
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dicionario_de_dados_v5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Modelos Relacional
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Modelos Relacional
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelo_logico/modelo_logico/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelo_logico/modelo_logico_v2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelo_logico/modelo_logico_v3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Geral
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Geral
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geral/ata_de_reunioes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ata de Reuniões
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geral/apresentacoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apresentações
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Jogo
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Jogo
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../game/game/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jogo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introdução
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desenvolvimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desenvolvimento
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Desenvolvimento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pokedex" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pokedex
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#personagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Personagem
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rota" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rota
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokeball" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pokeball
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batalha" class="md-nav__link">
+    <span class="md-ellipsis">
+      Batalha
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lider_ginasio_insignia_personagem_pokedex_equipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liga-pokemon" class="md-nav__link">
+    <span class="md-ellipsis">
+      Liga Pokemon
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cidade
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batalha_batalha" class="md-nav__link">
+    <span class="md-ellipsis">
+      Batalha_Batalha
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#captura_captura" class="md-nav__link">
+    <span class="md-ellipsis">
+      Captura_Captura
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encontro_encontra" class="md-nav__link">
+    <span class="md-ellipsis">
+      Encontro_Encontra
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokemondeagua" class="md-nav__link">
+    <span class="md-ellipsis">
+      PokemonDeAgua
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokemoneletrico" class="md-nav__link">
+    <span class="md-ellipsis">
+      PokemonEletrico
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokemondefogo" class="md-nav__link">
+    <span class="md-ellipsis">
+      PokemonDeFogo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokemondeplanta" class="md-nav__link">
+    <span class="md-ellipsis">
+      PokemonDePlanta
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokemondegelo" class="md-nav__link">
+    <span class="md-ellipsis">
+      PokemonDeGelo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokemonlutador" class="md-nav__link">
+    <span class="md-ellipsis">
+      PokemonLutador
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokemonvenenoso" class="md-nav__link">
+    <span class="md-ellipsis">
+      PokemonVenenoso
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokemonterrestre" class="md-nav__link">
+    <span class="md-ellipsis">
+      PokemonTerrestre
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokemonvoador" class="md-nav__link">
+    <span class="md-ellipsis">
+      PokemonVoador
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokemonpsiquico" class="md-nav__link">
+    <span class="md-ellipsis">
+      PokemonPsíquico
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokemoninseto" class="md-nav__link">
+    <span class="md-ellipsis">
+      PokemonInseto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokemondepedra" class="md-nav__link">
+    <span class="md-ellipsis">
+      PokemonDePedra
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokemonfantasma" class="md-nav__link">
+    <span class="md-ellipsis">
+      PokemonFantasma
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokemondragao" class="md-nav__link">
+    <span class="md-ellipsis">
+      PokemonDragao
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokemonsombrio" class="md-nav__link">
+    <span class="md-ellipsis">
+      PokemonSombrio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokemonmetalico" class="md-nav__link">
+    <span class="md-ellipsis">
+      PokemonMetalico
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pokemonfada" class="md-nav__link">
+    <span class="md-ellipsis">
+      PokemonFada
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inst-pokemon" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inst Pokemon
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elite
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passa-por" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passa por
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lanca" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lança
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#surge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Surge
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="dicionario-de-dados">Dicionário de Dados</h1>
+<h2 id="introducao">Introdução</h2>
+<p>Um dicionário de dados é uma ferramenta fundamental para documentar e organizar as informações sobre os dados armazenados em um sistema. Ele funciona como um repositório centralizado que descreve em detalhes os elementos de dados, suas características e suas relações entre si.</p>
+<h2 id="desenvolvimento">Desenvolvimento</h2>
+<h3 id="pokedex">Pokedex</h3>
+<table>
+<thead>
+<tr>
+<th>Tabela</th>
+<th>Nome da Entidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descrição</td>
+<td>Um banco de dados ou enciclopédia de Pokémon que contém informações sobre todos os Pokémon conhecidos, incluindo suas características, tipos e evoluções.</td>
+</tr>
+<tr>
+<td>Observação</td>
+<td>Pode estar associada a um personagem como um item ou ferramenta.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID_Pokedex</td>
+<td>Identificador único da Pokédex</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Primária</td>
+</tr>
+<tr>
+<td>Numero_Pokemons</td>
+<td>Número total de Pokémon na Pokédex</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Numero_Pokemons_Vistos</td>
+<td>Número de Pokémon vistos</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Numero_Pokemons_Capturados</td>
+<td>Número de Pokémon capturados</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Status_Completa</td>
+<td>Indica se a Pokédex está completa (Sim/Não)</td>
+<td>Texto</td>
+<td>3</td>
+<td>Valores Predefinidos</td>
+</tr>
+</tbody>
+</table>
+<h3 id="personagem">Personagem</h3>
+<table>
+<thead>
+<tr>
+<th>Tabela</th>
+<th>Nome da Entidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descrição</td>
+<td>Um indivíduo jogável ou NPC (personagem não jogável) no universo Pokémon. Pode ser um treinador, líder de ginásio, entre outros.</td>
+</tr>
+<tr>
+<td>Observação</td>
+<td>Pode ter um relacionamento com várias outras entidades, como Batalha, Insignia, e Captura.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID_Personagem</td>
+<td>Identificador único do Personagem</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Primária</td>
+</tr>
+<tr>
+<td>Nome</td>
+<td>Nome do Personagem</td>
+<td>Texto</td>
+<td>255</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Pokebolas_Normais</td>
+<td>Quantidade de Pokébolas Normais</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Pokebolas_Greats</td>
+<td>Quantidade de Pokébolas Greats</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Pokebolas_Ultras</td>
+<td>Quantidade de Pokébolas Ultras</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rota">Rota</h3>
+<table>
+<thead>
+<tr>
+<th>Tabela</th>
+<th>Nome da Entidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descrição</td>
+<td>Define as rotas que conectam diferentes cidades ou regiões no jogo.</td>
+</tr>
+<tr>
+<td>Observação</td>
+<td>Pode estar relacionada a diversas cidades e encontros de Pokémon.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID_Rota</td>
+<td>Identificador único da rota</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Primária</td>
+</tr>
+<tr>
+<td>fk_Rota_ID_Rota</td>
+<td>Identificador da rota relacionada</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pokeball">Pokeball</h3>
+<table>
+<thead>
+<tr>
+<th>Tabela</th>
+<th>Nome da Entidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descrição</td>
+<td>Dispositivos usados para capturar e armazenar Pokémon.</td>
+</tr>
+<tr>
+<td>Observação</td>
+<td>Diferentes tipos de Pokébolas têm diferentes taxas de captura.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID_Pokebola</td>
+<td>Identificador único da Pokébola</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Primária</td>
+</tr>
+<tr>
+<td>Chance_Captura</td>
+<td>Chance de captura de Pokémon</td>
+<td>Decimal</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID_Pokebola</td>
+<td>Identificador único da Pokébola</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Primária</td>
+</tr>
+</tbody>
+</table>
+<h3 id="batalha">Batalha</h3>
+<table>
+<thead>
+<tr>
+<th>Tabela</th>
+<th>Nome da Entidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descrição</td>
+<td>Um confronto entre Pokémon, onde um treinador enfrenta outro ou um Pokémon selvagem.</td>
+</tr>
+<tr>
+<td>Observação</td>
+<td>Pode envolver diferentes personagens e Pokémon.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID_Batalha</td>
+<td>Identificador único da Batalha</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Primária</td>
+</tr>
+<tr>
+<td>Exp</td>
+<td>Experiência ganha na Batalha</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Resultado</td>
+<td>Resultado da Batalha (Vitória/Derrota)</td>
+<td>Texto</td>
+<td>10</td>
+<td>Valores Predefinidos</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lider_ginasio_insignia_personagem_pokedex_equipe">Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe</h3>
+<table>
+<thead>
+<tr>
+<th>Tabela</th>
+<th>Nome da Entidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descrição</td>
+<td>Informação sobre os líderes de ginásio e suas equipes.</td>
+</tr>
+<tr>
+<td>Observação</td>
+<td>Inclui informações sobre o ginásio, insígnias e a Pokédex.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID_Lider</td>
+<td>Identificador único do líder do ginásio</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Parte da Chave Primária</td>
+</tr>
+<tr>
+<td>Nome</td>
+<td>Nome do líder do ginásio</td>
+<td>Texto</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Biografia</td>
+<td>Biografia do líder do ginásio</td>
+<td>Texto</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>ID_Ginasio</td>
+<td>Identificador único do ginásio</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Parte da Chave Primária</td>
+</tr>
+<tr>
+<td>fk_Personagem_Pokedex_Equipe_ID_Personagem</td>
+<td>Identificador da equipe do líder</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>ID_Insignia</td>
+<td>Identificador único da insígnia do ginásio</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Parte da Chave Primária</td>
+</tr>
+<tr>
+<td>Tipo</td>
+<td>Tipo predominante do ginásio</td>
+<td>Texto</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>ID_Personagem</td>
+<td>Identificador único do personagem</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Parte da Chave Primária</td>
+</tr>
+<tr>
+<td>Pokebolas_Normais</td>
+<td>Número de Pokébolas normais</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Pokebolas_Greats</td>
+<td>Número de Pokébolas Great</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Pokebolas_Ultras</td>
+<td>Número de Pokébolas Ultra</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>ID_Pokedex</td>
+<td>Identificador único da Pokédex</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Parte da Chave Primária</td>
+</tr>
+<tr>
+<td>Numero_Pokemons</td>
+<td>Número total de Pokémon da equipe</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Numero_Pokemons_Vistos</td>
+<td>Número de Pokémon vistos na Pokédex</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Numero_Pokemons_Capturados</td>
+<td>Número de Pokémon capturados na Pokédex</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Status_Completa</td>
+<td>Status de completude da Pokédex</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>fk_Inst_Pokemon_Id_Pokemon_Inst</td>
+<td>Identificador da instância Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+</tbody>
+</table>
+<h3 id="liga-pokemon">Liga Pokemon</h3>
+<table>
+<thead>
+<tr>
+<th>Tabela</th>
+<th>Nome da Entidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descrição</td>
+<td>Uma competição de alto nível onde treinadores batalham após coletar todas as insignias dos ginásios.</td>
+</tr>
+<tr>
+<td>Observação</td>
+<td>Pode envolver batalhas finais e eventos importantes.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID_Liga</td>
+<td>Identificador único da Liga Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Primária</td>
+</tr>
+<tr>
+<td>Descricao</td>
+<td>Descrição da Liga Pokémon</td>
+<td>Texto</td>
+<td>1000</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Numero_Insignias_Necessarias</td>
+<td>Número de Insígnias necessárias para a Liga</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cidade">Cidade</h3>
+<table>
+<thead>
+<tr>
+<th>Tabela</th>
+<th>Nome da Entidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descrição</td>
+<td>Representa uma cidade no jogo, com suas funcionalidades como Pokécenter e Pokémarket.</td>
+</tr>
+<tr>
+<td>Observação</td>
+<td>Está relacionada a ginásios, líderes de ginásio e rotas.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Possui_Pokecenter</td>
+<td>Indica se a cidade possui um Pokécenter</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Possui_Pokemarket</td>
+<td>Indica se a cidade possui um Pokémarket</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Possui_Ginasio</td>
+<td>Indica se a cidade possui um ginásio</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Lider</td>
+<td>Identificador do líder do ginásio</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Ginasio</td>
+<td>Identificador do ginásio relacionado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Insignia</td>
+<td>Identificador da insígnia relacionada</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_Rota_ID_Rota</td>
+<td>Identificador da rota relacionada</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+</tbody>
+</table>
+<h3 id="batalha_batalha">Batalha_Batalha</h3>
+<table>
+<thead>
+<tr>
+<th>Tabela</th>
+<th>Nome da Entidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descrição</td>
+<td>Armazena informações sobre batalhas ocorridas no jogo.</td>
+</tr>
+<tr>
+<td>Observação</td>
+<td>Relacionado a líderes de ginásio e suas equipes.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID_Batalha</td>
+<td>Identificador único da batalha</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Primária</td>
+</tr>
+<tr>
+<td>Exp</td>
+<td>Experiência obtida na batalha</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Resultado</td>
+<td>Resultado da batalha</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Lider</td>
+<td>Identificador do líder envolvido na batalha</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Ginasio</td>
+<td>Identificador do ginásio envolvido na batalha</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Insignia</td>
+<td>Identificador da insígnia envolvida na batalha</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Personagem</td>
+<td>Identificador do personagem envolvido na batalha</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Pokedex</td>
+<td>Identificador da Pokédex envolvida na batalha</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+</tbody>
+</table>
+<h3 id="captura_captura">Captura_Captura</h3>
+<table>
+<thead>
+<tr>
+<th>Tabela</th>
+<th>Nome da Entidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descrição</td>
+<td>Contém informações sobre as capturas de Pokémon realizadas no jogo.</td>
+</tr>
+<tr>
+<td>Observação</td>
+<td>Relacionada a vários tipos de Pokémon.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID_Captura</td>
+<td>Identificador único da captura</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Primária</td>
+</tr>
+<tr>
+<td>Experiencia</td>
+<td>Experiência obtida na captura</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>fk_Pokeball_ID_Pokebola</td>
+<td>Identificador da Pokébola usada na captura</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonDeAgua_id</td>
+<td>Identificador do Pokémon de água relacionado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonDeAgua_ID_Pokemon</td>
+<td>Identificador do Pokémon de água capturado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonEletrico_ID_Pokemon</td>
+<td>Identificador do Pokémon elétrico capturado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonDeFogo_id</td>
+<td>Identificador do Pokémon de fogo relacionado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonDeFogo_ID_Pokemon</td>
+<td>Identificador do Pokémon de fogo capturado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonDeGelo_id</td>
+<td>Identificador do Pokémon de gelo relacionado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonDeGelo_ID_Pokemon</td>
+<td>Identificador do Pokémon de gelo capturado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonVenenoso_id</td>
+<td>Identificador do Pokémon venenoso relacionado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonVenenoso_ID_Pokemon</td>
+<td>Identificador do Pokémon venenoso capturado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonTerrestre_id</td>
+<td>Identificador do Pokémon terrestre relacionado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonTerrestre_ID_Pokemon</td>
+<td>Identificador do Pokémon terrestre capturado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonVoador_id</td>
+<td>Identificador do Pokémon voador relacionado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonVoador_ID_Pokemon</td>
+<td>Identificador do Pokémon voador capturado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonPsíquico_id</td>
+<td>Identificador do Pokémon psíquico relacionado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonPsíquico_ID_Pokemon</td>
+<td>Identificador do Pokémon psíquico capturado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonInseto_id</td>
+<td>Identificador do Pokémon inseto relacionado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonInseto_ID_Pokemon</td>
+<td>Identificador do Pokémon inseto capturado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonDePedra_id</td>
+<td>Identificador do Pokémon de pedra relacionado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonDePedra_ID_Pokemon</td>
+<td>Identificador do Pokémon de pedra capturado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonDragao_ID_Pokemon</td>
+<td>Identificador do Pokémon dragão capturado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonSombrio_ID_Pokemon</td>
+<td>Identificador do Pokémon sombrio capturado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonFada_id</td>
+<td>Identificador do Pokémon fada relacionado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonFada_ID_Pokemon</td>
+<td>Identificador do Pokémon fada capturado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonDePlanta_id</td>
+<td>Identificador do Pokémon de planta relacionado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonDePlanta_ID_Pokemon</td>
+<td>Identificador do Pokémon de planta capturado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonLutador_ID_Pokemon</td>
+<td>Identificador do Pokémon lutador capturado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonMetalico_id</td>
+<td>Identificador do Pokémon metálico relacionado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonMetalico_ID_Pokemon</td>
+<td>Identificador do Pokémon metálico capturado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+</tbody>
+</table>
+<h3 id="encontro_encontra">Encontro_Encontra</h3>
+<table>
+<thead>
+<tr>
+<th>Tabela</th>
+<th>Nome da Entidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descrição</td>
+<td>Registra informações sobre encontros de personagens com Pokémon.</td>
+</tr>
+<tr>
+<td>Observação</td>
+<td>Inclui dados sobre a captura, derrota, e experiência obtida.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID_Encontro</td>
+<td>Identificador único do encontro</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Primária</td>
+</tr>
+<tr>
+<td>Capturado</td>
+<td>Indica se o Pokémon foi capturado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Derrotado</td>
+<td>Indica se o Pokémon foi derrotado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Correu</td>
+<td>Indica se o personagem fugiu do encontro</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Perdeu</td>
+<td>Indica se o personagem perdeu o encontro</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Experiencia</td>
+<td>Experiência obtida no encontro</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Lider</td>
+<td>Identificador do líder relacionado ao encontro</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Ginasio</td>
+<td>Identificador do ginásio relacionado ao encontro</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Insignia</td>
+<td>Identificador da insígnia relacionada ao encontro</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Personagem</td>
+<td>Identificador do personagem relacionado ao encontro</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_Lider_Ginásio_Insignia_Personagem_Pokedex_Equipe_ID_Pokedex</td>
+<td>Identificador da Pokédex relacionada ao encontro</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonDeAgua_id</td>
+<td>Identificador do Pokémon de água relacionado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonDeAgua_ID_Pokemon</td>
+<td>Identificador do Pokémon de água encontrado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonEletrico_ID_Pokemon</td>
+<td>Identificador do Pokémon elétrico encontrado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonDeFogo_id</td>
+<td>Identificador do Pokémon de fogo relacionado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonDeFogo_ID_Pokemon</td>
+<td>Identificador do Pokémon de fogo encontrado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonDeGelo_id</td>
+<td>Identificador do Pokémon de gelo relacionado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonDeGelo_ID_Pokemon</td>
+<td>Identificador do Pokémon de gelo encontrado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonVenenoso_id</td>
+<td>Identificador do Pokémon venenoso relacionado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonVenenoso_ID_Pokemon</td>
+<td>Identificador do Pokémon venenoso encontrado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonTerrestre_id</td>
+<td>Identificador do Pokémon terrestre relacionado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonTerrestre_ID_Pokemon</td>
+<td>Identificador do Pokémon terrestre encontrado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonVoador_id</td>
+<td>Identificador do Pokémon voador relacionado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonVoador_ID_Pokemon</td>
+<td>Identificador do Pokémon voador encontrado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonPsíquico_id</td>
+<td>Identificador do Pokémon psíquico relacionado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonPsíquico_ID_Pokemon</td>
+<td>Identificador do Pokémon psíquico encontrado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonInseto_id</td>
+<td>Identificador do Pokémon inseto relacionado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonInseto_ID_Pokemon</td>
+<td>Identificador do Pokémon inseto encontrado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonDePedra_id</td>
+<td>Identificador do Pokémon de pedra relacionado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonDePedra_ID_Pokemon</td>
+<td>Identificador do Pokémon de pedra encontrado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonDragao_ID_Pokemon</td>
+<td>Identificador do Pokémon dragão encontrado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonSombrio_ID_Pokemon</td>
+<td>Identificador do Pokémon sombrio encontrado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonFada_id</td>
+<td>Identificador do Pokémon fada relacionado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonFada_ID_Pokemon</td>
+<td>Identificador do Pokémon fada encontrado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonDePlanta_id</td>
+<td>Identificador do Pokémon de planta relacionado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonDePlanta_ID_Pokemon</td>
+<td>Identificador do Pokémon de planta encontrado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonLutador_ID_Pokemon</td>
+<td>Identificador do Pokémon lutador encontrado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonMetalico_id</td>
+<td>Identificador do Pokémon metálico relacionado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_PokemonMetalico_ID_Pokemon</td>
+<td>Identificador do Pokémon metálico encontrado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pokemondeagua">PokemonDeAgua</h3>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hydro_pump</td>
+<td>Poder do movimento Hydro Pump</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>id</td>
+<td>Identificador único da instância do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Parte da Chave Primária</td>
+</tr>
+<tr>
+<td>ID_Pokemon</td>
+<td>Identificador do Pokémon base</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Parte da Chave Primária</td>
+</tr>
+<tr>
+<td>Nome</td>
+<td>Nome do Pokémon</td>
+<td>Texto</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Nivel</td>
+<td>Nível atual da instância</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Experiencia</td>
+<td>Experiência acumulada</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Defesa_Especial</td>
+<td>Defesa especial do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Velocidade</td>
+<td>Velocidade do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Tipo</td>
+<td>Tipo do Pokémon</td>
+<td>Texto</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>fk_Inst Pokemon_Id_Pokemon_Inst</td>
+<td>Chave estrangeira para Instância Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pokemoneletrico">PokemonEletrico</h3>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fire_blast</td>
+<td>Poder do movimento Fire Blast</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>ID_Pokemon</td>
+<td>Identificador do Pokémon base</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Primária</td>
+</tr>
+<tr>
+<td>Nome</td>
+<td>Nome do Pokémon</td>
+<td>Texto</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Nivel</td>
+<td>Nível atual da instância</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Experiencia</td>
+<td>Experiência acumulada</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Defesa_Especial</td>
+<td>Defesa especial do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Velocidade</td>
+<td>Velocidade do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Tipo</td>
+<td>Tipo do Pokémon</td>
+<td>Texto</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>fk_Inst Pokemon_Id_Pokemon_Inst</td>
+<td>Chave estrangeira para Instância Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pokemondefogo">PokemonDeFogo</h3>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Identificador único da instância do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Parte da Chave Primária</td>
+</tr>
+<tr>
+<td>ID_Pokemon</td>
+<td>Identificador do Pokémon base</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Parte da Chave Primária</td>
+</tr>
+<tr>
+<td>Nome</td>
+<td>Nome do Pokémon</td>
+<td>Texto</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Nivel</td>
+<td>Nível atual da instância</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Experiencia</td>
+<td>Experiência acumulada</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Defesa_Especial</td>
+<td>Defesa especial do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Velocidade</td>
+<td>Velocidade do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Tipo</td>
+<td>Tipo do Pokémon</td>
+<td>Texto</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>fk_Inst Pokemon_Id_Pokemon_Inst</td>
+<td>Chave estrangeira para Instância Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pokemondeplanta">PokemonDePlanta</h3>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Identificador único da instância do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Parte da Chave Primária</td>
+</tr>
+<tr>
+<td>ID_Pokemon</td>
+<td>Identificador do Pokémon base</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Parte da Chave Primária</td>
+</tr>
+<tr>
+<td>Nome</td>
+<td>Nome do Pokémon</td>
+<td>Texto</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Nivel</td>
+<td>Nível atual da instância</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Experiencia</td>
+<td>Experiência acumulada</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Defesa_Especial</td>
+<td>Defesa especial do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Velocidade</td>
+<td>Velocidade do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Tipo</td>
+<td>Tipo do Pokémon</td>
+<td>Texto</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>fk_Inst Pokemon_Id_Pokemon_Inst</td>
+<td>Chave estrangeira para Instância Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pokemondegelo">PokemonDeGelo</h3>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Identificador único da instância do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Parte da Chave Primária</td>
+</tr>
+<tr>
+<td>ID_Pokemon</td>
+<td>Identificador do Pokémon base</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Parte da Chave Primária</td>
+</tr>
+<tr>
+<td>Nome</td>
+<td>Nome do Pokémon</td>
+<td>Texto</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Nivel</td>
+<td>Nível atual da instância</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Experiencia</td>
+<td>Experiência acumulada</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Defesa_Especial</td>
+<td>Defesa especial do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Velocidade</td>
+<td>Velocidade do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Tipo</td>
+<td>Tipo do Pokémon</td>
+<td>Texto</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>fk_Inst Pokemon_Id_Pokemon_Inst</td>
+<td>Chave estrangeira para Instância Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pokemonlutador">PokemonLutador</h3>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>focus_blast</td>
+<td>Poder do movimento Focus Blast</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>ID_Pokemon</td>
+<td>Identificador do Pokémon base</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Primária</td>
+</tr>
+<tr>
+<td>Nome</td>
+<td>Nome do Pokémon</td>
+<td>Texto</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Nivel</td>
+<td>Nível atual da instância</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Experiencia</td>
+<td>Experiência acumulada</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Defesa_Especial</td>
+<td>Defesa especial do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Velocidade</td>
+<td>Velocidade do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Tipo</td>
+<td>Tipo do Pokémon</td>
+<td>Texto</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>fk_Inst Pokemon_Id_Pokemon_Inst</td>
+<td>Chave estrangeira para Instância Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pokemonvenenoso">PokemonVenenoso</h3>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Identificador único da instância do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Parte da Chave Primária</td>
+</tr>
+<tr>
+<td>ID_Pokemon</td>
+<td>Identificador do Pokémon base</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Parte da Chave Primária</td>
+</tr>
+<tr>
+<td>Nome</td>
+<td>Nome do Pokémon</td>
+<td>Texto</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Nivel</td>
+<td>Nível atual da instância</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Experiencia</td>
+<td>Experiência acumulada</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Defesa_Especial</td>
+<td>Defesa especial do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Velocidade</td>
+<td>Velocidade do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Tipo</td>
+<td>Tipo do Pokémon</td>
+<td>Texto</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>fk_Inst Pokemon_Id_Pokemon_Inst</td>
+<td>Chave estrangeira para Instância Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pokemonterrestre">PokemonTerrestre</h3>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Identificador único da instância do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Parte da Chave Primária</td>
+</tr>
+<tr>
+<td>ID_Pokemon</td>
+<td>Identificador do Pokémon base</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Parte da Chave Primária</td>
+</tr>
+<tr>
+<td>Nome</td>
+<td>Nome do Pokémon</td>
+<td>Texto</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Nivel</td>
+<td>Nível atual da instância</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Experiencia</td>
+<td>Experiência acumulada</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Defesa_Especial</td>
+<td>Defesa especial do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Velocidade</td>
+<td>Velocidade do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Tipo</td>
+<td>Tipo do Pokémon</td>
+<td>Texto</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>fk_Inst Pokemon_Id_Pokemon_Inst</td>
+<td>Chave estrangeira para Instância Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pokemonvoador">PokemonVoador</h3>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Identificador único da instância do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Parte da Chave Primária</td>
+</tr>
+<tr>
+<td>ID_Pokemon</td>
+<td>Identificador do Pokémon base</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Parte da Chave Primária</td>
+</tr>
+<tr>
+<td>Nome</td>
+<td>Nome do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Nivel</td>
+<td>Nível atual da instância</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Experiencia</td>
+<td>Experiência acumulada</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Defesa_Especial</td>
+<td>Defesa especial do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Velocidade</td>
+<td>Velocidade do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Tipo</td>
+<td>Tipo do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>fk_Inst Pokemon_Id_Pokemon_Inst</td>
+<td>Chave estrangeira para Instância Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pokemonpsiquico">PokemonPsíquico</h3>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Identificador único da instância do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Parte da Chave Primária</td>
+</tr>
+<tr>
+<td>ID_Pokemon</td>
+<td>Identificador do Pokémon base</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Parte da Chave Primária</td>
+</tr>
+<tr>
+<td>Nome</td>
+<td>Nome do Pokémon</td>
+<td>Texto</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Nivel</td>
+<td>Nível atual da instância</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Experiencia</td>
+<td>Experiência acumulada</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Defesa_Especial</td>
+<td>Defesa especial do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Velocidade</td>
+<td>Velocidade do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Tipo</td>
+<td>Tipo do Pokémon</td>
+<td>Texto</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>fk_Inst Pokemon_Id_Pokemon_Inst</td>
+<td>Chave estrangeira para Instância Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pokemoninseto">PokemonInseto</h3>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Identificador único da instância do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Parte da Chave Primária</td>
+</tr>
+<tr>
+<td>ID_Pokemon</td>
+<td>Identificador do Pokémon base</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Parte da Chave Primária</td>
+</tr>
+<tr>
+<td>Nome</td>
+<td>Nome do Pokémon</td>
+<td>Texto</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Nivel</td>
+<td>Nível atual da instância</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Experiencia</td>
+<td>Experiência acumulada</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Defesa_Especial</td>
+<td>Defesa especial do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Velocidade</td>
+<td>Velocidade do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Tipo</td>
+<td>Tipo do Pokémon</td>
+<td>Texto</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>fk_Inst Pokemon_Id_Pokemon_Inst</td>
+<td>Chave estrangeira para Instância Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pokemondepedra">PokemonDePedra</h3>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Identificador único da instância do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Parte da Chave Primária</td>
+</tr>
+<tr>
+<td>ID_Pokemon</td>
+<td>Identificador do Pokémon base</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Parte da Chave Primária</td>
+</tr>
+<tr>
+<td>Nome</td>
+<td>Nome do Pokémon</td>
+<td>Texto</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Nivel</td>
+<td>Nível atual da instância</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Experiencia</td>
+<td>Experiência acumulada</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Defesa_Especial</td>
+<td>Defesa especial do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Velocidade</td>
+<td>Velocidade do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Tipo</td>
+<td>Tipo do Pokémon</td>
+<td>Texto</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>fk_Inst Pokemon_Id_Pokemon_Inst</td>
+<td>Chave estrangeira para Instância Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pokemonfantasma">PokemonFantasma</h3>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(Nenhuma coluna definida)</td>
+<td>(Nenhuma coluna definida)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pokemondragao">PokemonDragao</h3>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID_Pokemon</td>
+<td>Identificador do Pokémon base</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Primária</td>
+</tr>
+<tr>
+<td>Nome</td>
+<td>Nome do Pokémon</td>
+<td>Texto</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Nivel</td>
+<td>Nível atual da instância</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Experiencia</td>
+<td>Experiência acumulada</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Defesa_Especial</td>
+<td>Defesa especial do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Velocidade</td>
+<td>Velocidade do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Tipo</td>
+<td>Tipo do Pokémon</td>
+<td>Texto</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>fk_Inst Pokemon_Id_Pokemon_Inst</td>
+<td>Chave estrangeira para Instância Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pokemonsombrio">PokemonSombrio</h3>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID_Pokemon</td>
+<td>Identificador do Pokémon base</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Primária</td>
+</tr>
+<tr>
+<td>Nome</td>
+<td>Nome do Pokémon</td>
+<td>Texto</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Nivel</td>
+<td>Nível atual da instância</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Experiencia</td>
+<td>Experiência acumulada</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Defesa_Especial</td>
+<td>Defesa especial do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Velocidade</td>
+<td>Velocidade do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Tipo</td>
+<td>Tipo do Pokémon</td>
+<td>Texto</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>fk_Inst Pokemon_Id_Pokemon_Inst</td>
+<td>Chave estrangeira para Instância Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pokemonmetalico">PokemonMetalico</h3>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Identificador único da instância do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Parte da Chave Primária</td>
+</tr>
+<tr>
+<td>ID_Pokemon</td>
+<td>Identificador do Pokémon base</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Parte da Chave Primária</td>
+</tr>
+<tr>
+<td>Nome</td>
+<td>Nome do Pokémon</td>
+<td>Texto</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Nivel</td>
+<td>Nível atual da instância</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Experiencia</td>
+<td>Experiência acumulada</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Defesa_Especial</td>
+<td>Defesa especial do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Velocidade</td>
+<td>Velocidade do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Tipo</td>
+<td>Tipo do Pokémon</td>
+<td>Texto</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>fk_Inst Pokemon_Id_Pokemon_Inst</td>
+<td>Chave estrangeira para Instância Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pokemonfada">PokemonFada</h3>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Identificador único da instância do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Parte da Chave Primária</td>
+</tr>
+<tr>
+<td>ID_Pokemon</td>
+<td>Identificador do Pokémon base</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Parte da Chave Primária</td>
+</tr>
+<tr>
+<td>Nome</td>
+<td>Nome do Pokémon</td>
+<td>Texto</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Nivel</td>
+<td>Nível atual da instância</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Experiencia</td>
+<td>Experiência acumulada</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Defesa_Especial</td>
+<td>Defesa especial do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Velocidade</td>
+<td>Velocidade do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Tipo</td>
+<td>Tipo do Pokémon</td>
+<td>Texto</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>fk_Inst Pokemon_Id_Pokemon_Inst</td>
+<td>Chave estrangeira para Instância Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+</tbody>
+</table>
+<h3 id="inst-pokemon">Inst Pokemon</h3>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id_Pokemon_Inst</td>
+<td>Identificador único da instância do Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Primária</td>
+</tr>
+<tr>
+<td>Probabilidade_Surgimento</td>
+<td>Probabilidade de surgimento da instância</td>
+<td>Real</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="elite">Elite</h3>
+<table>
+<thead>
+<tr>
+<th>Tabela</th>
+<th>Elite</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descrição</td>
+<td>Representa uma liga de Elite no jogo, que desafia os jogadores com um aumento de dificuldade e requisitos específicos.</td>
+</tr>
+<tr>
+<td>Observação</td>
+<td>A tabela armazena detalhes sobre o multiplicador de dificuldade, a descrição da liga, o número de insignias necessárias e a referência ao ginásio associado.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Multiplicador_Dificuldade</td>
+<td>Multiplicador que afeta a dificuldade da Elite</td>
+<td>Real</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>ID_Liga</td>
+<td>Identificador único da liga de Elite</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Primária</td>
+</tr>
+<tr>
+<td>Descricao</td>
+<td>Descrição da liga de Elite</td>
+<td>Texto</td>
+<td>255</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Numero_Insignias_Necessarias</td>
+<td>Número de insignias necessárias para enfrentar a Elite</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>fk_Ginásio_ID_Ginasio</td>
+<td>Chave estrangeira para o Ginásio associado</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+</tbody>
+</table>
+<h3 id="passa-por">Passa por</h3>
+<table>
+<thead>
+<tr>
+<th>Tabela</th>
+<th>Passa Por</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descrição</td>
+<td>Representa a relação entre um personagem e um Pokémon em relação a uma rota específica que eles atravessam juntos.</td>
+</tr>
+<tr>
+<td>Observação</td>
+<td>A tabela contém chaves estrangeiras para o personagem, o Pokémon e a rota associada, indicando o caminho percorrido.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fk_Personagem_Pokedex_Equipe_ID_Personagem</td>
+<td>Chave estrangeira para o Personagem da equipe</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_Personagem_Pokedex_Equipe_ID_Pokedex</td>
+<td>Chave estrangeira para o Pokémon da equipe</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_Rota_ID_Rota</td>
+<td>Chave estrangeira para a Rota</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lanca">Lança</h3>
+<table>
+<thead>
+<tr>
+<th>Tabela</th>
+<th>Lança</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descrição</td>
+<td>Representa a relação entre um personagem e um Pokémon com uma Pokébola específica que o Pokémon usa.</td>
+</tr>
+<tr>
+<td>Observação</td>
+<td>A tabela armazena as chaves estrangeiras para o personagem, o Pokémon e a Pokébola utilizada, indicando quais Pokébolas foram lançadas por quais personagens e Pokémon.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fk_Personagem_Pokedex_Equipe_ID_Personagem</td>
+<td>Chave estrangeira para o Personagem da equipe</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_Personagem_Pokedex_Equipe_ID_Pokedex</td>
+<td>Chave estrangeira para o Pokémon da equipe</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_Pokeball_ID_Pokebola</td>
+<td>Chave estrangeira para a Pokébola</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+</tbody>
+</table>
+<h3 id="surge">Surge</h3>
+<table>
+<thead>
+<tr>
+<th>Tabela</th>
+<th>Surge</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descrição</td>
+<td>Representa o encontro entre uma instância de Pokémon e uma rota específica no jogo.</td>
+</tr>
+<tr>
+<td>Observação</td>
+<td>A tabela contém chaves estrangeiras para a rota e a instância de Pokémon, indicando em qual rota o Pokémon surge.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Tipo de Dado</th>
+<th>Tamanho</th>
+<th>Restrição de Domínio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fk_Rota_ID_Rota</td>
+<td>Chave estrangeira para a Rota</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+<tr>
+<td>fk_Inst Pokemon_Id_Pokemon_Inst</td>
+<td>Chave estrangeira para a Instância Pokémon</td>
+<td>Inteiro</td>
+<td>-</td>
+<td>Chave Estrangeira</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Versão</th>
+<th>Autor</th>
+<th>Descrição da Alteração</th>
+<th>Data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0</td>
+<td>Carlos Gabriel</td>
+<td>Criação da quarta versão do dicionário de dados.</td>
+<td>19/08/2024</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.path", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+        <script src="../../js/custom.js"></script>
+      
+    
+  </body>
+</html>

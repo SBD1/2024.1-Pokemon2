@@ -1,0 +1,1380 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../der_v3/">
+      
+      
+        <link rel="next" href="../dicionario_de_dados_v1/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>V4 - Pokemon</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#descricao-do-artefato-der-quarta-versao" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="Pokemon" class="md-header__button md-logo" aria-label="Pokemon" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Pokemon
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              V4
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Pokemon" class="md-nav__button md-logo" aria-label="Pokemon" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Pokemon
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Artefatos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Artefatos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    DER
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            DER
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../der_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../der_v2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../der_v3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    V4
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    V4
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#der" class="md-nav__link">
+    <span class="md-ellipsis">
+      DER:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principais-alteracoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principais Alterações
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemplo-de-integridade-na-insercao-de-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Integridade na Insercao de dados
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Dicionário de Dados
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Dicionário de Dados
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dicionario_de_dados_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dicionario_de_dados_v2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dicionario_de_dados_v3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dicionario_de_dados_v4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dicionario_de_dados_v5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Modelos Relacional
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Modelos Relacional
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelo_logico/modelo_logico/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelo_logico/modelo_logico_v2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelo_logico/modelo_logico_v3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    V3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Geral
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Geral
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geral/ata_de_reunioes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ata de Reuniões
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geral/apresentacoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apresentações
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Jogo
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Jogo
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../game/game/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jogo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#der" class="md-nav__link">
+    <span class="md-ellipsis">
+      DER:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principais-alteracoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principais Alterações
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemplo-de-integridade-na-insercao-de-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Integridade na Insercao de dados
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="descricao-do-artefato-der-quarta-versao"><strong>Descrição do Artefato DER - Quarta Versão</strong></h1>
+<h2 id="der">DER:</h2>
+<p><img alt="Image" src="../imagens/der_v4.png" /></p>
+<h2 id="principais-alteracoes">Principais Alterações</h2>
+<ul>
+<li>Melhor organização do Diagrama e geral</li>
+<li>Adicionando especializacao/generalizacao para tipos</li>
+</ul>
+<h2 id="exemplo-de-integridade-na-insercao-de-dados">Exemplo de Integridade na Insercao de dados</h2>
+<ul>
+<li>
+<p>Integridade dos Dados Obrigatórios (Parâmetros da Genérica):</p>
+<p>Checagem de Nulos: A procedure verifica se todos os parâmetros obrigatórios da tabela genérica Pokemon não são nulos. Isso inclui dex, nome, tipo, hp, ataque, defesa, velocidade, spAtaque, spDefesa, evolucaoDex, habilidadeId, pokemonDex, e rotaId. Se algum desses parâmetros for nulo, a procedure não prossegue com a inserção e exibe uma mensagem de erro.</p>
+</li>
+<li>
+<p>Integridade dos Dados Específicos (Parâmetros da Específica)</p>
+<p>Checagem de Nulos: A procedure verifica se pelo menos um dos parâmetros específicos não é nulo antes de tentar inserir os dados nas tabelas específicas (PokemonDeAgua, PokemonDeFogo, PokemonDePlanta, etc.). Se todos os parâmetros específicos forem nulos, a procedure exibe uma mensagem de erro e não tenta realizar a inserção.
+Inserção na Tabela Genérica</p>
+<p>Se todos os parâmetros obrigatórios estão presentes e válidos, a procedure insere os dados na tabela Pokemon. A chave primária (ou identificador único) gerada (dex) é retornada e armazenada na variável aux. Isso garante que a mesma chave primária seja usada para as inserções subsequentes nas tabelas específicas.</p>
+</li>
+<li>
+<p>Inserção nas Tabelas Específicas:</p>
+<p>A procedure insere dados nas tabelas específicas de acordo com os parâmetros fornecidos. Por exemplo, se _hydro_pump não for nulo, insere um registro na tabela PokemonDeAgua com o id retornado da tabela Pokemon e o valor de _hydro_pump.</p>
+</li>
+<li>
+<p>Restrições de Integridade: </p>
+<p>Cada tabela específica tem sua própria restrição de integridade, geralmente assegurando que o id é uma chave estrangeira válida que corresponde a um dex na tabela Pokemon. Isso garante que não haja registros órfãos e que todos os dados específicos estejam associados a um Pokémon existente.</p>
+</li>
+<li>
+<p>Mensagens de Erro: </p>
+<p>Se algum dos parâmetros obrigatórios da tabela genérica estiver faltando ou se todos os parâmetros específicos estiverem nulos, a procedure levanta uma mensagem de erro apropriada usando RAISE NOTICE. Isso ajuda na depuração e garante que o usuário saiba o que está errado.</p>
+</li>
+</ul>
+<pre><code class="language-sql">
+-- DDL
+
+DROP TABLE IF EXISTS Pokemon CASCADE;
+DROP TABLE IF EXISTS PokemonDeAgua;
+DROP TABLE IF EXISTS PokemonEletrico;
+DROP TABLE IF EXISTS PokemonDeFogo;
+DROP TABLE IF EXISTS PokemonDePlanta;
+DROP TABLE IF EXISTS PokemonDeGelo;
+DROP TABLE IF EXISTS PokemonLutador;
+DROP TABLE IF EXISTS PokemonVenenoso;
+DROP TABLE IF EXISTS PokemonTerrestre;
+DROP TABLE IF EXISTS PokemonVoador;
+DROP TABLE IF EXISTS PokemonPsiquico;
+DROP TABLE IF EXISTS PokemonInseto;
+DROP TABLE IF EXISTS PokemonDePedra;
+DROP TABLE IF EXISTS PokemonFantasma;
+DROP TABLE IF EXISTS PokemonDragao;
+DROP TABLE IF EXISTS PokemonSombrio;
+DROP TABLE IF EXISTS PokemonMetalico;
+DROP TABLE IF EXISTS PokemonFada;
+
+
+CREATE TABLE Pokemon (
+    dex SERIAL PRIMARY KEY,
+    nome TEXT NOT NULL,
+    tipo TEXT NOT NULL,
+    hp INTEGER NOT NULL,
+    ataque INTEGER NOT NULL,
+    defesa INTEGER NOT NULL,
+    velocidade INTEGER NOT NULL,
+    spAtaque INTEGER NOT NULL,
+    spDefesa INTEGER NOT NULL,
+    evolucaoDex INTEGER,
+    habilidadeId INTEGER NOT NULL,
+    pokemonDex INTEGER NOT NULL,
+    rotaId INTEGER
+);
+
+-- Tabela para Pokémon de Água
+CREATE TABLE PokemonDeAgua (
+    id INT REFERENCES Pokemon(dex),
+    hydro_pump INT
+);
+
+-- Tabela para Pokémon Elétrico
+CREATE TABLE PokemonEletrico (
+    id INT REFERENCES Pokemon(dex),
+    thunder INT
+);
+
+-- Tabela para Pokémon de Fogo
+CREATE TABLE PokemonDeFogo (
+    id INT REFERENCES Pokemon(dex),
+    fire_blast INT
+);
+
+-- Tabela para Pokémon de Planta
+CREATE TABLE PokemonDePlanta (
+    id INT REFERENCES Pokemon(dex),
+    solar_beam INT
+);
+
+-- Tabela para Pokémon de Gelo
+CREATE TABLE PokemonDeGelo (
+    id INT REFERENCES Pokemon(dex),
+    blizzard INT
+);
+
+-- Tabela para Pokémon Lutador
+CREATE TABLE PokemonLutador (
+    id INT REFERENCES Pokemon(dex),
+    focus_blast INT
+);
+
+-- Tabela para Pokémon Venenoso
+CREATE TABLE PokemonVenenoso (
+    id INT REFERENCES Pokemon(dex),
+    gunk_shot INT
+);
+
+-- Tabela para Pokémon Terrestre
+CREATE TABLE PokemonTerrestre (
+    id INT REFERENCES Pokemon(dex),
+    meteor_beam INT
+);
+
+-- Tabela para Pokémon Voador
+CREATE TABLE PokemonVoador (
+    id INT REFERENCES Pokemon(dex),
+    aero_blast INT
+);
+
+-- Tabela para Pokémon Psíquico
+CREATE TABLE PokemonPsiquico (
+    id INT REFERENCES Pokemon(dex),
+    future_sight INT
+);
+
+-- Tabela para Pokémon Inseto
+CREATE TABLE PokemonInseto (
+    id INT REFERENCES Pokemon(dex),
+    megahorn INT
+);
+
+-- Tabela para Pokémon de Pedra
+CREATE TABLE PokemonDePedra (
+    id INT REFERENCES Pokemon(dex),
+    meteor_beam INT
+);
+
+-- Tabela para Pokémon Fantasma
+CREATE TABLE PokemonFantasma (
+    id INT REFERENCES Pokemon(dex),
+    poltergeist INT
+);
+
+-- Tabela para Pokémon Dragão
+CREATE TABLE PokemonDragao (
+    id INT REFERENCES Pokemon(dex),
+    outrage INT
+);
+
+-- Tabela para Pokémon Sombrio
+CREATE TABLE PokemonSombrio (
+    id INT REFERENCES Pokemon(dex),
+    payback INT
+);
+
+-- Tabela para Pokémon Metálico
+CREATE TABLE PokemonMetalico (
+    id INT REFERENCES Pokemon(dex),
+    meteor_mash INT
+);
+
+-- Tabela para Pokémon Fada
+CREATE TABLE PokemonFada (
+    id INT REFERENCES Pokemon(dex),
+    moonblast INT
+);
+
+
+-- Stored Procedure para inserir um Pokémon
+
+CREATE OR REPLACE FUNCTION inserir_pokemon_com_respectivo_tipo(
+    _dex INT,
+    _nome TEXT,
+    _tipo TEXT, 
+    _hp INT, 
+    _ataque INT, 
+    _defesa INT, 
+    _velocidade INT, 
+    _spAtaque INT, 
+    _spDefesa INT, 
+    _evolucaoDex INT, 
+    _habilidadeId INT, 
+    _pokemonDex INT,
+    _rotaId INT,
+    _hydro_pump INT,
+    _fire_blast INT,
+    _solar_beam INT,
+    _thunder INT,
+    _blizzard INT,
+    _focus_blast INT,
+    _gunk_shot INT,
+    _aero_blast INT,
+    _future_sight INT,
+    _megahorn INT,
+    _meteor_beam INT,
+    _poltergeist INT,
+    _outrage INT,
+    _payback INT,
+    _meteor_mash INT,
+    _moonblast INT)
+RETURNS VOID AS $$
+DECLARE
+    aux INT;
+BEGIN
+    -- Parametros obrigatorios da generica
+    IF _dex IS NOT NULL AND _nome IS NOT NULL AND _tipo IS NOT NULL AND _hp IS NOT NULL AND 
+    _ataque IS NOT NULL AND _defesa IS NOT NULL AND _velocidade IS NOT NULL AND 
+    _spAtaque IS NOT NULL AND _spDefesa IS NOT NULL AND _evolucaoDex IS NOT NULL AND 
+    _habilidadeId IS NOT NULL AND _pokemonDex IS NOT NULL AND _rotaId IS NOT NULL THEN
+        -- Parametros obrigatorios da especifica
+        IF _hydro_pump IS NOT NULL OR _fire_blast IS NOT NULL OR _solar_beam IS NOT NULL OR
+        _thunder IS NOT NULL OR _blizzard IS NOT NULL OR _focus_blast IS NOT NULL OR
+        _gunk_shot IS NOT NULL OR _aero_blast IS NOT NULL OR _future_sight IS NOT NULL OR
+        _megahorn IS NOT NULL OR _meteor_beam IS NOT NULL OR _poltergeist IS NOT NULL OR
+        _outrage IS NOT NULL OR _payback IS NOT NULL OR _meteor_mash IS NOT NULL OR
+        _moonblast IS NOT NULL THEN
+            -- Insere os dados na tabela Pokemon (generica)
+            INSERT INTO Pokemon (dex, nome, tipo, hp, ataque, defesa, velocidade, spAtaque, spDefesa, evolucaoDex, habilidadeId, pokemonDex, rotaId) values
+            (_dex, _nome, _tipo, _hp, _ataque, _defesa, _velocidade, _spAtaque, _spDefesa, _evolucaoDex, _habilidadeId, _pokemonDex, _rotaId) RETURNING dex INTO aux;
+            -- Insere os dados nas tabelas especificas
+            IF _hydro_pump IS NOT NULL THEN
+                INSERT INTO PokemonDeAgua (id, hydro_pump) values (aux, _hydro_pump);
+            END IF;
+            IF _fire_blast IS NOT NULL THEN
+                INSERT INTO PokemonDeFogo (id, fire_blast) values (aux, _fire_blast);
+            END IF;
+            IF _solar_beam IS NOT NULL THEN
+                INSERT INTO PokemonDePlanta (id, solar_beam) values (aux, _solar_beam);
+            END IF;
+            IF _thunder IS NOT NULL THEN
+                INSERT INTO PokemonEletrico (id, thunder) values (aux, _thunder);
+            END IF;
+            IF _blizzard IS NOT NULL THEN
+                INSERT INTO PokemonDeGelo (id, blizzard) values (aux, _blizzard);
+            END IF;
+            IF _focus_blast IS NOT NULL THEN
+                INSERT INTO PokemonLutador (id, focus_blast) values (aux, _focus_blast);
+            END IF;
+            IF _gunk_shot IS NOT NULL THEN
+                INSERT INTO PokemonVenenoso (id, gunk_shot) values (aux, _gunk_shot);
+            END IF;
+            IF _aero_blast IS NOT NULL THEN
+                INSERT INTO PokemonVoador (id, aero_blast) values (aux, _aero_blast);
+            END IF;
+            IF _future_sight IS NOT NULL THEN
+                INSERT INTO PokemonPsiquico (id, future_sight) values (aux, _future_sight);
+            END IF;
+            IF _megahorn IS NOT NULL THEN
+                INSERT INTO PokemonInseto (id, megahorn) values (aux, _megahorn);
+            END IF;
+            IF _meteor_beam IS NOT NULL THEN
+                INSERT INTO PokemonTerrestre (id, meteor_beam) values (aux, _meteor_beam);
+            END IF;
+            IF _poltergeist IS NOT NULL THEN
+                INSERT INTO PokemonFantasma (id, poltergeist) values (aux, _poltergeist);
+            END IF;
+            IF _outrage IS NOT NULL THEN
+                INSERT INTO PokemonDragao (id, outrage) values (aux, _outrage);
+            END IF;
+            IF _payback IS NOT NULL THEN
+                INSERT INTO PokemonNoturno (id, payback) values (aux, _payback);
+            END IF;
+            IF _meteor_mash IS NOT NULL THEN
+                INSERT INTO PokemonMetal (id, meteor_mash) values (aux, _meteor_mash);
+            END IF;
+            IF _moonblast IS NOT NULL THEN
+                INSERT INTO PokemonFada (id, moonblast) values (aux, _moonblast);
+            END IF;
+        ELSE
+            RAISE NOTICE 'Erro: Os parâmetros da especifica não podem ser nulos.';
+        END IF;
+    ELSE
+        RAISE NOTICE 'Erro: Os parâmetros da generica não podem ser nulos.';
+    END IF;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Exemplo de Uso INSERIR
+
+
+SELECT inserir_pokemon_com_respectivo_tipo(
+    _dex := 1,                   -- ID do Pokémon (dex)
+    _nome := 'Squirtle',         -- Nome do Pokémon
+    _tipo := 'Agua',             -- Tipo do Pokémon (Agua, Fogo, Eletrico, etc.)
+    _hp := 44,                   -- Pontos de vida (HP)
+    _ataque := 48,               -- Valor do ataque
+    _defesa := 65,               -- Valor da defesa
+    _velocidade := 43,           -- Velocidade
+    _spAtaque := 50,             -- Ataque especial
+    _spDefesa := 64,             -- Defesa especial
+    _evolucaoDex := 2,           -- Dex do Pokémon evoluído (2 = Wartortle)
+    _habilidadeId := 101,        -- ID da habilidade associada (número fictício)
+    _pokemonDex := 1,            -- ID do Pokémon inicial (referência cruzada)
+    _rotaId := 3,                -- ID da rota em que o Pokémon pode ser encontrado
+    _hydro_pump := 110,          -- Ataque Hydro Pump (valor fictício de poder)
+    _fire_blast := NULL,         -- Sem valor para Fire Blast
+    _solar_beam := NULL,         -- Sem valor para Solar Beam
+    _thunder := NULL,            -- Sem valor para Thunder
+    _blizzard := NULL,           -- Sem valor para Blizzard
+    _focus_blast := NULL,        -- Sem valor para Focus Blast
+    _gunk_shot := NULL,          -- Sem valor para Gunk Shot
+    _aero_blast := NULL,         -- Sem valor para Aero Blast
+    _future_sight := NULL,       -- Sem valor para Future Sight
+    _megahorn := NULL,           -- Sem valor para Megahorn
+    _meteor_beam := NULL,        -- Sem valor para Meteor Beam
+    _poltergeist := NULL,        -- Sem valor para Poltergeist
+    _outrage := NULL,            -- Sem valor para Outrage
+    _payback := NULL,            -- Sem valor para Payback
+    _meteor_mash := NULL,        -- Sem valor para Meteor Mash
+    _moonblast := NULL           -- Sem valor para Moonblast
+);
+
+REVOKE INSERT ON Pokemon FROM PUBLIC;
+REVOKE INSERT ON PokemonDeAgua FROM PUBLIC;
+REVOKE INSERT ON PokemonEletrico FROM PUBLIC;
+REVOKE INSERT ON PokemonDeFogo FROM PUBLIC;
+REVOKE INSERT ON PokemonDePlanta FROM PUBLIC;
+REVOKE INSERT ON PokemonDeGelo FROM PUBLIC;
+REVOKE INSERT ON PokemonLutador FROM PUBLIC;
+REVOKE INSERT ON PokemonVenenoso FROM PUBLIC;
+REVOKE INSERT ON PokemonTerrestre FROM PUBLIC;
+REVOKE INSERT ON PokemonVoador FROM PUBLIC;
+REVOKE INSERT ON PokemonPsiquico FROM PUBLIC;
+REVOKE INSERT ON PokemonInseto FROM PUBLIC;
+REVOKE INSERT ON PokemonDePedra FROM PUBLIC;
+REVOKE INSERT ON PokemonFantasma FROM PUBLIC;
+REVOKE INSERT ON PokemonDragao FROM PUBLIC;
+REVOKE INSERT ON PokemonSombrio FROM PUBLIC;
+REVOKE INSERT ON PokemonMetalico FROM PUBLIC;
+REVOKE INSERT ON PokemonFada FROM PUBLIC;
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.path", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+        <script src="../../js/custom.js"></script>
+      
+    
+  </body>
+</html>
