@@ -641,7 +641,7 @@ def liga_pokemon(db_engine, player_treinador):
     try:
         result_insigna = db_engine.execute(query_insigna, {"player_treinador": player_treinador})
         insignas = result_insigna.fetchone()
-        if insignas[0] <= 2:
+        if insignas[0] < 3:
             slow_print("Você precisa de pelo menos 3 insígnias para participar da Liga Pokémon.")
             return
         
@@ -691,7 +691,6 @@ def participar_liga(db_engine, player_treinador, liga):
                 db_engine.commit()
                 slow_print("Você venceu a Liga!")
                 slow_print("Você é um mestre Pokémon!")
-                slow_print("Voce ganhou 3 insiginias!")
                 insere_pokeballs(db_engine, player_treinador, 5)
                 buscar_insere_insignia(db_engine, player_treinador, npc)
                 buscar_insere_insignia(db_engine, player_treinador, npc)
@@ -852,7 +851,7 @@ def batalhar(db_engine, player_treinador, pokemon, pokemon_npc):
         
 def calcular_dano(pokemon_atacante, pokemon_defensor):
     dano = (pokemon_atacante.ataque / pokemon_defensor.defesa) * pokemon_atacante.nivel
-    return dano
+    return int(dano)
 
 def escolher_pokemon_npc(db_engine, npc_ginasio):
     query = text("""
@@ -904,16 +903,21 @@ def get_ginasio_cidade(db_engine, cidade):
         return None
     
 def lutar_npc(db_engine, player_treinador, npc_ginasio, liga):
+    
+    if liga:
+        nomear = "Mestre Pokemon" 
+    else: 
+        nomear = "Lider de Ginásio"
 
-    print(f"Você deseja lutar contra o líder de ginásio {npc_ginasio.nome}? (S/N)")
+    print(f"Você deseja lutar contra o {nomear} {npc_ginasio.nome}? (S/N)")
     escolha = slow_input("Escolha uma opção: ")
 
-    if escolha == 's':
+    if escolha.lower() == 's':
         resultado = batalhar_pokemon(db_engine, player_treinador, npc_ginasio)
         if resultado:
-            slow_print(f"Parabéns! Você derrotou o líder de ginásio {npc_ginasio.nome}!")
+            slow_print(f"Parabéns! Você derrotou o {nomear} {npc_ginasio.nome}!")
         else:
-            slow_print(f"Você foi derrotado pelo líder de ginásio {npc_ginasio.nome}.")
+            slow_print(f"Você foi derrotado pelo {nomear} {npc_ginasio.nome}.")
         query = text("""
             INSERT INTO public."BatalhaLider" ("ganhou", "perdeu", "treinadorId", "liderId")
             VALUES (:ganhou, :perdeu , :treinadorId, :liderId)
@@ -931,11 +935,11 @@ def lutar_npc(db_engine, player_treinador, npc_ginasio, liga):
                 return { "ganhou": ganhou, "perdeu": perdeu }   
             return True
         except Exception as e:
-            slow_print(f"Erro ao iniciar batalha com líder de ginásio: {e}")
+            slow_print(f"Erro ao iniciar batalha com {nomear}: {e}")
         
         
     else:
-        slow_print("Você fugiu da batalha contra o líder de ginásio.")
+        slow_print("Você fugiu da batalha contra o {nomear}.")
         return False
 
 # Função para escolher o pokemon da batalha
